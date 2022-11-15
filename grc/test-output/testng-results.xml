@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[CHECKING NULL EMAIL AND PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[CHECKING NULL EMAIL<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[CHECKING NULL PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[CHECKING VALID EMAIL AND INVALID PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[CHECKING VALID EMAIL AND PASSWORD WITH LESS THAN 8 CHARACTERS<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[CHECKING INVALID EMAIL AND VALID PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[CHECKING INVALID EMAIL AND PASSWORD WITH LESS THAN 8 CHARACTERS<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[CHECKING INVALID EMAIL AND PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[CHECKING LESS THAN 8 CHARACTERS EMAIL AND PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[CHECKING LOGIN WITH VALID EMAIL AND VAILD PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2022-11-15T14:18:45 IST" name="Default suite" finished-at="2022-11-15T14:19:24 IST" duration-ms="39552">
+    <groups>
+    </groups>
+    <test started-at="2022-11-15T14:18:45 IST" name="Default test" finished-at="2022-11-15T14:19:24 IST" duration-ms="39552">
+      <class name="libra_Module.Login">
+        <test-method is-config="true" signature="openbrowser()[pri:0, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:18:45 IST" name="openbrowser" finished-at="2022-11-15T14:18:46 IST" duration-ms="1752" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openbrowser -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:18:46 IST" name="beforeMethod" finished-at="2022-11-15T14:18:54 IST" duration-ms="7680" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void libra_Module.Login.test01_checkNullEmailandPassword() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="test01_checkNullEmailandPassword()[pri:1, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:18:54 IST" name="test01_checkNullEmailandPassword" finished-at="2022-11-15T14:18:54 IST" duration-ms="275" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[CHECKING NULL EMAIL AND PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test01_checkNullEmailandPassword -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:18:54 IST" name="beforeMethod" finished-at="2022-11-15T14:18:55 IST" duration-ms="269" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void libra_Module.Login.test02_checkNullEmail() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="test02_checkNullEmail()[pri:2, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:18:55 IST" name="test02_checkNullEmail" finished-at="2022-11-15T14:18:55 IST" duration-ms="255" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[CHECKING NULL EMAIL<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test02_checkNullEmail -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:18:55 IST" name="beforeMethod" finished-at="2022-11-15T14:18:55 IST" duration-ms="349" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void libra_Module.Login.test03_checkPwdNull() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="test03_checkPwdNull()[pri:3, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:18:55 IST" name="test03_checkPwdNull" finished-at="2022-11-15T14:18:56 IST" duration-ms="248" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[CHECKING NULL PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test03_checkPwdNull -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:18:56 IST" name="beforeMethod" finished-at="2022-11-15T14:18:56 IST" duration-ms="200" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void libra_Module.Login.test04_checkValEmailInvalidPwd() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="test04_checkValEmailInvalidPwd()[pri:4, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:18:56 IST" name="test04_checkValEmailInvalidPwd" finished-at="2022-11-15T14:18:57 IST" duration-ms="851" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[CHECKING VALID EMAIL AND INVALID PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test04_checkValEmailInvalidPwd -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:18:57 IST" name="beforeMethod" finished-at="2022-11-15T14:18:57 IST" duration-ms="215" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void libra_Module.Login.test05_checkValEmailLess8CharPwd() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="test05_checkValEmailLess8CharPwd()[pri:5, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:18:57 IST" name="test05_checkValEmailLess8CharPwd" finished-at="2022-11-15T14:18:57 IST" duration-ms="329" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[CHECKING VALID EMAIL AND PASSWORD WITH LESS THAN 8 CHARACTERS<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test05_checkValEmailLess8CharPwd -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:18:57 IST" name="beforeMethod" finished-at="2022-11-15T14:18:57 IST" duration-ms="236" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void libra_Module.Login.test06_checkInvalidEmailValPwd() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="test06_checkInvalidEmailValPwd()[pri:6, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:18:57 IST" name="test06_checkInvalidEmailValPwd" finished-at="2022-11-15T14:19:16 IST" duration-ms="18535" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[CHECKING INVALID EMAIL AND VALID PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test06_checkInvalidEmailValPwd -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:19:16 IST" name="beforeMethod" finished-at="2022-11-15T14:19:16 IST" duration-ms="405" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void libra_Module.Login.test07_checkInvalidEmailLess8CharPwd() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="test07_checkInvalidEmailLess8CharPwd()[pri:7, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:19:16 IST" name="test07_checkInvalidEmailLess8CharPwd" finished-at="2022-11-15T14:19:17 IST" duration-ms="321" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[CHECKING INVALID EMAIL AND PASSWORD WITH LESS THAN 8 CHARACTERS<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test07_checkInvalidEmailLess8CharPwd -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:19:17 IST" name="beforeMethod" finished-at="2022-11-15T14:19:17 IST" duration-ms="225" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void libra_Module.Login.test08_checkInvalidEmailAndPwd() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="test08_checkInvalidEmailAndPwd()[pri:8, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:19:17 IST" name="test08_checkInvalidEmailAndPwd" finished-at="2022-11-15T14:19:17 IST" duration-ms="590" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[CHECKING INVALID EMAIL AND PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test08_checkInvalidEmailAndPwd -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:19:17 IST" name="beforeMethod" finished-at="2022-11-15T14:19:18 IST" duration-ms="400" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void libra_Module.Login.test09_checkLess8CharEmailPwd() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="test09_checkLess8CharEmailPwd()[pri:9, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:19:18 IST" name="test09_checkLess8CharEmailPwd" finished-at="2022-11-15T14:19:18 IST" duration-ms="350" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[CHECKING LESS THAN 8 CHARACTERS EMAIL AND PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test09_checkLess8CharEmailPwd -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:19:18 IST" name="beforeMethod" finished-at="2022-11-15T14:19:19 IST" duration-ms="394" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void libra_Module.Login.test10_checkLogin() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="test10_checkLogin()[pri:10, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:19:19 IST" name="test10_checkLogin" finished-at="2022-11-15T14:19:24 IST" duration-ms="5436" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[CHECKING LOGIN WITH VALID EMAIL AND VAILD PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test10_checkLogin -->
+        <test-method is-config="true" signature="aftertest()[pri:0, instance:libra_Module.Login@f0da945]" started-at="2022-11-15T14:19:24 IST" name="aftertest" finished-at="2022-11-15T14:19:24 IST" duration-ms="192" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftertest -->
+      </class> <!-- libra_Module.Login -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

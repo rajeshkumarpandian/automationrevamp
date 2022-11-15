@@ -1,4 +1,4 @@
-package libra_Module_Test;
+package libra_Module;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,14 +6,11 @@ import java.util.LinkedHashMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import Libra.Libra_Common_Module.LComVar;
+import libra_Test.*;
 import jxl.Sheet;
 import jxl.Workbook;
-import Libra.Libra_Common_Module.*;
-import Libra.Selenium_Test_Common_module.*;
 
-
-public class DeleteAllTest extends Libra.Libra_Common_Module.LComFun {
+public class DeleteAllTest extends LComFun {
 	
 	public DeleteAllTest(WebDriver webPageDriver, String baseUrl) {
 		super(webPageDriver, baseUrl);
