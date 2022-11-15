@@ -15,15 +15,11 @@ import org.testng.Reporter;
 
 import com.aventstack.extentreports.ExtentTest;
 
-import atu.testrecorder.ATUTestRecorder;
-import atu.testrecorder.exceptions.ATUTestRecorderException;
-
 public class CommonFunctions<ReturnBooleanAndString> extends CommonVariables {
 
 	protected static WebDriver driver;
 	protected static String baseUrl;
-	public File parameters;
-	ATUTestRecorder recorder;
+	public File parameters;	
 
 	public CommonFunctions(WebDriver webPageDriver, String baseURL) {
 		// TODO Auto-generated constructor stub

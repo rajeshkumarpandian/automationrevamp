@@ -31,8 +31,6 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import Libra.Libra_Common_Module.LComVar;
 import Libra.Selenium_Test_Common_module.CommonFunctions;
-import atu.testrecorder.ATUTestRecorder;
-import atu.testrecorder.exceptions.ATUTestRecorderException;
 import io.netty.handler.logging.LogLevel;
 
 public class DeleteAll {
@@ -44,7 +42,6 @@ public class DeleteAll {
 	private static WebDriver driver;
 	private static String baseUrl;
 	private static TestBrowser testBrowser;
-	ATUTestRecorder recorder;
 	private static final String FULL_DATE_FORMAT = "dd_MM_yyyy_'at'_hh_mm_ss";
 
 	@BeforeClass
