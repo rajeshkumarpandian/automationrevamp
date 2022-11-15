@@ -1,0 +1,135 @@
+package Libra.Selenium_Test_Common_module;
+
+import java.io.File;
+import java.time.Duration;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
+
+import com.aventstack.extentreports.ExtentTest;
+
+import atu.testrecorder.ATUTestRecorder;
+import atu.testrecorder.exceptions.ATUTestRecorderException;
+
+public class CommonFunctions<ReturnBooleanAndString> extends CommonVariables {
+
+	protected static WebDriver driver;
+	protected static String baseUrl;
+	public File parameters;
+	ATUTestRecorder recorder;
+
+	public CommonFunctions(WebDriver webPageDriver, String baseURL) {
+		// TODO Auto-generated constructor stub
+		driver = webPageDriver;
+		baseUrl = baseURL;
+	}
+
+	public void reportlog(String testStatus, String Description) throws Exception {
+		if (testStatus.toLowerCase().equals("fail")) {
+			Reporter.log(Description);
+		}
+		if (testStatus.toLowerCase().equals("pass")) {
+			Reporter.log(Description.toUpperCase() + "<b> <font color='blue' font size = 4>" + " ==> PASS" + "</font></b>");
+		}
+	}
+
+	public void clickByXpath(String XPath) {
+		waitForElementPresent(driver, By.xpath(XPath));
+		if (iselementPresent(By.xpath(XPath))) {
+			driver.findElement(By.xpath(XPath)).click();
+		}
+	}
+
+	public void clickById(String Id) {
+		if (iselementPresent(By.id(Id))) {
+			driver.findElement(By.id(Id)).click();
+		}
+	}
+
+	public void clickByName(String Name) {
+		if (iselementPresent(By.name(Name))) {
+			driver.findElement(By.name(Name)).click();
+		}
+	}
+
+	public void clickByClassName(String ClassName) {
+		if (iselementPresent(By.className(ClassName))) {
+			driver.findElement(By.className(ClassName)).click();
+		}
+	}
+
+	public static boolean iselementPresent(By by) {
+		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+		try {
+			driver.findElement(by);
+			return true;
+		} catch (Exception e) {
+			return false;
+		} finally {
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		}
+	}
+
+	public void findAndPassbyxpath(String xpath, String passData) {
+		if (iselementPresent(By.xpath(xpath))) {
+			driver.findElement(By.xpath(xpath)).clear();
+			driver.findElement(By.xpath(xpath)).sendKeys(passData);
+		}
+	}
+
+	public void findAndPassbyid(String id, String passData) {
+		if (iselementPresent(By.id(id))) {
+			driver.findElement(By.id(id)).clear();
+			driver.findElement(By.id(id)).sendKeys(passData);
+		}
+	}
+
+	public void findAndPassbyname(String name, String passData) {
+		if (iselementPresent(By.name(name))) {
+			driver.findElement(By.name(name)).clear();
+			driver.findElement(By.name(name)).sendKeys(passData);
+		}
+	}
+
+	public void findAndPassbyClassname(String Classname, String passData) {
+		if (iselementPresent(By.className(Classname))) {
+			driver.findElement(By.className(Classname)).clear();
+			driver.findElement(By.className(Classname)).sendKeys(passData);
+		}
+	}
+
+	public static void waitForElementPresent(final WebDriver driver, final By by) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT_SECONDS));
+		try {
+			ExpectedCondition<Boolean> elementIsDisplayed = new ExpectedCondition<Boolean>() {
+				public Boolean apply(WebDriver arg0) {
+					try {
+						WebElement webElement = driver.findElement(by);
+						if (webElement.isDisplayed()) {
+							return true;
+						} else {
+							return false;
+						}
+					} catch (NoSuchElementException e) {
+						return false;
+					} catch (StaleElementReferenceException f) {
+						return false;
+					}
+				}
+			};
+			wait.until(elementIsDisplayed);
+		} catch (Exception e) {
+			// Ignore the timeout exception
+		} finally {
+			// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		}
+	}
+
+}

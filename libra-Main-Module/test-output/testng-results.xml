@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[CHECKING LOGIN WITH VALID EMAIL AND VAILD PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+    </line>
+    <line>
+      <![CDATA[CHECKING ADD PERSON WIHOUT COMPANY<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2022-11-06T17:03:55 IST" name="Default suite" finished-at="2022-11-06T17:04:08 IST" duration-ms="13392">
+    <groups>
+    </groups>
+    <test started-at="2022-11-06T17:03:55 IST" name="Default test" finished-at="2022-11-06T17:04:08 IST" duration-ms="13392">
+      <class name="Libra.libra_Main_Module.Person">
+        <test-method is-config="true" signature="openbrowser()[pri:0, instance:Libra.libra_Main_Module.Person@3cebbb30]" started-at="2022-11-06T17:03:55 IST" name="openbrowser" finished-at="2022-11-06T17:03:57 IST" duration-ms="1801" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openbrowser -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Libra.libra_Main_Module.Person@3cebbb30]" started-at="2022-11-06T17:03:57 IST" name="afterMethod" finished-at="2022-11-06T17:03:58 IST" duration-ms="1206" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name={null} status=CREATED method=Person.test0001_checkLogin()[pri:1, instance:Libra.libra_Main_Module.Person@3cebbb30] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="test0001_checkLogin()[pri:1, instance:Libra.libra_Main_Module.Person@3cebbb30]" started-at="2022-11-06T17:03:58 IST" name="test0001_checkLogin" finished-at="2022-11-06T17:04:02 IST" duration-ms="3675" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[CHECKING LOGIN WITH VALID EMAIL AND VAILD PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test0001_checkLogin -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Libra.libra_Main_Module.Person@3cebbb30]" started-at="2022-11-06T17:04:02 IST" name="afterMethod" finished-at="2022-11-06T17:04:03 IST" duration-ms="1368" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name={null} status=CREATED method=Person.test0025_checkAddPersonWOComp()[pri:25, instance:Libra.libra_Main_Module.Person@3cebbb30] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="test0025_checkAddPersonWOComp()[pri:25, instance:Libra.libra_Main_Module.Person@3cebbb30]" started-at="2022-11-06T17:04:03 IST" name="test0025_checkAddPersonWOComp" finished-at="2022-11-06T17:04:08 IST" duration-ms="5296" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[CHECKING ADD PERSON WIHOUT COMPANY<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test0025_checkAddPersonWOComp -->
+      </class> <!-- Libra.libra_Main_Module.Person -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
