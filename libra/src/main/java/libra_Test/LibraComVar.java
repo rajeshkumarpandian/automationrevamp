@@ -1,6 +1,6 @@
 package libra_Test;
 
-public class LComVar {
+public class LibraComVar {
 	
 /*********************************************ELEMENTS TYPE*****************************************************************************/	
 	

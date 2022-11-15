@@ -9,7 +9,7 @@ import jxl.Sheet;
 import jxl.Workbook;
 
 
-public class DeleteAllTest extends LComFun {
+public class DeleteAllTest extends LibraComFun {
 	
 	public DeleteAllTest(WebDriver webPageDriver, String baseUrl) {
 		super(webPageDriver, baseUrl);
@@ -19,7 +19,7 @@ public class DeleteAllTest extends LComFun {
 
 	public void checkDeleteCompany(String sheetName) throws Exception, IOException {
 		reportlog("pass", "Checking delete company");
-		Workbook file1 = Workbook.getWorkbook(new File(LComVar.TEST_DATA));
+		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
 		Sheet sheet1 = file1.getSheet(sheetName);
 		int rowCount = sheet1.getRows();
 		int colCount = sheet1.getColumns();
@@ -33,18 +33,18 @@ public class DeleteAllTest extends LComFun {
 			String CompanyName = strHM.get("CompanyName");	
 			String ValidationMessage = strHM.get("ValidationMessage");
 			if (Test_Scenario.equals("Positive") && (Scenario.equals("Company"))) {
-				driver.get(baseUrl + LComVar.CONT_COMP_CARD_VIEW);				
-				ContactCardEditDelete(LComVar.ALL_PAGE_CARD_LIST, CompanyName, "delete");				
-				waitForElementPresent(driver,By.xpath(LComVar.CONT_DEL));
-				clickByXpath(LComVar.CONT_DEL);
-				stringComparion(LComVar.XPATH,LComVar.LOGIN_INVAL_PWD, ValidationMessage);																								
+				driver.get(baseUrl + LibraComVar.CONT_COMP_CARD_VIEW);				
+				ContactCardEditDelete(LibraComVar.ALL_PAGE_CARD_LIST, CompanyName, "delete");				
+				waitForElementPresent(driver,By.xpath(LibraComVar.CONT_DEL));
+				clickByXpath(LibraComVar.CONT_DEL);
+				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_INVAL_PWD, ValidationMessage);																								
 			}
 		}
 	}
 	
 	public void checkDeletePerson(String sheetName) throws Exception, IOException {
 		reportlog("pass", "Checking delete person");
-		Workbook file1 = Workbook.getWorkbook(new File(LComVar.TEST_DATA));
+		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
 		Sheet sheet1 = file1.getSheet(sheetName);
 		int rowCount = sheet1.getRows();
 		int colCount = sheet1.getColumns();
@@ -58,11 +58,11 @@ public class DeleteAllTest extends LComFun {
 			String CompanyName = strHM.get("CompanyName");	
 			String ValidationMessage = strHM.get("ValidationMessage");
 			if (Test_Scenario.equals("Positive") && (Scenario.equals("Person"))) {
-				driver.get(baseUrl + LComVar.CONT_PEOPLE_CARD_VIEW);				
-				ContactCardEditDelete(LComVar.ALL_PAGE_CARD_LIST, CompanyName, "delete");				
-				waitForElementPresent(driver,By.xpath(LComVar.CONT_DEL));
-				clickByXpath(LComVar.CONT_DEL);
-				stringComparion(LComVar.XPATH,LComVar.LOGIN_INVAL_PWD, ValidationMessage);																								
+				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);				
+				ContactCardEditDelete(LibraComVar.ALL_PAGE_CARD_LIST, CompanyName, "delete");				
+				waitForElementPresent(driver,By.xpath(LibraComVar.CONT_DEL));
+				clickByXpath(LibraComVar.CONT_DEL);
+				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_INVAL_PWD, ValidationMessage);																								
 			}
 		}
 	}

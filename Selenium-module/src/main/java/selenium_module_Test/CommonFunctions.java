@@ -25,6 +25,7 @@ public class CommonFunctions extends CommonVariables {
 		baseUrl = baseURL;
 	}
 
+	
 	public void reportlog(String testStatus, String Description) throws Exception {
 		if (testStatus.toLowerCase().equals("fail")) {
 			Reporter.log(Description);
@@ -34,6 +35,22 @@ public class CommonFunctions extends CommonVariables {
 		}
 	}
 
+	public boolean stringComparion(String elementType, String elementValue, String expectedValue) {
+		boolean flag = false;
+		String getValue = "";
+		if (elementType.equals("XPATH")) {
+			getValue = driver.findElement(By.xpath(elementValue)).getText();
+		} else if (elementType.equals("ID")) {
+			getValue = driver.findElement(By.id(elementValue)).getText();
+		} else if (elementType.equals("NAME")) {
+			getValue = driver.findElement(By.name(elementValue)).getText();
+		} else if (elementType.equals("CLASSNAME")) {
+			getValue = driver.findElement(By.className(elementValue)).getText();
+		}
+		org.testng.Assert.assertEquals(getValue, expectedValue);
+		return flag;
+	}
+	
 	public void clickByXpath(String XPath) {
 		waitForElementPresent(driver, By.xpath(XPath));
 		if (iselementPresent(By.xpath(XPath))) {

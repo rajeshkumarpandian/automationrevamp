@@ -29,14 +29,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import Libra.Libra_Common_Module.LComVar;
-import Libra.Selenium_Test_Common_module.CommonFunctions;
-import atu.testrecorder.ATUTestRecorder;
-import atu.testrecorder.exceptions.ATUTestRecorderException;
 import io.netty.handler.logging.LogLevel;
-import libra_Module_Test.DeleteAllTest;
-import libra_Module_Test.LoginTest;
-
+import libra_Test.*;
 public class DeleteAll {
 
 	private enum TestBrowser {
@@ -45,22 +39,21 @@ public class DeleteAll {
 
 	private static WebDriver driver;
 	private static String baseUrl;
-	private static TestBrowser testBrowser;
-	ATUTestRecorder recorder;
+	private static TestBrowser testBrowser;	
 	private static final String FULL_DATE_FORMAT = "dd_MM_yyyy_'at'_hh_mm_ss";
 
 	@BeforeClass
 	public void openbrowser() throws IOException {
 
 		Properties prop = new Properties();
-		FileInputStream in = new FileInputStream(LComVar.PROP_FILE);
+		FileInputStream in = new FileInputStream(LibraComVar.PROP_FILE);
 		prop.load(in);
 		in.close();
-		testBrowser = TestBrowser.valueOf(prop.getProperty(LComVar.PROP_BROWSER).toUpperCase());
-		baseUrl = prop.getProperty(LComVar.PROP_QE_URL);
+		testBrowser = TestBrowser.valueOf(prop.getProperty(LibraComVar.PROP_BROWSER).toUpperCase());
+		baseUrl = prop.getProperty(LibraComVar.PROP_QE_URL);
 		switch (testBrowser) {
 		case CHROME:
-			System.setProperty(LComVar.CHROME_DRIVER, LComVar.PATH_CHROME_DRIVER);
+			System.setProperty(LibraComVar.CHROME_DRIVER, LibraComVar.PATH_CHROME_DRIVER);
 			driver = new ChromeDriver();
 			break;
 		}
@@ -77,21 +70,21 @@ public class DeleteAll {
 
 	@Test(priority = 1)
 	public void test0001_checkLogin() throws Exception {
-		String sheetname = LComVar.DELETE;
+		String sheetname = LibraComVar.DELETE;
 		LoginTest libraPageTest = new LoginTest(DeleteAll.driver, DeleteAll.baseUrl);
 		libraPageTest.Login(sheetname);
 	}
 	
 	@Test(priority = 2)
 	public void test02_checkDeleteCompany() throws Exception {
-		String sheetname = LComVar.DELETE;
+		String sheetname = LibraComVar.DELETE;
 		DeleteAllTest libraPageTest = new DeleteAllTest(DeleteAll.driver, DeleteAll.baseUrl);
 		libraPageTest.checkDeleteCompany(sheetname);
 	}
 	
 	@Test(priority = 3)
 	public void test03_checkDeletePerson() throws Exception {
-		String sheetname = LComVar.DELETE;
+		String sheetname = LibraComVar.DELETE;
 		DeleteAllTest libraPageTest = new DeleteAllTest(DeleteAll.driver, DeleteAll.baseUrl);
 		libraPageTest.checkDeletePerson(sheetname);
 	}

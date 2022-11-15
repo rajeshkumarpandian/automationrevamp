@@ -3,14 +3,40 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="libra_Module.Login">
+      <class name="libra_Module.Company">
         <methods>
-          <include name="beforeMethod"/>
+          <include name="test0027_checkEditCompFromCard"/>
+          <include name="test0005_checkInvalidSpecharEMailCompany"/>
+          <include name="test0019_checkNewPersonInvalidTextEmail"/>
           <include name="openbrowser"/>
+          <include name="test0008_checkInvalidSpecCharWebCompany"/>
+          <include name="test0017_checkShortPinCompany"/>
+          <include name="test0016_checkStateNumSpecCharTextCompany"/>
+          <include name="test0015_checkStateSpecCharCompany"/>
+          <include name="test0028_checkEditCompInnerPageEditCompInnerPage"/>
+          <include name="test0006_checkInvalidTextWebCompany"/>
+          <include name="test0011_checkCityNumbersCompany"/>
+          <include name="test0021_checkNewPersonInvalidSpecialCharEmail"/>
+          <include name="test0023_checkAddCompWoPerson"/>
+          <include name="test0007_checkInvalidNumWebCompany"/>
+          <include name="test0013_checkCityNumSpecCharTextCompany"/>
+          <include name="test0020_checkNewPersonInvalidNumberEmail"/>
+          <include name="test0003_checkInvalidTextEMailCompany"/>
+          <include name="test0004_checkInvalidNumEMailCompany"/>
+          <include name="test0026_checkAddCompWithNewPerson"/>
+          <include name="test0014_checkStateNumbersCompany"/>
+          <include name="test0025_checkAddCompWithMulExPerson"/>
           <include name="aftertest"/>
-          <include name="test10_checkLogin"/>
+          <include name="test0018_checkNewPersonNameNull"/>
+          <include name="test0024_checkAddCompWithExPerson"/>
+          <include name="afterMethod"/>
+          <include name="test0010_checkShortPhoneNumCompany"/>
+          <include name="test0022_checkNewPersonInvalidTextMobile"/>
+          <include name="test0002_checkNullCompanyName"/>
+          <include name="test0009_checkInvalidTextMobileCompany"/>
+          <include name="test0012_checkCitySpecCharCompany"/>
         </methods>
-      </class> <!-- libra_Module.Login -->
+      </class> <!-- libra_Module.Company -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
