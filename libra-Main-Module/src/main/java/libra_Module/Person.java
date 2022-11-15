@@ -1,4 +1,4 @@
-package Libra.libra_Main_Module;
+package libra_Module;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,7 +23,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import Libra.Libra_Common_Module.LComVar;
+
 import Libra.Selenium_Test_Common_module.CommonFunctions;
 import io.netty.handler.logging.LogLevel;
 

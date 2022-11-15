@@ -1,4 +1,4 @@
-package Libra.libra_Main_Module;
+package libra_Module;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,19 +8,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 import com.mongodb.gridfs.CLI;
 
-import Libra.Selenium_Test_Common_module.CommonFunctions;
-import Libra.Libra_Common_Module.*;
 import jxl.JXLException;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
+import libra_Test.LComVar;
 
-public class TestModules extends Libra.Libra_Common_Module.LComFun {
+public class TestModules extends libra_Test.LComFun{
 
 	public TestModules(WebDriver webPageDriver, String baseUrl) {
 		super(webPageDriver, baseUrl);

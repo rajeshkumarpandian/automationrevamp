@@ -1,4 +1,4 @@
-package Libra.Selenium_Test_Common_module;
+package selenium_module_Test;
 
 import java.io.File;
 import java.time.Duration;
@@ -13,9 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
-import com.aventstack.extentreports.ExtentTest;
-
-public class CommonFunctions<ReturnBooleanAndString> extends CommonVariables {
+public class CommonFunctions extends CommonVariables {
 
 	protected static WebDriver driver;
 	protected static String baseUrl;

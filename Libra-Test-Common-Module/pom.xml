@@ -4,10 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>Libra</groupId>
-	<artifactId>Libra-Common-Module</artifactId>
+	<artifactId>Libra-Test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>Libra-Common-Module</name>
+	<name>Libra-Test</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
 
@@ -28,7 +28,7 @@
 
 		<dependency>
 			<groupId>Libra</groupId>
-			<artifactId>Selenium-Test-Common-module</artifactId>
+			<artifactId>Selenium-module</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 

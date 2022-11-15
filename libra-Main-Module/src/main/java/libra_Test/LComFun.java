@@ -1,4 +1,4 @@
-package Libra.Libra_Common_Module;
+package libra_Test;
 
 import java.io.File;
 import java.util.List;
@@ -13,7 +13,7 @@ import com.aventstack.extentreports.ExtentTest;
 import org.testng.*;
 import jxl.common.Assert;
 
-public class LComFun extends Libra.Selenium_Test_Common_module.CommonFunctions {
+public class LComFun extends selenium_module_Test.CommonFunctions {
 
 	public LComFun(WebDriver webPageDriver, String baseURL) {
 		super(webPageDriver, baseURL);

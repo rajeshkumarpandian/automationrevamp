@@ -1,4 +1,4 @@
-package Libra.Selenium_Test_Common_module;
+package selenium_module_Test;
 
 import java.time.Duration;
 

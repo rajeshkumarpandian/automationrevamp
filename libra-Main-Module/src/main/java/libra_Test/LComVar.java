@@ -1,4 +1,4 @@
-package Libra.Libra_Common_Module;
+package libra_Test;
 
 public class LComVar {
 	
