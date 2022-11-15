@@ -30,7 +30,7 @@ public class LComVar {
 	public static String PERSON = "Person";
 	public static String CRM = "CRM";
 	public static String DELETE = "Delete";
-	public static String TEST_DATA = "R:\\eclipse\\workSpace\\libra-Main-Module\\src\\test\\resources\\LibraTestData.xls";
+	public static String TEST_DATA = "R:\\eclipse\\workSpace\\automationrevamp\\libra\\src\\test\\resources\\LibraTestData.xls";
 	
 /*********************************************EXTEND REPORT DETAILS**********************************************************************/
 	

@@ -23,14 +23,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-
-import Libra.Libra_Common_Module.LComVar;
-import Libra.Selenium_Test_Common_module.CommonFunctions;
+import libra_Test.*;
 import io.netty.handler.logging.LogLevel;
 
 public class Login {
@@ -42,7 +35,7 @@ public class Login {
 	private static WebDriver driver;
 	private static String baseUrl;
 	private static TestBrowser testBrowser;	
-	private static final String FULL_DATE_FORMAT = "dd_MM_yyyy_'at'_hh_mm_ss";
+	
 
 	@BeforeClass
 	public void openbrowser() throws IOException {

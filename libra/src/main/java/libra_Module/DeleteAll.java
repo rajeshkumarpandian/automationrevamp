@@ -23,14 +23,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-
-import Libra.Libra_Common_Module.LComVar;
-import Libra.Selenium_Test_Common_module.CommonFunctions;
+import libra_Test.*;
 import io.netty.handler.logging.LogLevel;
 
 public class DeleteAll {
