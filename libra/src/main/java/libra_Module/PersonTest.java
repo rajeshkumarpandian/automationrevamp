@@ -1,14 +1,19 @@
-package libra_Test;
+package libra_Module_Test;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import Libra.Libra_Common_Module.LComVar;
 import jxl.Sheet;
 import jxl.Workbook;
+import Libra.Libra_Common_Module.*;
+import Libra.Selenium_Test_Common_module.*;
 
-public class PersonTest extends LComFun {
+
+public class PersonTest extends Libra.Libra_Common_Module.LComFun {
 	
 	public PersonTest(WebDriver webPageDriver, String baseUrl) {
 		super(webPageDriver, baseUrl);
