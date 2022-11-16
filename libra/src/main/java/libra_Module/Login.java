@@ -41,7 +41,7 @@ public class Login {
 	private static WebDriver driver;
 	private static String baseUrl;
 	private static TestBrowser testBrowser;	
-	private static final String FULL_DATE_FORMAT = "dd_MM_yyyy_'at'_hh_mm_ss";
+	
 
 	@BeforeClass
 	public void openbrowser() throws IOException {

@@ -36,7 +36,8 @@ public class Login {
 	private static WebDriver driver;
 	private static String baseUrl;
 	private static TestBrowser testBrowser;	
-	
+	private static String username;
+	private static String password;
 
 	@BeforeClass
 	public void openbrowser() throws IOException {
@@ -46,7 +47,9 @@ public class Login {
 		prop.load(in);
 		in.close();
 		testBrowser = TestBrowser.valueOf(prop.getProperty(GComVar.PROP_BROWSER).toUpperCase());
-		baseUrl = prop.getProperty(GComVar.PROP_QE_URL);
+		baseUrl = prop.getProperty(GComVar.PROP_GRC_QE_URL);
+		username = prop.getProperty(GComVar.PROP_GRC_QE_EMAIL);
+		password = prop.getProperty(GComVar.PROP_GRC_QE_PWD);						  		
 		switch (testBrowser) {
 		case CHROME:
 			System.setProperty(GComVar.CHROME_DRIVER, GComVar.PATH_CHROME_DRIVER);
@@ -65,76 +68,12 @@ public class Login {
 	}
 
 	@Test(priority = 1)
-	public void test01_checkNullEmailandPassword() throws Exception {
-		String sheetname = GComVar.LOGIN;
-		TestModules libraPageTest = new TestModules(Login.driver, Login.baseUrl);
-		libraPageTest.EmailandPasswordNull(sheetname);
+	public void test01_checkLogin() throws Exception {		
+		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
+		libraPageTest.Login(username,password);
 	}
 
-	@Test(priority = 2)
-	public void test02_checkNullEmail() throws Exception {
-		String sheetname = GComVar.LOGIN;
-		TestModules libraPageTest = new TestModules(Login.driver, Login.baseUrl);
-		libraPageTest.EmailNull(sheetname);
-	}
-
-	@Test(priority = 3)
-	public void test03_checkPwdNull() throws Exception {
-		String sheetname = GComVar.LOGIN;
-		TestModules libraPageTest = new TestModules(Login.driver, Login.baseUrl);
-		libraPageTest.PwdNull(sheetname);
-	}
-
-	@Test(priority = 4)
-	public void test04_checkValEmailInvalidPwd() throws Exception {
-		String sheetname = GComVar.LOGIN;
-		TestModules libraPageTest = new TestModules(Login.driver, Login.baseUrl);
-		libraPageTest.ValEmailInvalidPwd(sheetname);
-	}
-
-	@Test(priority = 5)
-	public void test05_checkValEmailLess8CharPwd() throws Exception {
-		String sheetname = GComVar.LOGIN;
-		TestModules libraPageTest = new TestModules(Login.driver, Login.baseUrl);
-		libraPageTest.ValEmailLess8CharPwd(sheetname);
-	}
-
-	@Test(priority = 6)
-	public void test06_checkInvalidEmailValPwd() throws Exception {
-		String sheetname = GComVar.LOGIN;
-		TestModules libraPageTest = new TestModules(Login.driver, Login.baseUrl);
-		libraPageTest.InvalidEmailValPwd(sheetname);
-	}
-
-	@Test(priority = 7)
-	public void test07_checkInvalidEmailLess8CharPwd() throws Exception {
-		String sheetname = GComVar.LOGIN;
-		TestModules libraPageTest = new TestModules(Login.driver, Login.baseUrl);
-		libraPageTest.InvalidEmailLess8CharPwd(sheetname);
-	}
-
-	@Test(priority = 8)
-	public void test08_checkInvalidEmailAndPwd() throws Exception {
-		String sheetname = GComVar.LOGIN;
-		TestModules libraPageTest = new TestModules(Login.driver, Login.baseUrl);
-		libraPageTest.InvalidEmailAndPwd(sheetname);
-	}
-
-	@Test(priority = 9)
-	public void test09_checkLess8CharEmailPwd() throws Exception {
-		String sheetname = GComVar.LOGIN;
-		TestModules libraPageTest = new TestModules(Login.driver, Login.baseUrl);
-		libraPageTest.Less8CharEmailPwd(sheetname);
-	}
-
-	@Test(priority = 10)
-	public void test10_checkLogin() throws Exception {
-		String sheetname = GComVar.LOGIN;
-		TestModules libraPageTest = new TestModules(Login.driver, Login.baseUrl);
-		libraPageTest.Login(sheetname);
-	}
-
-	@AfterTest
+	//@AfterTest
 	public void aftertest() throws Exception {		
 		driver.quit();
 	}

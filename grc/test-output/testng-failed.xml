@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="libra_Module.Login">
+      <class name="grc_Module.Login">
         <methods>
           <include name="beforeMethod"/>
           <include name="openbrowser"/>
-          <include name="aftertest"/>
-          <include name="test10_checkLogin"/>
+          <include name="test01_checkLogin"/>
         </methods>
-      </class> <!-- libra_Module.Login -->
+      </class> <!-- grc_Module.Login -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
