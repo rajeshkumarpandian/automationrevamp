@@ -413,7 +413,11 @@ public class LibraComFun extends selenium_module_Test.CommonFunctions {
 		
 	}
 	
-	
+	public void calendar () {
+		clickByName("court_case[open_date]");
+		
+		
+	}
 	
 	
 	

@@ -76,17 +76,24 @@ public class AddCase {
 		libraPageTest.Login(sheetname);
 	}
 
-	@Test(groups = { "sanity" })
+	//@Test(groups = { "sanity" })
 	public void test02_checkCaseTitleNull() throws Exception {
 		String sheetname = LibraComVar.ADDCASE;
 		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
 		libraPageTest.CaseTitleNull(sheetname);
 	}
 	
+	@Test(groups = { "sanity" })
+	public void test03_checkAddCaseSupCaseTypeNull() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseSupCaseTypeNull(sheetname);
+	}
+	
 	
 
 
-	@AfterTest
+	//@AfterTest
 	public void aftertest() throws Exception {		
 		driver.quit();
 	}
