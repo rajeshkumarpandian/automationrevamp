@@ -30,6 +30,7 @@ public class LibraComVar {
 	public static String PERSON = "Person";
 	public static String CRM = "CRM";
 	public static String DELETE = "Delete";
+	public static String ADDCASE = "Case";
 	public static String TEST_DATA = "R:\\eclipse\\workSpace\\automationrevamp\\libra\\src\\test\\resources\\LibraTestData.xls";
 	
 /*********************************************EXTEND REPORT DETAILS**********************************************************************/
@@ -145,6 +146,8 @@ public class LibraComVar {
 	public static String ON_REC_SEARCH_LIST = "//ul[@class='select2-results']//li/div/span";	
 	public static String CLIENT_CLICK = "s2id_autogen4";	
 	public static String CLIENT_SEARCH_LIST = "//ul[@class='select2-results']//li//ul/li/div/span";
+	public static String SEL_CASE_TYPE = "//*[@class='col-md-12 marginbottom-20']/div";
+
 	
 	
 	

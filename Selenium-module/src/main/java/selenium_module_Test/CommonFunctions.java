@@ -2,6 +2,7 @@ package selenium_module_Test;
 
 import java.io.File;
 import java.time.Duration;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
@@ -140,6 +141,19 @@ public class CommonFunctions extends CommonVariables {
 			// Ignore the timeout exception
 		} finally {
 			// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		}
+	}
+	
+	public void forloopClick (String xpath, String text) {
+		int noOfData = 0;
+		List<WebElement> dataCount = driver.findElements(By.xpath(xpath));
+		noOfData = dataCount.size();
+		for (int i = 1; i <= noOfData; i++) {
+			String data = driver.findElement(By.xpath(" " + xpath + " [" + i + "]")).getText();
+			if(data.contains(text)) {
+				clickByXpath(" " + xpath + " [" + i + "]");
+				break;
+			}
 		}
 	}
 
