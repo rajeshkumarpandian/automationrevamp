@@ -40,8 +40,7 @@ public class AddCase {
 
 	private static WebDriver driver;
 	private static String baseUrl;
-	private static TestBrowser testBrowser;	
-	
+	private static TestBrowser testBrowser;
 
 	@BeforeClass
 	public void openbrowser() throws IOException {
@@ -65,10 +64,10 @@ public class AddCase {
 	}
 
 	@BeforeMethod
-	public void beforeMethod(Method m) throws Exception {		
-		driver.get(baseUrl);		
+	public void beforeMethod(Method m) throws Exception {
+		driver.get(baseUrl);
 	}
-	
+
 	@Test(groups = { "sanity" })
 	public void test0001_checkLogin() throws Exception {
 		String sheetname = LibraComVar.COMPANY;
@@ -76,25 +75,43 @@ public class AddCase {
 		libraPageTest.Login(sheetname);
 	}
 
-	//@Test(groups = { "sanity" })
+	// @Test(groups = { "sanity" })
 	public void test02_checkCaseTitleNull() throws Exception {
 		String sheetname = LibraComVar.ADDCASE;
 		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
 		libraPageTest.CaseTitleNull(sheetname);
 	}
-	
-	@Test(groups = { "sanity" })
+
+	// @Test(groups = { "sanity" })
 	public void test03_checkAddCaseSupCaseTypeNull() throws Exception {
 		String sheetname = LibraComVar.ADDCASE;
 		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
 		libraPageTest.AddCaseSupCaseTypeNull(sheetname);
 	}
-	
-	
 
+	// @Test(groups = { "sanity" })
+	public void test04_checkAddCaseSupCaseNumNull() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseSupCaseNumNull(sheetname);
+	}
 
-	//@AfterTest
-	public void aftertest() throws Exception {		
+	//@Test(groups = { "sanity" })
+	public void test05_checkAddCaseSupCaseYearNull() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseSupCaseYearNull(sheetname);
+	}
+
+	@Test(groups = { "sanity" })
+	public void test06_checkAddCaseHighCourtNull() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseHighCourtNull(sheetname);
+	}
+
+	// @AfterTest
+	public void aftertest() throws Exception {
 		driver.quit();
 	}
 }
