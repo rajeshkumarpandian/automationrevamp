@@ -5,7 +5,7 @@
     <classes>
       <class name="libra_Module.AddCase">
         <methods>
-          <include name="test06_checkAddCaseHighCourtNull"/>
+          <include name="test09_checkAddCaseTribunalCourtNameNull"/>
           <include name="beforeMethod"/>
           <include name="openbrowser"/>
         </methods>

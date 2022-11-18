@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Vakilsearch\AppData\Local\Temp\testng-eclipse-417820485\testng-customsuite.xml</span>
+                    <span>C:\Users\Vakilsearch\AppData\Local\Temp\testng-eclipse--1387086750\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="libra_Module.AddCase" class="method navigator-link" hash-for-method="test06_checkAddCaseHighCourtNull">test06_checkAddCaseHighCourtNull</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="libra_Module.AddCase" class="method navigator-link" hash-for-method="test09_checkAddCaseTribunalCourtNameNull">test09_checkAddCaseTribunalCourtNameNull</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -141,37 +141,24 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test06_checkAddCaseHighCourtNull">
-                  </a> <!-- test06_checkAddCaseHighCourtNull -->
-                  <span class="method-name">test06_checkAddCaseHighCourtNull</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//*[@class=&apos;parsley-required&apos;])[1]&quot;}
-  (Session info: chrome=107.0.5304.107)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+                  <a name="test09_checkAddCaseTribunalCourtNameNull">
+                  </a> <!-- test09_checkAddCaseTribunalCourtNameNull -->
+                  <span class="method-name">test09_checkAddCaseTribunalCourtNameNull</span>
+                  <div class="stack-trace">org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
 Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
 System info: host: &apos;DESKTOP-LHQEHTF&apos;, ip: &apos;192.168.29.221&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b8aa474ad3bc617c957357b6034dae4f, findElement {using=xpath, value=(//*[@class=&apos;parsley-required&apos;])[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\VAKILS~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52621}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52621/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b8aa474ad3bc617c957357b6034dae4f
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+Command: [f85c9985b29531a38e8201bd7f1bbcd7, findElement {using=xpath, value= //*[@class=&apos;form-group court-type&apos;]/div [6]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\VAKILS~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52485}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52485/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: f85c9985b29531a38e8201bd7f1bbcd7
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:571)
 	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at selenium_module_Test.CommonFunctions.stringComparion(CommonFunctions.java:43)
-	at libra_Test.AddCaseTest.AddCaseHighCourtNull(AddCaseTest.java:161)
-	at libra_Module.AddCase.test06_checkAddCaseHighCourtNull(AddCase.java:110)
+	at selenium_module_Test.CommonFunctions.forloopClick(CommonFunctions.java:152)
+	at libra_Test.AddCaseTest.AddCaseTribunalCourtNameNull(AddCaseTest.java:248)
+	at libra_Module.AddCase.test09_checkAddCaseTribunalCourtNameNull(AddCase.java:131)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -200,6 +187,34 @@ Session ID: b8aa474ad3bc617c957357b6034dae4f
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.io.UncheckedIOException: java.net.SocketException: Connection reset
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:73)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:49)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+	at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:98)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:181)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	... 35 more
+Caused by: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:258)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
 
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -224,7 +239,7 @@ Session ID: b8aa474ad3bc617c957357b6034dae4f
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Vakilsearch\AppData\Local\Temp\testng-eclipse-417820485\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Vakilsearch\AppData\Local\Temp\testng-eclipse--1387086750\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -265,7 +280,7 @@ Session ID: b8aa474ad3bc617c957357b6034dae4f
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">test06_checkAddCaseHighCourtNull</span>
+                <span class="method-in-group-name">test09_checkAddCaseTribunalCourtNameNull</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -287,18 +302,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test06_checkAddCaseHighCourtNull')
+data.setCell(0, 1, 'test09_checkAddCaseTribunalCourtNameNull')
 data.setCell(0, 2, 'libra_Module.AddCase')
-data.setCell(0, 3, 61514);
+data.setCell(0, 3, 23828);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'test0001_checkLogin')
 data.setCell(1, 2, 'libra_Module.AddCase')
-data.setCell(1, 3, 3512);
+data.setCell(1, 3, 2989);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 26 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -316,9 +331,9 @@ return data;
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
             <div class="reporter-method-div">
-              <span class="reporter-method-name">test06_checkAddCaseHighCourtNull</span>
+              <span class="reporter-method-name">test09_checkAddCaseTribunalCourtNameNull</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">CHECKING ADD CASE HIGH COURT NULL<b> <font color='blue' font size = 4> ==> PASS</font></b></span>
+                <span class="reporter-method-output">CHECKING ADD CASE TRIBUNAL COURT TRIBUNAL NAME NULL<b> <font color='blue' font size = 4> ==> PASS</font></b></span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -343,21 +358,21 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod(public void libra_Module.AddCase.test0001_checkLogin() throws java.lang.Exception)</span>
-                <span class="method-start">1892 ms</span>
+                <span class="method-start">1645 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">test0001_checkLogin</span>
-                <span class="method-start">2879 ms</span>
+                <span class="method-start">2990 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
-                <span class="method-name">beforeMethod(public void libra_Module.AddCase.test06_checkAddCaseHighCourtNull() throws java.lang.Exception)</span>
-                <span class="method-start">6393 ms</span>
+                <span class="method-name">beforeMethod(public void libra_Module.AddCase.test09_checkAddCaseTribunalCourtNameNull() throws java.lang.Excepti...)</span>
+                <span class="method-start">5981 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">test06_checkAddCaseHighCourtNull</span>
-                <span class="method-start">7499 ms</span>
+                <span class="method-name">test09_checkAddCaseTribunalCourtNameNull</span>
+                <span class="method-start">7004 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

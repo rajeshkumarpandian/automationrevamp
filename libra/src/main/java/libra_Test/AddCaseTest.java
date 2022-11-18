@@ -155,7 +155,98 @@ public class AddCaseTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.ADD_CASE);		
 				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
 				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
-				forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);			
+				forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);	
+				waitForElementPresent(driver,By.name(LibraComVar.CASE_NUM));
+				clickById(LibraComVar.CASE_NEXT);
+				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
+			}
+		}
+	}
+	
+	public void AddCaseDisCourtNull(String sheetName) throws Exception, IOException {
+		reportlog("pass", "Checking add case district court state null");
+		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
+		Sheet sheet1 = file1.getSheet(sheetName);
+		int rowCount = sheet1.getRows();
+		int colCount = sheet1.getColumns();
+		for (int i = 1; i < rowCount; i++) {
+			LinkedHashMap<String, String> strHM = new LinkedHashMap<String, String>();
+			for (int j = 0; j < colCount; j++) {
+				strHM.put(sheet1.getCell(j, 0).getContents(), sheet1.getCell(j, i).getContents());
+			}
+			String Test_Scenario = strHM.get("Test_Scenario");
+			String Scenario = strHM.get("Scenario");
+			String ValidationMessage = strHM.get("ValidationMessage");			
+			String Casetype = strHM.get("Casetype");
+			String CourtType = strHM.get("CourtType");			
+			String CaseTitle = strHM.get("CaseTitle");			
+			if (Test_Scenario.equals("Negative") && (Scenario.equals("DisCourtNull"))) {
+				driver.get(baseUrl + LibraComVar.ADD_CASE);		
+				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
+				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
+				forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);	
+				waitForElementPresent(driver,By.name(LibraComVar.CASE_NUM));
+				clickById(LibraComVar.CASE_NEXT);
+				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
+			}
+		}
+	}
+	
+	public void AddCaseConsumerCourtNull(String sheetName) throws Exception, IOException {
+		reportlog("pass", "Checking add case consumer court state/commission null");
+		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
+		Sheet sheet1 = file1.getSheet(sheetName);
+		int rowCount = sheet1.getRows();
+		int colCount = sheet1.getColumns();
+		for (int i = 1; i < rowCount; i++) {
+			LinkedHashMap<String, String> strHM = new LinkedHashMap<String, String>();
+			for (int j = 0; j < colCount; j++) {
+				strHM.put(sheet1.getCell(j, 0).getContents(), sheet1.getCell(j, i).getContents());
+			}
+			String Test_Scenario = strHM.get("Test_Scenario");
+			String Scenario = strHM.get("Scenario");
+			String ValidationMessage = strHM.get("ValidationMessage");			
+			String Casetype = strHM.get("Casetype");
+			String CourtType = strHM.get("CourtType");			
+			String CaseTitle = strHM.get("CaseTitle");			
+			if (Test_Scenario.equals("Negative") && (Scenario.equals("ConsumerCourtNull"))) {
+				driver.get(baseUrl + LibraComVar.ADD_CASE);		
+				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
+				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
+				forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);	
+				waitForElementPresent(driver,By.name(LibraComVar.CASE_NUM));
+				clickById(LibraComVar.CASE_NEXT);
+				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
+			}
+		}
+	}
+	
+	public void AddCaseTribunalCourtNameNull(String sheetName) throws Exception, IOException {
+		reportlog("pass", "Checking add case tribunal court tribunal name null");
+		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
+		Sheet sheet1 = file1.getSheet(sheetName);
+		int rowCount = sheet1.getRows();
+		int colCount = sheet1.getColumns();
+		for (int i = 1; i < rowCount; i++) {
+			LinkedHashMap<String, String> strHM = new LinkedHashMap<String, String>();
+			for (int j = 0; j < colCount; j++) {
+				strHM.put(sheet1.getCell(j, 0).getContents(), sheet1.getCell(j, i).getContents());
+			}
+			String Test_Scenario = strHM.get("Test_Scenario");
+			String Scenario = strHM.get("Scenario");
+			String ValidationMessage = strHM.get("ValidationMessage");			
+			String Casetype = strHM.get("Casetype");
+			String CourtType = strHM.get("CourtType");			
+			String CaseTitle = strHM.get("CaseTitle");			
+			if (Test_Scenario.equals("Negative") && (Scenario.equals("TribunalNameNull"))) {
+				driver.get(baseUrl + LibraComVar.ADD_CASE);		
+				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
+				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
+				forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);	
+				waitForElementPresent(driver,By.name(LibraComVar.CASE_NUM));
 				clickById(LibraComVar.CASE_NEXT);
 				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								

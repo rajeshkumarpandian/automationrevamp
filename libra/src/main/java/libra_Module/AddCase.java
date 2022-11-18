@@ -96,18 +96,39 @@ public class AddCase {
 		libraPageTest.AddCaseSupCaseNumNull(sheetname);
 	}
 
-	//@Test(groups = { "sanity" })
+	// @Test(groups = { "sanity" })
 	public void test05_checkAddCaseSupCaseYearNull() throws Exception {
 		String sheetname = LibraComVar.ADDCASE;
 		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
 		libraPageTest.AddCaseSupCaseYearNull(sheetname);
 	}
 
-	@Test(groups = { "sanity" })
+	// @Test(groups = { "sanity" })
 	public void test06_checkAddCaseHighCourtNull() throws Exception {
 		String sheetname = LibraComVar.ADDCASE;
 		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
 		libraPageTest.AddCaseHighCourtNull(sheetname);
+	}
+
+	// @Test(groups = { "sanity" })
+	public void test07_checkAddCaseDisCourtNull() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseDisCourtNull(sheetname);
+	}
+
+	//@Test(groups = { "sanity" })
+	public void test08_checkAddCaseConsumerCourtNull() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseConsumerCourtNull(sheetname);
+	}
+	
+	@Test(groups = { "sanity" })
+	public void test09_checkAddCaseTribunalCourtNameNull() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseTribunalCourtNameNull(sheetname);
 	}
 
 	// @AfterTest
