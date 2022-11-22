@@ -141,6 +141,7 @@ public class LibraComVar {
 	public static String CASE_TITLE = "court_case[title]";
 	public static String CASE_NEXT = "step_1_validation";
 	public static String LAWYER_NEXT = "step_2_validation";
+	public static String PARTY_DET_NEXT = "(//*[@class='btn-libra next-step'])[3]";
 	public static String ON_REC_CLICK = "s2id_court_case_firm_user_ids";
 	public static String ON_REC_SEARCH = "s2id_autogen5";
 	public static String ON_REC_SEARCH_LIST = "//ul[@class='select2-results']//li/div/span";	
@@ -148,9 +149,13 @@ public class LibraComVar {
 	public static String CLIENT_SEARCH_LIST = "//ul[@class='select2-results']//li//ul/li/div/span";
 	public static String SEL_CASE_TYPE = "//*[@class='col-md-12 marginbottom-20']/div";
 	public static String SEL_COURT_TYPE = "//*[@class='form-group court-type']/div";
+	public static String SEL_COURT_TYPE_TWO = "//*[@class='form-group court-type'][2]/div";
 	public static String CASE_NUM = "court_case[number]";
 	public static String SUP_CASE_TYPE = "select2-chosen-7";
 	public static String SUP_CASE_TYPE_SEARCH = "s2id_autogen7_search";
+	public static String AD_CASE_COURT_NAME = "court_case[new_court_name]";
+	public static String AD_CASE_CAVEAT_NUM = "court_case[caveat_number]";
+	public static String AD_CASE_NEW_PER_BUT = "add_com_person";
 
 	
 	

@@ -117,18 +117,81 @@ public class AddCase {
 		libraPageTest.AddCaseDisCourtNull(sheetname);
 	}
 
-	//@Test(groups = { "sanity" })
+	// @Test(groups = { "sanity" })
 	public void test08_checkAddCaseConsumerCourtNull() throws Exception {
 		String sheetname = LibraComVar.ADDCASE;
 		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
 		libraPageTest.AddCaseConsumerCourtNull(sheetname);
 	}
-	
-	@Test(groups = { "sanity" })
+
+	// @Test(groups = { "sanity" })
 	public void test09_checkAddCaseTribunalCourtNameNull() throws Exception {
 		String sheetname = LibraComVar.ADDCASE;
 		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
 		libraPageTest.AddCaseTribunalCourtNameNull(sheetname);
+	}
+
+	// @Test(groups = { "sanity" })
+	public void test10_checkAddCaseOthersCourtNameNull() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseOthersCourtNameNull(sheetname);
+	}
+
+	// @Test(groups = { "sanity" })
+	public void test11_checkAddCaseOthersCourtNameNull() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseOthersCourtNameNull(sheetname);
+	}
+
+	// @Test(groups = { "sanity" })
+	public void test11_checkAddCaseCaveatNameNull() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseCaveatNameNull(sheetname);
+	}
+
+	// @Test(groups = { "sanity" })
+	public void test12_checkAddCaseCaveatNumNull() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseCaveatNumNull(sheetname);
+	}
+
+	// @Test(groups = { "sanity" })
+	public void test13_checkAddCaseCaveatExDateNull() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseCaveatExDateNull(sheetname);
+	}
+
+	// @Test(groups = { "sanity" })
+	public void test14_checkAddCaseOnRecCounselNull() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseOnRecCounselNull(sheetname);
+	}
+
+	// @Test(groups = { "sanity" })
+	public void test15_checkAddCaseNewContFNNull() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseNewContFNNull(sheetname);
+	}
+
+	@Test(groups = { "sanity" })
+	public void test16_checkAddCaseNewContNumNull() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseNewContNumNull(sheetname);
+	}
+
+	@Test(groups = { "sanity" })
+	public void test17_checkAddCaseNewContNumShort() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseNewContNumShort(sheetname);
 	}
 
 	// @AfterTest
