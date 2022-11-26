@@ -180,18 +180,32 @@ public class AddCase {
 		libraPageTest.AddCaseNewContFNNull(sheetname);
 	}
 
-	@Test(groups = { "sanity" })
+	// @Test(groups = { "sanity" })
 	public void test16_checkAddCaseNewContNumNull() throws Exception {
 		String sheetname = LibraComVar.ADDCASE;
 		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
 		libraPageTest.AddCaseNewContNumNull(sheetname);
 	}
 
-	@Test(groups = { "sanity" })
+	// @Test(groups = { "sanity" })
 	public void test17_checkAddCaseNewContNumShort() throws Exception {
 		String sheetname = LibraComVar.ADDCASE;
 		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
 		libraPageTest.AddCaseNewContNumShort(sheetname);
+	}
+
+	// @Test(groups = { "sanity" })
+	public void test18_checkAddCaseNewClientEmailText() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseNewClientEmailText(sheetname);
+	}
+
+	@Test(groups = { "sanity" })
+	public void test19_checkAddCaseManually() throws Exception {
+		String sheetname = LibraComVar.ADDCASE;
+		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);
+		libraPageTest.AddCaseManually(sheetname);
 	}
 
 	// @AfterTest

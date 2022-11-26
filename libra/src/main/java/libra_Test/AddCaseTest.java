@@ -583,7 +583,81 @@ public class AddCaseTest extends LibraComFun {
 			}
 		}
 	}
+	/**
+	 * 
+	 * @param sheetName
+	 * @throws Exception
+	 * @throws IOException
+	 */
+	public void AddCaseNewClientEmailText(String sheetName) throws Exception, IOException {
+		reportlog("pass", "Checking add case new client email text");
+		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
+		Sheet sheet1 = file1.getSheet(sheetName);
+		int rowCount = sheet1.getRows();
+		int colCount = sheet1.getColumns();
+		for (int i = 1; i < rowCount; i++) {
+			LinkedHashMap<String, String> strHM = new LinkedHashMap<String, String>();
+			for (int j = 0; j < colCount; j++) {
+				strHM.put(sheet1.getCell(j, 0).getContents(), sheet1.getCell(j, i).getContents());
+			}
+			String Test_Scenario = strHM.get("Test_Scenario");
+			String Scenario = strHM.get("Scenario");
+			String ValidationMessage = strHM.get("ValidationMessage");			
+			String Casetype = strHM.get("Casetype");						
+			String CaseTitle = strHM.get("CaseTitle");		
+			String OnRecCouncil = strHM.get("OnRecCouncil");				
+			String NewClientEmail = strHM.get("NewClientEmail");
+			if (Test_Scenario.equals("Negative") && (Scenario.equals("NewClientEmailText"))) {
+				driver.get(baseUrl + LibraComVar.ADD_CASE);		
+				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
+				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);									
+				clickById(LibraComVar.CASE_NEXT);
+				SingleSearchdropdownSelection(LibraComVar.ON_REC_CLICK, LibraComVar.ON_REC_SEARCH, LibraComVar.ON_REC_SEARCH_LIST,OnRecCouncil);
+				clickById(LibraComVar.LAWYER_NEXT);								
+				clickByXpath(LibraComVar.PARTY_DET_NEXT);
+				clickByXpath(LibraComVar.AD_CASE_NEW_CLIENT);				
+				findAndPassbyname(LibraComVar.AD_CASE_CLIENT_EMAIL, NewClientEmail);
+				clickByXpath(LibraComVar.CREATE_CASE);
+				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_EMAIL));
+				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, ValidationMessage);								
+			}
+		}
+	}
 	
+	public void AddCaseManually(String sheetName) throws Exception, IOException {
+		reportlog("pass", "Checking add case manually");
+		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
+		Sheet sheet1 = file1.getSheet(sheetName);
+		int rowCount = sheet1.getRows();
+		int colCount = sheet1.getColumns();
+		for (int i = 1; i < rowCount; i++) {
+			LinkedHashMap<String, String> strHM = new LinkedHashMap<String, String>();
+			for (int j = 0; j < colCount; j++) {
+				strHM.put(sheet1.getCell(j, 0).getContents(), sheet1.getCell(j, i).getContents());
+			}
+			String Test_Scenario = strHM.get("Test_Scenario");
+			String Scenario = strHM.get("Scenario");
+			String ValidationMessage = strHM.get("ValidationMessage");			
+			String Casetype = strHM.get("Casetype");						
+			String CaseTitle = strHM.get("CaseTitle");		
+			String OnRecCouncil = strHM.get("OnRecCouncil");				
+			String NewClientEmail = strHM.get("NewClientEmail");
+			if (Test_Scenario.equals("Negative") && (Scenario.equals("NewClientEmailText"))) {
+				driver.get(baseUrl + LibraComVar.ADD_CASE);		
+				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
+				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);									
+				clickById(LibraComVar.CASE_NEXT);
+				SingleSearchdropdownSelection(LibraComVar.ON_REC_CLICK, LibraComVar.ON_REC_SEARCH, LibraComVar.ON_REC_SEARCH_LIST,OnRecCouncil);
+				clickById(LibraComVar.LAWYER_NEXT);								
+				clickByXpath(LibraComVar.PARTY_DET_NEXT);
+				clickByXpath(LibraComVar.AD_CASE_NEW_CLIENT);				
+				findAndPassbyname(LibraComVar.AD_CASE_CLIENT_EMAIL, NewClientEmail);
+				clickByXpath(LibraComVar.CREATE_CASE);
+				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_EMAIL));
+				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, ValidationMessage);								
+			}
+		}
+	}
 	
 	
 	
