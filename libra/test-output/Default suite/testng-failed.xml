@@ -5,7 +5,7 @@
     <classes>
       <class name="libra_Module.AddCase">
         <methods>
-          <include name="test18_checkAddCaseNewClientEmailText"/>
+          <include name="test19_checkAddCaseManually"/>
           <include name="beforeMethod"/>
           <include name="openbrowser"/>
         </methods>

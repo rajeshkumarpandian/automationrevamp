@@ -49,9 +49,19 @@ public class LibraComFun extends selenium_module_Test.CommonFunctions {
 		findAndPassbyname(LibraComVar.COMP_PIN, PinCode);
 		clickByXpath(LibraComVar.BTN_CREATE_COMP_CARD_VIEW);
 	}
-	
-	public boolean ContactCardDetails(String url, String COMPName, String Email, String Mobile,String StreetAddress, String Locality, String City, String PinCode) {
-		
+	/**
+	 * 
+	 * @param url
+	 * @param COMPName
+	 * @param Email
+	 * @param Mobile
+	 * @param StreetAddress
+	 * @param Locality
+	 * @param City
+	 * @param PinCode
+	 * @return
+	 */
+	public boolean ContactCardDetails(String url, String COMPName, String Email, String Mobile,String StreetAddress, String Locality, String City, String PinCode) {		
 		String address = Locality + "," + " " + City + " - " + PinCode;
 		boolean flag = false;
 		int noOfContact = 0;		
@@ -104,9 +114,23 @@ public class LibraComFun extends selenium_module_Test.CommonFunctions {
 			}											
 		return flag;
 	}
-
-	public boolean ContactInnerDetails(String Cardxpath, String COMPName, String Email, String Mobile,String StreetAddress, String Locality, String City, String PinCode, String State,String ExPer, String NewPerFN,String NewPerLN ) {
-		
+     /**
+      * 
+      * @param Cardxpath
+      * @param COMPName
+      * @param Email
+      * @param Mobile
+      * @param StreetAddress
+      * @param Locality
+      * @param City
+      * @param PinCode
+      * @param State
+      * @param ExPer
+      * @param NewPerFN
+      * @param NewPerLN
+      * @return
+      */
+	public boolean ContactInnerDetails(String Cardxpath, String COMPName, String Email, String Mobile,String StreetAddress, String Locality, String City, String PinCode, String State,String ExPer, String NewPerFN,String NewPerLN ) {		
 		boolean flag = false;
 		int noOfCompanies = 0;
 		int noOfdata = 0;
@@ -166,7 +190,16 @@ public class LibraComFun extends selenium_module_Test.CommonFunctions {
 		}
 		return flag;
 	}
-
+    /**
+     * 
+     * @param link
+     * @param Listxpath
+     * @param COMPName
+     * @param Email
+     * @param Mobile
+     * @param ContactType
+     * @return
+     */
 	public boolean ContactListDetails(String link, String Listxpath, String COMPName, String Email, String Mobile,String ContactType) {
 		boolean flag = false;
 		int noOfContact = 0;
@@ -215,14 +248,30 @@ public class LibraComFun extends selenium_module_Test.CommonFunctions {
 		}
 		return flag;
 	}
-	
-	
+	/**
+	 * 	
+	 * @param link
+	 * @param invrpaybtn
+	 * @param dropclick
+	 * @param Searchbox
+	 * @param SearchValue
+	 * @param Contact
+	 */
 	public void ContactDepBilInvAndPaymentPage(String link,String invrpaybtn,String dropclick,String Searchbox,String SearchValue,String Contact) {		
 		driver.get(baseUrl + link);
 		clickById(invrpaybtn);
 		SingleSearchdropdownSelection(dropclick,Searchbox, SearchValue, Contact);					
 	}
-		
+	/**
+	 * 	
+	 * @param link
+	 * @param TimerExpbtn
+	 * @param dropclick
+	 * @param Searchbox
+	 * @param SearchValue
+	 * @param Contact
+	 * @param ContactType
+	 */
 	public void ContactDepBilTimeEntAndExpPage(String link,String TimerExpbtn,String dropclick,String Searchbox,String SearchValue,String Contact,String ContactType) {		
 		driver.get(baseUrl + link);
 		clickById(TimerExpbtn);	
@@ -231,7 +280,13 @@ public class LibraComFun extends selenium_module_Test.CommonFunctions {
 			SingleSearchdropdownSelection(dropclick,Searchbox,SearchValue, Contact);	
 		}						
 	}
-	
+	/**
+	 * 
+	 * @param link
+	 * @param CaseTitle
+	 * @param AccountName
+	 * @param Company
+	 */
 	public void ContactDepAddCasePage(String link, String CaseTitle, String AccountName, String Company) {
 		driver.get(baseUrl + link);
 		findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
@@ -240,7 +295,13 @@ public class LibraComFun extends selenium_module_Test.CommonFunctions {
 		clickById(LibraComVar.LAWYER_NEXT);
 		SingleSearchdropdownSelection(LibraComVar.CLIENT_CLICK, LibraComVar.CLIENT_CLICK, LibraComVar.CLIENT_SEARCH_LIST, Company);
 	}
-		
+	/**
+	 * 	
+	 * @param ID
+	 * @param Searchbox
+	 * @param Listxpath
+	 * @param Contact
+	 */
 	public void SingleSearchdropdownSelection(String ID,String Searchbox, String Listxpath, String Contact) {
 		int noOfContact = 0;
 		waitForElementPresent(driver,By.id(ID));
@@ -277,14 +338,27 @@ public class LibraComFun extends selenium_module_Test.CommonFunctions {
 			}
 		}				 
 	}
-	
-	
+	/**
+	 * 	
+	 * @param link
+	 * @param addbtn
+	 * @param ID
+	 * @param Searchbox
+	 * @param Listxpath
+	 * @param Contact
+	 */
 	public void ContactDropdownCheck (String link,String addbtn,String ID,String Searchbox, String Listxpath, String Contact) {
 		driver.get(baseUrl + link);
 		clickByXpath(addbtn);
 		SingleSearchdropdownSelection(ID,Searchbox,Listxpath,Contact);		
 	}
-	
+	/**
+	 * 
+	 * @param cardpath
+	 * @param Contact
+	 * @param action
+	 * @return
+	 */
 	public boolean ContactCardEditDelete(String cardpath, String Contact, String action) {
 		boolean flag = false;
 		int noOfPagination = 0;
@@ -339,36 +413,12 @@ public class LibraComFun extends selenium_module_Test.CommonFunctions {
 		}												
 		return flag;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	/**
+	 * 
+	 * @param xpath
+	 * @param Data
+	 * @return
+	 */
 	public boolean MulDataClick (String xpath, String Data) {
 		boolean flag = false;
 		int Count = 0;
@@ -384,11 +434,24 @@ public class LibraComFun extends selenium_module_Test.CommonFunctions {
 		}				
 		return flag;
 	}
-	
-	
+	/**
+	 * 
+	 * @param FirstName
+	 * @param LastName
+	 * @param CompName
+	 * @param NewCompName
+	 * @param NewCompEmail
+	 * @param NewCompMob
+	 * @param Mob
+	 * @param mail
+	 * @param Address
+	 * @param locality
+	 * @param City
+	 * @param State
+	 * @param pin
+	 */
 	public void addPersonCardView(String FirstName, String LastName, String CompName, String NewCompName,String NewCompEmail,
-			String NewCompMob,String Mob,String mail, String Address,String locality,String City,String State,String pin) {
-		
+			String NewCompMob,String Mob,String mail, String Address,String locality,String City,String State,String pin) {		
 		waitForElementPresent(driver,By.name( LibraComVar.COMP_NEW_PER_FN));
 		findAndPassbyname(LibraComVar.COMP_NEW_PER_FN, FirstName);  
 		findAndPassbyname(LibraComVar.COMP_NEW_PER_LN, LastName);	
@@ -409,22 +472,18 @@ public class LibraComFun extends selenium_module_Test.CommonFunctions {
 		findAndPassbyname(LibraComVar.PER_LOCALITY, locality);
 		findAndPassbyname(LibraComVar.PER_STATE, State);
 		findAndPassbyname(LibraComVar.PER_PIN, pin);
-		clickByXpath(LibraComVar.BTN_CREATE_COMP_CARD_VIEW);
-		
+		clickByXpath(LibraComVar.BTN_CREATE_COMP_CARD_VIEW);		
 	}
 	
-	public void calendar () {
-		clickByName("court_case[open_date]");
-		
-		
+	public void CaseDetails(String CaseTitle, String Casetype, String CourtType, String CourtCaseType) {
+		driver.get(baseUrl + LibraComVar.ADD_CASE);
+		findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
+		forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
+		if ((CourtType.contains("Tribunal")) || (CourtType.contains("Other Courts"))) {
+			forloopClick(LibraComVar.SEL_COURT_TYPE_TWO, CourtType);
+		} else {
+			forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);
+		}
+		SingleSearchdropdownSelection(LibraComVar.SUP_CASE_TYPE, LibraComVar.SUP_CASE_TYPE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, CourtCaseType);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
