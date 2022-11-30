@@ -302,12 +302,12 @@ public class LibraComFun extends selenium_module_Test.CommonFunctions {
 	 * @param Listxpath
 	 * @param Contact
 	 */
-	public void SingleSearchdropdownSelection(String ID,String Searchbox, String Listxpath, String Contact) {
+	public void SingleSearchdropdownSelection(String ID,String Searchbox, String Listxpath, String value) {
 		int noOfContact = 0;
 		waitForElementPresent(driver,By.id(ID));
 		clickById(ID);						
-		if (Contact.contains("&")) {
-			String[] contact = Contact.split("&");
+		if (value.contains("&")) {
+			String[] contact = value.split("&");
 			int noOfContacts = contact.length;
 			for (int i = 0; i <= noOfContacts; i++) {
 				driver.findElement(By.id(Searchbox)).sendKeys(contact[i]);
@@ -325,13 +325,13 @@ public class LibraComFun extends selenium_module_Test.CommonFunctions {
 				}
 			}
 		}else {
-			driver.findElement(By.id(Searchbox)).sendKeys(Contact);
+			driver.findElement(By.id(Searchbox)).sendKeys(value);
 			waitForElementPresent(driver,By.xpath(Listxpath));
 			List<WebElement> ContactList = driver.findElements(By.xpath(Listxpath));
 			noOfContact = ContactList.size();
 			for (int k = 1; k <= noOfContact; k++) {
 				String SelectContact = driver.findElement(By.xpath("" + Listxpath + "[" + k + "]")).getAttribute("innerHTML");		
-				if (SelectContact.contains(Contact)) {					
+				if (SelectContact.contains(value)) {					
 					driver.findElement(By.xpath("" + Listxpath + "[" + k + "]")).click();
 					break;
 				}
@@ -475,47 +475,56 @@ public class LibraComFun extends selenium_module_Test.CommonFunctions {
 		clickByXpath(LibraComVar.BTN_CREATE_COMP_CARD_VIEW);		
 	}
 	
-	public void CaseDetails(String CaseTitle, String Casetype, String CourtType, String CourtCaseType, String CourtName,
-			String CaseType, String CaseNum, String CaseTag, String FillingDate, String batchNum, String PracticeArea,
-			String Prayer) {
+	public void CaseDetails(String CaseTitle, String Casetype, String CourtType, String CaseCourtStateComTrib,String CaseDisCourtTrib,String DisCaseTrib,String DisCaseTypeTrib, String OthersCourtName,
+			String OthersCaseType, String CaseNum,String CaseYear, String CaseTag, String FilingDate, String batchNum, String PracticeArea,String Prayer) {
 		driver.get(baseUrl + LibraComVar.ADD_CASE);
 		findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
 		forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
-		if ((CourtType.contains("Tribunal")) || (CourtType.contains("Other Courts"))) {
-			forloopClick(LibraComVar.SEL_COURT_TYPE_TWO, CourtType);
-		} else {
-			forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);
-		}
-		SingleSearchdropdownSelection(LibraComVar.SUP_CASE_TYPE, LibraComVar.SUP_CASE_TYPE_SEARCH,
-				LibraComVar.ON_REC_SEARCH_LIST, CourtCaseType);
-		if (CourtType.contains("High Court")) {
-			SingleSearchdropdownSelection("s2id_court_case_case_type_id", "s2id_autogen583_search",LibraComVar.ON_REC_SEARCH_LIST, "COMAP - COMAP");
-		}
-		if (CourtType.contains("District Court")) {
-			SingleSearchdropdownSelection("s2id_district_id", "s2id_autogen63_search", LibraComVar.ON_REC_SEARCH_LIST,"Puducherry");
-			SingleSearchdropdownSelection("s2id_court_case_court_record_id", "s2id_autogen79_search",LibraComVar.ON_REC_SEARCH_LIST, "Principal District Court, Puducherry, Puducherry");
-			SingleSearchdropdownSelection("s2id_court_case_case_type_id", "s2id_autogen167_search",LibraComVar.ON_REC_SEARCH_LIST, "CMA - Civil Miscellaneous Appeal (TAX)");
-		}
-		if (CourtType.contains("Consumer Court")) {
-			SingleSearchdropdownSelection("s2id_court_case_court_record_id", "s2id_autogen218_search",LibraComVar.ON_REC_SEARCH_LIST, "Consumer Court, State Commission, Circuit Bench Nagpur");
-			SingleSearchdropdownSelection("s2id_court_case_case_type_id", "s2id_autogen277_search",LibraComVar.ON_REC_SEARCH_LIST, "RA - Review Application(RA)");
-		}
-		if (CourtType.contains("Tribunal")) {
-			SingleSearchdropdownSelection("s2id_court_case_court_record_id", "s2id_autogen69_search",LibraComVar.ON_REC_SEARCH_LIST,"Maharashtra Administrative Tribunal - MAT, Maharashtra Administrative Tribunal - Aurangabad");
-			SingleSearchdropdownSelection("s2id_court_case_case_type_id", "s2id_autogen328_search",LibraComVar.ON_REC_SEARCH_LIST, "MA - Miscellaneous Application");
-			SingleSearchdropdownSelection("s2id_court_case_case_type_stage_id", "s2id_autogen327_search",LibraComVar.ON_REC_SEARCH_LIST, "Register");
-		}
+		forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);	
+		
+		if(!CourtType.contains("Other Courts")) {
+			SingleSearchdropdownSelection(LibraComVar.SUP_CASE_TYPE, LibraComVar.SUP_CASE_TYPE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, CaseCourtStateComTrib);
+			if (CourtType.contains("High Court")) {
+				SingleSearchdropdownSelection("s2id_court_case_case_type_id", "s2id_autogen583_search",LibraComVar.ON_REC_SEARCH_LIST, CaseDisCourtTrib);
+			}
+			if (CourtType.contains("District Court")) {
+				SingleSearchdropdownSelection("s2id_district_id", "s2id_autogen63_search", LibraComVar.ON_REC_SEARCH_LIST,CaseDisCourtTrib);
+				SingleSearchdropdownSelection("s2id_court_case_court_record_id", "s2id_autogen79_search",LibraComVar.ON_REC_SEARCH_LIST,DisCaseTrib);
+				SingleSearchdropdownSelection("s2id_court_case_case_type_id", "s2id_autogen167_search",LibraComVar.ON_REC_SEARCH_LIST,DisCaseTypeTrib);
+			}
+			if (CourtType.contains("Consumer Court")) {
+				SingleSearchdropdownSelection("s2id_court_case_court_record_id", "s2id_autogen218_search",LibraComVar.ON_REC_SEARCH_LIST,CaseDisCourtTrib);
+				SingleSearchdropdownSelection("s2id_court_case_case_type_id", "s2id_autogen277_search",LibraComVar.ON_REC_SEARCH_LIST,DisCaseTrib);
+			}
+			if (CourtType.contains("Tribunal")) {
+				SingleSearchdropdownSelection("s2id_court_case_court_record_id", "s2id_autogen69_search",LibraComVar.ON_REC_SEARCH_LIST,CaseDisCourtTrib);
+				SingleSearchdropdownSelection("s2id_court_case_case_type_id", "s2id_autogen328_search",LibraComVar.ON_REC_SEARCH_LIST,DisCaseTrib);
+				SingleSearchdropdownSelection("s2id_court_case_case_type_stage_id", "s2id_autogen327_search",LibraComVar.ON_REC_SEARCH_LIST,DisCaseTypeTrib);
+			}
+		} 
 		if (CourtType.contains("Other Courts")) {
-			findAndPassbyname(LibraComVar.AD_CASE_COURT_NAME, CourtName);
-			findAndPassbyname(LibraComVar.AD_CASE_TYPE, CaseType);
-		}
+			waitForElementPresent(driver,By.name(LibraComVar.AD_CASE_COURT_NAME));
+			findAndPassbyname(LibraComVar.AD_CASE_COURT_NAME, OthersCourtName);
+			findAndPassbyname(LibraComVar.AD_CASE_TYPE, OthersCaseType);
+		}		
 		findAndPassbyname(LibraComVar.AD_CASE_NUM, CaseNum);
+		findAndPassbyname(LibraComVar.AD_CASE_YEAR, CaseYear);		
 		if (!CaseTag.isEmpty()) {
 			SingleSearchdropdownSelection(LibraComVar.AD_CASE_TAG, LibraComVar.AD_CASE_TAG_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, CaseTag);
 		}
-		findAndPassbyname(LibraComVar.AD_CASE_FILLING_DATE, FillingDate);
+		findAndPassbyname(LibraComVar.AD_CASE_FILLING_DATE, FilingDate);
 		findAndPassbyname(LibraComVar.AD_CASE_BATCH_NUM, batchNum);
 		SingleSearchdropdownSelection(LibraComVar.AD_CASE_PRACTICE_AREA, LibraComVar.INV_CONT_SEARCH_BOX,LibraComVar.ON_REC_SEARCH_LIST, PracticeArea);
-		findAndPassbyname(LibraComVar.AD_CASE_PRAYER, Prayer);		
+		findAndPassbyname(LibraComVar.AD_CASE_PRAYER, Prayer);	
+		clickById(LibraComVar.CASE_NEXT);
+	}	
+	
+	public void LawyerDetails() {
+		
 	}
+	
+	
+	
+	
+	
 }

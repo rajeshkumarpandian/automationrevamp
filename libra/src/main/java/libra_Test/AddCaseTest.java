@@ -97,13 +97,13 @@ public class AddCaseTest extends LibraComFun {
 			String Casetype = strHM.get("Casetype");
 			String CourtType = strHM.get("CourtType");			
 			String CaseTitle = strHM.get("CaseTitle");
-			String SupCaseType = strHM.get("CourtCaseType");			
+			String CaseCourtStateComTrib = strHM.get("CaseCourtStateComTrib");			
 			if (Test_Scenario.equals("Negative") && (Scenario.equals("CasenumNull"))) {
 				driver.get(baseUrl + LibraComVar.ADD_CASE);		
 				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
 				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
 				forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);	
-				SingleSearchdropdownSelection(LibraComVar.SUP_CASE_TYPE,LibraComVar.SUP_CASE_TYPE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, SupCaseType);
+				SingleSearchdropdownSelection(LibraComVar.SUP_CASE_TYPE,LibraComVar.SUP_CASE_TYPE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, CaseCourtStateComTrib);
 				clickById(LibraComVar.CASE_NEXT);
 				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
@@ -133,14 +133,14 @@ public class AddCaseTest extends LibraComFun {
 			String Casetype = strHM.get("Casetype");
 			String CourtType = strHM.get("CourtType");			
 			String CaseTitle = strHM.get("CaseTitle");
-			String SupCaseType = strHM.get("CourtCaseType");
+			String CaseCourtStateComTrib = strHM.get("CaseCourtStateComTrib");
 			String CaseNum = strHM.get("CaseNum");
 			if (Test_Scenario.equals("Negative") && (Scenario.equals("CaseyearNull"))) {
 				driver.get(baseUrl + LibraComVar.ADD_CASE);		
 				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
 				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
 				forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);	
-				SingleSearchdropdownSelection(LibraComVar.SUP_CASE_TYPE,LibraComVar.SUP_CASE_TYPE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, SupCaseType);
+				SingleSearchdropdownSelection(LibraComVar.SUP_CASE_TYPE,LibraComVar.SUP_CASE_TYPE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, CaseCourtStateComTrib);
 				findAndPassbyname(LibraComVar.CASE_NUM, CaseNum);
 				clickById(LibraComVar.CASE_NEXT);
 				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
@@ -280,7 +280,7 @@ public class AddCaseTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.ADD_CASE);		
 				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
 				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
-				forloopClick(LibraComVar.SEL_COURT_TYPE_TWO, CourtType);	
+				forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);	
 				waitForElementPresent(driver,By.name(LibraComVar.CASE_NUM));
 				clickById(LibraComVar.CASE_NEXT);
 				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
@@ -315,7 +315,7 @@ public class AddCaseTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.ADD_CASE);		
 				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
 				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
-				forloopClick(LibraComVar.SEL_COURT_TYPE_TWO, CourtType);	
+				forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);	
 				waitForElementPresent(driver,By.name(LibraComVar.CASE_NUM));
 				clickById(LibraComVar.CASE_NEXT);
 				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
@@ -641,17 +641,21 @@ public class AddCaseTest extends LibraComFun {
 			String Casetype = strHM.get("CaseDetailstype");						
 			String CaseTitle = strHM.get("CaseTitle");		
 			String CourtType = strHM.get("CourtType");				
-			String CourtCaseType = strHM.get("CourtCaseType");
-			String CourtName = strHM.get("CourtName");			
+			String CaseCourtStateComTrib = strHM.get("CaseCourtStateComTrib");
+			String CaseDisCourtTrib = strHM.get("CaseDisCourtTrib");			
+			String DisCaseTrib = strHM.get("DisCaseTrib");			
+			String DisCaseTypeTrib = strHM.get("DisCaseTypeTrib");						
+			String OthersCourtName = strHM.get("OthersCourtName");			
 			String CaseNum = strHM.get("CaseNum");
 			String CaseTag = strHM.get("CaseTag");
 			String FilingDate = strHM.get("FilingDate");
 			String batchNum = strHM.get("BatchNum");
 			String PracticeArea = strHM.get("PracticeArea");
 			String Prayer = strHM.get("Prayer");
-			String CaseType = strHM.get("TCaseType");			
-			if (Test_Scenario.equals("Positive") && (Scenario.equals("AddCaseNone"))) {
-				CaseDetails(CaseTitle, Casetype, CourtType, CourtCaseType,CourtName,CaseType,CaseNum,CaseTag,FilingDate,batchNum,PracticeArea,Prayer);							
+			String OthersCaseType = strHM.get("OthersCaseType");
+			String CaseYear = strHM.get("CaseYear");
+			if (Test_Scenario.equals("Positive") && (Scenario.equals("AddCaseNone"))) {				
+				CaseDetails(CaseTitle,Casetype,CourtType,CaseCourtStateComTrib,CaseDisCourtTrib,DisCaseTrib,DisCaseTypeTrib,OthersCourtName,OthersCaseType,CaseNum,CaseYear,CaseTag,FilingDate,batchNum,PracticeArea,Prayer);
 			}
 		}
 	}

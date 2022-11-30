@@ -201,7 +201,7 @@ public class AddCase {
 		libraPageTest.AddCaseNewClientEmailText(sheetname);
 	}
 
-	@Test(groups = { "sanity" })
+	@Test(groups = { "smoke" })
 	public void test19_checkAddCaseManually() throws Exception {
 		String sheetname = LibraComVar.ADDCASE;
 		AddCaseTest libraPageTest = new AddCaseTest(AddCase.driver, AddCase.baseUrl);

@@ -148,8 +148,7 @@ public class LibraComVar {
 	public static final String CLIENT_CLICK = "s2id_autogen4";	
 	public static final String CLIENT_SEARCH_LIST = "//ul[@class='select2-results']//li//ul/li/div/span";
 	public static final String SEL_CASE_TYPE = "//*[@class='col-md-12 marginbottom-20']/div";
-	public static final String SEL_COURT_TYPE = "//*[@class='form-group court-type']/div";
-	public static final String SEL_COURT_TYPE_TWO = "//*[@class='form-group court-type'][2]/div";
+	public static final String SEL_COURT_TYPE = "(//*[contains(@for,'court_case_court_type')])";	   
 	public static final String CASE_NUM = "court_case[number]";
 	public static final String SUP_CASE_TYPE = "select2-chosen-7";
 	public static final String SUP_CASE_TYPE_SEARCH = "s2id_autogen7_search";
