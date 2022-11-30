@@ -636,14 +636,22 @@ public class AddCaseTest extends LibraComFun {
 				strHM.put(sheet1.getCell(j, 0).getContents(), sheet1.getCell(j, i).getContents());
 			}
 			String Test_Scenario = strHM.get("Test_Scenario");
-			String Scenario = strHM.get("Scenario");
+			String Scenario = strHM.get("Scenario");			
 			String ValidationMessage = strHM.get("ValidationMessage");			
-			String Casetype = strHM.get("Casetype");						
+			String Casetype = strHM.get("CaseDetailstype");						
 			String CaseTitle = strHM.get("CaseTitle");		
 			String CourtType = strHM.get("CourtType");				
 			String CourtCaseType = strHM.get("CourtCaseType");
+			String CourtName = strHM.get("CourtName");			
+			String CaseNum = strHM.get("CaseNum");
+			String CaseTag = strHM.get("CaseTag");
+			String FilingDate = strHM.get("FilingDate");
+			String batchNum = strHM.get("BatchNum");
+			String PracticeArea = strHM.get("PracticeArea");
+			String Prayer = strHM.get("Prayer");
+			String CaseType = strHM.get("TCaseType");			
 			if (Test_Scenario.equals("Positive") && (Scenario.equals("AddCaseNone"))) {
-				CaseDetails(CaseTitle, Casetype, CourtType, CourtCaseType);							
+				CaseDetails(CaseTitle, Casetype, CourtType, CourtCaseType,CourtName,CaseType,CaseNum,CaseTag,FilingDate,batchNum,PracticeArea,Prayer);							
 			}
 		}
 	}

@@ -8,20 +8,20 @@
       <![CDATA[CHECKING ADD CASE MANUALLY<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
     </line>
   </reporter-output>
-  <suite started-at="2022-11-26T16:40:36 IST" name="Default suite" finished-at="2022-11-26T16:40:54 IST" duration-ms="17527">
+  <suite started-at="2022-11-29T21:56:01 IST" name="Default suite" finished-at="2022-11-29T21:57:37 IST" duration-ms="95880">
     <groups>
       <group name="sanity">
         <method signature="AddCase.test0001_checkLogin()[pri:0, instance:libra_Module.AddCase@6404f418]" name="test0001_checkLogin" class="libra_Module.AddCase"/>
         <method signature="AddCase.test19_checkAddCaseManually()[pri:0, instance:libra_Module.AddCase@6404f418]" name="test19_checkAddCaseManually" class="libra_Module.AddCase"/>
       </group> <!-- sanity -->
     </groups>
-    <test started-at="2022-11-26T16:40:36 IST" name="Default test" finished-at="2022-11-26T16:40:54 IST" duration-ms="17527">
+    <test started-at="2022-11-29T21:56:01 IST" name="Default test" finished-at="2022-11-29T21:57:37 IST" duration-ms="95880">
       <class name="libra_Module.AddCase">
-        <test-method is-config="true" signature="openbrowser()[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-11-26T16:40:36 IST" name="openbrowser" finished-at="2022-11-26T16:40:38 IST" duration-ms="1627" status="PASS">
+        <test-method is-config="true" signature="openbrowser()[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-11-29T21:56:01 IST" name="openbrowser" finished-at="2022-11-29T21:56:03 IST" duration-ms="1860" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openbrowser -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-11-26T16:40:38 IST" name="beforeMethod" finished-at="2022-11-26T16:40:39 IST" duration-ms="1101" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-11-29T21:56:03 IST" name="beforeMethod" finished-at="2022-11-29T21:56:05 IST" duration-ms="1461" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -32,14 +32,14 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test0001_checkLogin()[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-11-26T16:40:39 IST" name="test0001_checkLogin" finished-at="2022-11-26T16:40:42 IST" duration-ms="3120" status="PASS">
+        <test-method signature="test0001_checkLogin()[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-11-29T21:56:05 IST" name="test0001_checkLogin" finished-at="2022-11-29T21:56:10 IST" duration-ms="4754" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[CHECKING LOGIN WITH VALID EMAIL AND VAILD PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
             </line>
           </reporter-output>
         </test-method> <!-- test0001_checkLogin -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-11-26T16:40:42 IST" name="beforeMethod" finished-at="2022-11-26T16:40:43 IST" duration-ms="1102" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-11-29T21:56:10 IST" name="beforeMethod" finished-at="2022-11-29T21:56:11 IST" duration-ms="1364" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -50,33 +50,48 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test19_checkAddCaseManually()[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-11-26T16:40:43 IST" name="test19_checkAddCaseManually" finished-at="2022-11-26T16:40:54 IST" duration-ms="10545" status="FAIL">
-          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
+        <test-method signature="test19_checkAddCaseManually()[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-11-29T21:56:11 IST" name="test19_checkAddCaseManually" finished-at="2022-11-29T21:57:37 IST" duration-ms="86383" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Error communicating with the remote browser. It may have died.
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#s2id_autogen7_search"}
+  (Session info: chrome=107.0.5304.108)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'DESKTOP-LHQEHTF', ip: '192.168.29.221', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+System info: host: 'DESKTOP-LHQEHTF', ip: '192.168.100.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1d81c6ecebfaf82483f69a0bfcc2b5d9, findElement {using=xpath, value= //*[@class='form-group court-type']/div [6]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.108, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\VAKILS~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64187}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64187/devtoo..., se:cdpVersion: 107.0.5304.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 1d81c6ecebfaf82483f69a0bfcc2b5d9]]>
+Command: [45ced58092d9d8b827797db9e4f08ee6, findElement {using=id, value=s2id_autogen7_search}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.108, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\VAKILS~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:54090}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54090/devtoo..., se:cdpVersion: 107.0.5304.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 45ced58092d9d8b827797db9e4f08ee6]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#s2id_autogen7_search"}
+  (Session info: chrome=107.0.5304.108)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'DESKTOP-LHQEHTF', ip: '192.168.29.221', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+System info: host: 'DESKTOP-LHQEHTF', ip: '192.168.100.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1d81c6ecebfaf82483f69a0bfcc2b5d9, findElement {using=xpath, value= //*[@class='form-group court-type']/div [6]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.108, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\VAKILS~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64187}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64187/devtoo..., se:cdpVersion: 107.0.5304.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 1d81c6ecebfaf82483f69a0bfcc2b5d9
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:571)
+Command: [45ced58092d9d8b827797db9e4f08ee6, findElement {using=id, value=s2id_autogen7_search}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.108, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\VAKILS~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:54090}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54090/devtoo..., se:cdpVersion: 107.0.5304.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 45ced58092d9d8b827797db9e4f08ee6
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
 at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
 at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-at selenium_module_Test.CommonFunctions.forloopClick(CommonFunctions.java:152)
-at libra_Test.LibraComFun.CaseDetails(LibraComFun.java:482)
-at libra_Test.AddCaseTest.AddCaseManually(AddCaseTest.java:646)
+at libra_Test.LibraComFun.SingleSearchdropdownSelection(LibraComFun.java:328)
+at libra_Test.LibraComFun.CaseDetails(LibraComFun.java:489)
+at libra_Test.AddCaseTest.AddCaseManually(AddCaseTest.java:654)
 at libra_Module.AddCase.test19_checkAddCaseManually(AddCase.java:208)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -106,37 +121,9 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.io.UncheckedIOException: java.net.SocketException: Connection reset
-at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:73)
-at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
-at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:49)
-at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
-at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:98)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:181)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-... 36 more
-Caused by: java.net.SocketException: Connection reset
-at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
-at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
-at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:258)
-at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
-at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
-at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
-at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722)
-at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
-at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
-at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
-at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
-at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-at java.base/java.lang.Thread.run(Thread.java:833)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
             <line>
               <![CDATA[CHECKING ADD CASE MANUALLY<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>

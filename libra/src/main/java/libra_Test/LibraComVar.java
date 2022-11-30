@@ -158,8 +158,17 @@ public class LibraComVar {
 	public static final String AD_CASE_NEW_PER_BUT = "add_com_person";
 	public static final String AD_CASE_CLIENT_EMAIL="court_case[case_point_of_contacts_attributes][2][email]";
 	public static final String CREATE_CASE = "//input[@value='Create Case']";
-	public static final String AD_CASE_NEW_CLIENT="//label[@for='court_case_billing_same_as_client']";
-	
+	public static final String AD_CASE_NEW_CLIENT= "//label[@for='court_case_billing_same_as_client']";
+	public static final String AD_CASE_TAG = "s2id_court_case_case_tag_ids";
+	public static final String AD_CASE_TAG_SEARCH = "s2id_autogen2";
+	public static final String AD_CASE_NUM = "court_case[number]";
+	public static final String AD_CASE_TYPE = "court_case[new_case_type]";
+	public static final String AD_CASE_YEAR = "court_case[case_year]";
+	public static final String AD_CASE_FILLING_DATE = "court_case[open_date]";
+	public static final String AD_CASE_BATCH_NUM = "court_case[batch_number]";
+	public static final String AD_CASE_PRACTICE_AREA = "s2id_court_case_specialization_id";
+	public static final String AD_CASE_PRAYER = "court_case[description]";
+
 	
 	
 }
