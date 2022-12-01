@@ -167,6 +167,36 @@ public class LibraComVar {
 	public static final String AD_CASE_BATCH_NUM = "court_case[batch_number]";
 	public static final String AD_CASE_PRACTICE_AREA = "s2id_court_case_specialization_id";
 	public static final String AD_CASE_PRAYER = "court_case[description]";
+	
+	
+	
+	
+	
+	public static final String CASEDISCOURTTRIB = "s2id_court_case_case_type_id";
+	public static final String DIS_COURT = "s2id_district_id";
+	public static final String DISCASETRIB = "s2id_court_case_court_record_id";
+	public static final String CASE_STAGE = "s2id_court_case_case_type_stage_id";
+	public static final String CASEDISCOURTTRIB_SEARCH = "s2id_autogen583_search";
+	public static final String DIS_SEARCH = "s2id_autogen63_search";
+	public static final String DIS_CASE_SEARCH = "s2id_autogen79_search";
+	public static final String DIS_COURT_SEARCH = "s2id_autogen167_search";
+	public static final String CON_COURT_SEARCH = "s2id_autogen218_search";
+	public static final String CON_CASE_SEARCH = "s2id_autogen277_search";
+	public static final String TRIB_CASE_SEARCH = "s2id_autogen69_search";
+	public static final String TRIB_COURT_SEARCH = "s2id_autogen328_search";
+	public static final String TRIB_STAGE_SEARCH = "s2id_autogen327_search";
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	
 	

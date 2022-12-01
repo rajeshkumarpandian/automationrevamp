@@ -479,41 +479,44 @@ public class LibraComFun extends selenium_module_Test.CommonFunctions {
 			String OthersCaseType, String CaseNum,String CaseYear, String CaseTag, String FilingDate, String batchNum, String PracticeArea,String Prayer) {
 		driver.get(baseUrl + LibraComVar.ADD_CASE);
 		findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
-		forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
-		forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);	
-		
-		if(!CourtType.contains("Other Courts")) {
+		forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);					
+		if(CourtType.contains("Supreme Court") || CourtType.contains("High Court") ||(CourtType.contains("District Court"))|| CourtType.contains("Consumer Court") ||(CourtType.contains("Tribunal"))){			
+			forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);
 			SingleSearchdropdownSelection(LibraComVar.SUP_CASE_TYPE, LibraComVar.SUP_CASE_TYPE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, CaseCourtStateComTrib);
 			if (CourtType.contains("High Court")) {
-				SingleSearchdropdownSelection("s2id_court_case_case_type_id", "s2id_autogen583_search",LibraComVar.ON_REC_SEARCH_LIST, CaseDisCourtTrib);
+				SingleSearchdropdownSelection(LibraComVar.CASEDISCOURTTRIB,LibraComVar.CASEDISCOURTTRIB_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, CaseDisCourtTrib);
 			}
 			if (CourtType.contains("District Court")) {
-				SingleSearchdropdownSelection("s2id_district_id", "s2id_autogen63_search", LibraComVar.ON_REC_SEARCH_LIST,CaseDisCourtTrib);
-				SingleSearchdropdownSelection("s2id_court_case_court_record_id", "s2id_autogen79_search",LibraComVar.ON_REC_SEARCH_LIST,DisCaseTrib);
-				SingleSearchdropdownSelection("s2id_court_case_case_type_id", "s2id_autogen167_search",LibraComVar.ON_REC_SEARCH_LIST,DisCaseTypeTrib);
+				SingleSearchdropdownSelection(LibraComVar.DIS_COURT,LibraComVar.DIS_SEARCH, LibraComVar.ON_REC_SEARCH_LIST,CaseDisCourtTrib);
+				SingleSearchdropdownSelection(LibraComVar.DISCASETRIB,LibraComVar.DIS_CASE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,DisCaseTrib);
+				SingleSearchdropdownSelection(LibraComVar.CASEDISCOURTTRIB,LibraComVar.DIS_COURT_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,DisCaseTypeTrib);
 			}
 			if (CourtType.contains("Consumer Court")) {
-				SingleSearchdropdownSelection("s2id_court_case_court_record_id", "s2id_autogen218_search",LibraComVar.ON_REC_SEARCH_LIST,CaseDisCourtTrib);
-				SingleSearchdropdownSelection("s2id_court_case_case_type_id", "s2id_autogen277_search",LibraComVar.ON_REC_SEARCH_LIST,DisCaseTrib);
+				SingleSearchdropdownSelection(LibraComVar.DISCASETRIB,LibraComVar.CON_COURT_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,CaseDisCourtTrib);
+				SingleSearchdropdownSelection(LibraComVar.CASEDISCOURTTRIB,LibraComVar.CON_CASE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,DisCaseTrib);
 			}
 			if (CourtType.contains("Tribunal")) {
-				SingleSearchdropdownSelection("s2id_court_case_court_record_id", "s2id_autogen69_search",LibraComVar.ON_REC_SEARCH_LIST,CaseDisCourtTrib);
-				SingleSearchdropdownSelection("s2id_court_case_case_type_id", "s2id_autogen328_search",LibraComVar.ON_REC_SEARCH_LIST,DisCaseTrib);
-				SingleSearchdropdownSelection("s2id_court_case_case_type_stage_id", "s2id_autogen327_search",LibraComVar.ON_REC_SEARCH_LIST,DisCaseTypeTrib);
+				SingleSearchdropdownSelection(LibraComVar.DISCASETRIB,LibraComVar.TRIB_CASE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,CaseDisCourtTrib);
+				SingleSearchdropdownSelection(LibraComVar.CASEDISCOURTTRIB,LibraComVar.TRIB_COURT_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,DisCaseTrib);
+				SingleSearchdropdownSelection(LibraComVar.CASE_STAGE,LibraComVar.TRIB_STAGE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,DisCaseTypeTrib);
 			}
 		} 
 		if (CourtType.contains("Other Courts")) {
 			waitForElementPresent(driver,By.name(LibraComVar.AD_CASE_COURT_NAME));
 			findAndPassbyname(LibraComVar.AD_CASE_COURT_NAME, OthersCourtName);
 			findAndPassbyname(LibraComVar.AD_CASE_TYPE, OthersCaseType);
-		}		
-		findAndPassbyname(LibraComVar.AD_CASE_NUM, CaseNum);
-		findAndPassbyname(LibraComVar.AD_CASE_YEAR, CaseYear);		
+		}	
+		if(!Casetype.contains("None")) {
+			findAndPassbyname(LibraComVar.AD_CASE_NUM, CaseNum);
+			findAndPassbyname(LibraComVar.AD_CASE_YEAR, CaseYear);	
+		}				
 		if (!CaseTag.isEmpty()) {
 			SingleSearchdropdownSelection(LibraComVar.AD_CASE_TAG, LibraComVar.AD_CASE_TAG_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, CaseTag);
 		}
-		findAndPassbyname(LibraComVar.AD_CASE_FILLING_DATE, FilingDate);
-		findAndPassbyname(LibraComVar.AD_CASE_BATCH_NUM, batchNum);
+		findAndPassbyname(LibraComVar.AD_CASE_FILLING_DATE, FilingDate);		
+		if(Casetype.equals("Litigation")) {
+			findAndPassbyname(LibraComVar.AD_CASE_BATCH_NUM, batchNum);
+		}
 		SingleSearchdropdownSelection(LibraComVar.AD_CASE_PRACTICE_AREA, LibraComVar.INV_CONT_SEARCH_BOX,LibraComVar.ON_REC_SEARCH_LIST, PracticeArea);
 		findAndPassbyname(LibraComVar.AD_CASE_PRAYER, Prayer);	
 		clickById(LibraComVar.CASE_NEXT);

@@ -8,7 +8,7 @@
       <![CDATA[CHECKING ADD CASE MANUALLY<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
     </line>
   </reporter-output>
-  <suite started-at="2022-11-30T14:02:11 IST" name="Default suite" finished-at="2022-11-30T14:02:39 IST" duration-ms="28165">
+  <suite started-at="2022-12-01T06:54:28 IST" name="Default suite" finished-at="2022-12-01T06:54:38 IST" duration-ms="10061">
     <groups>
       <group name="smoke">
         <method signature="AddCase.test19_checkAddCaseManually()[pri:0, instance:libra_Module.AddCase@6404f418]" name="test19_checkAddCaseManually" class="libra_Module.AddCase"/>
@@ -17,13 +17,13 @@
         <method signature="AddCase.test0001_checkLogin()[pri:0, instance:libra_Module.AddCase@6404f418]" name="test0001_checkLogin" class="libra_Module.AddCase"/>
       </group> <!-- sanity -->
     </groups>
-    <test started-at="2022-11-30T14:02:11 IST" name="Default test" finished-at="2022-11-30T14:02:39 IST" duration-ms="28165">
+    <test started-at="2022-12-01T06:54:28 IST" name="Default test" finished-at="2022-12-01T06:54:38 IST" duration-ms="10061">
       <class name="libra_Module.AddCase">
-        <test-method is-config="true" signature="openbrowser()[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-11-30T14:02:11 IST" name="openbrowser" finished-at="2022-11-30T14:02:13 IST" duration-ms="1868" status="PASS">
+        <test-method is-config="true" signature="openbrowser()[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-12-01T06:54:28 IST" name="openbrowser" finished-at="2022-12-01T06:54:30 IST" duration-ms="1712" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openbrowser -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-11-30T14:02:13 IST" name="beforeMethod" finished-at="2022-11-30T14:02:14 IST" duration-ms="1407" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-12-01T06:54:30 IST" name="beforeMethod" finished-at="2022-12-01T06:54:31 IST" duration-ms="1228" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -34,14 +34,14 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test0001_checkLogin()[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-11-30T14:02:14 IST" name="test0001_checkLogin" finished-at="2022-11-30T14:02:18 IST" duration-ms="3493" status="PASS">
+        <test-method signature="test0001_checkLogin()[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-12-01T06:54:31 IST" name="test0001_checkLogin" finished-at="2022-12-01T06:54:35 IST" duration-ms="3740" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[CHECKING LOGIN WITH VALID EMAIL AND VAILD PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
             </line>
           </reporter-output>
         </test-method> <!-- test0001_checkLogin -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-11-30T14:02:18 IST" name="beforeMethod" finished-at="2022-11-30T14:02:19 IST" duration-ms="1470" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-12-01T06:54:35 IST" name="beforeMethod" finished-at="2022-12-01T06:54:36 IST" duration-ms="1318" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -52,7 +52,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test19_checkAddCaseManually()[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-11-30T14:02:19 IST" name="test19_checkAddCaseManually" finished-at="2022-11-30T14:02:39 IST" duration-ms="19902" status="PASS">
+        <test-method signature="test19_checkAddCaseManually()[pri:0, instance:libra_Module.AddCase@6404f418]" started-at="2022-12-01T06:54:36 IST" name="test19_checkAddCaseManually" finished-at="2022-12-01T06:54:38 IST" duration-ms="2035" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[CHECKING ADD CASE MANUALLY<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
