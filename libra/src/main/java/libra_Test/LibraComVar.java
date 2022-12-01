@@ -167,11 +167,7 @@ public class LibraComVar {
 	public static final String AD_CASE_BATCH_NUM = "court_case[batch_number]";
 	public static final String AD_CASE_PRACTICE_AREA = "s2id_court_case_specialization_id";
 	public static final String AD_CASE_PRAYER = "court_case[description]";
-	
-	
-	
-	
-	
+	public static final String AD_CASE_EXP_DATE = "court_case[expiry_date]";
 	public static final String CASEDISCOURTTRIB = "s2id_court_case_case_type_id";
 	public static final String DIS_COURT = "s2id_district_id";
 	public static final String DISCASETRIB = "s2id_court_case_court_record_id";
@@ -184,10 +180,15 @@ public class LibraComVar {
 	public static final String CON_CASE_SEARCH = "s2id_autogen277_search";
 	public static final String TRIB_CASE_SEARCH = "s2id_autogen69_search";
 	public static final String TRIB_COURT_SEARCH = "s2id_autogen328_search";
-	public static final String TRIB_STAGE_SEARCH = "s2id_autogen327_search";
+	public static final String TRIB_STAGE_SEARCH = "s2id_autogen327_search";	
+	public static final String NEW_COUNSEL_NAME = "court_case[case_point_of_contacts_attributes][3][name]";
+	public static final String NEW_COUNSEL_EMAIL = "court_case[case_point_of_contacts_attributes][3][email]";
+	public static final String NEW_COUNSEL_NUM = "court_case[case_point_of_contacts_attributes][3][number]";
+	public static final String REFER_BY =  "court_case[referred_by]";
 	
-	
-	
+	        
+	        		
+			
 	
 	
 	

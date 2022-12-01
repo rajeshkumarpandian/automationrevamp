@@ -644,18 +644,24 @@ public class AddCaseTest extends LibraComFun {
 			String CaseCourtStateComTrib = strHM.get("CaseCourtStateComTrib");
 			String CaseDisCourtTrib = strHM.get("CaseDisCourtTrib");			
 			String DisCaseTrib = strHM.get("DisCaseTrib");			
-			String DisCaseTypeTrib = strHM.get("DisCaseTypeTrib");						
-			String OthersCourtName = strHM.get("OthersCourtName");			
+			String DisCaseTypeTrib = strHM.get("DisCaseTypeTrib");											
 			String CaseNum = strHM.get("CaseNum");
 			String CaseTag = strHM.get("CaseTag");
 			String FilingDate = strHM.get("FilingDate");
 			String batchNum = strHM.get("BatchNum");
 			String PracticeArea = strHM.get("PracticeArea");
-			String Prayer = strHM.get("Prayer");
-			String OthersCaseType = strHM.get("OthersCaseType");
+			String Prayer = strHM.get("Prayer");			
 			String CaseYear = strHM.get("CaseYear");
+			String OnRecCouncil = strHM.get("OnRecCouncil");	
+			String AdvocateSide = strHM.get("AdvocateSide");
+			String SeniorCounsel = strHM.get("SeniorCounsel");
+			String NewCounselName = strHM.get("NewCounselName");
+			String NewCounselEmail = strHM.get("NewCounselEmail");
+			String NewCounselNum = strHM.get("NewCounselNum");
+			String Referredby = strHM.get("Referredby");
 			if (Test_Scenario.equals("Positive") && (Scenario.equals("AddCaseNone"))) {				
-				CaseDetails(CaseTitle,Casetype,CourtType,CaseCourtStateComTrib,CaseDisCourtTrib,DisCaseTrib,DisCaseTypeTrib,OthersCourtName,OthersCaseType,CaseNum,CaseYear,CaseTag,FilingDate,batchNum,PracticeArea,Prayer);
+				CaseDetails(CaseTitle,Casetype,CourtType,CaseCourtStateComTrib,CaseDisCourtTrib,DisCaseTrib,DisCaseTypeTrib,CaseNum,CaseYear,CaseTag,FilingDate,batchNum,PracticeArea,Prayer);
+				LawyerDetails(OnRecCouncil, AdvocateSide,SeniorCounsel,NewCounselName,NewCounselEmail,NewCounselNum,Referredby);
 			}
 		}
 	}

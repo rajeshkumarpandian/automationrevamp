@@ -14,13 +14,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
-public class CommonFunctions extends CommonVariables {
+public class ComFun extends ComVar{
 
 	protected static WebDriver driver;
 	protected static String baseUrl;
 	public File parameters;	
 
-	public CommonFunctions(WebDriver webPageDriver, String baseURL) {
+	public ComFun(WebDriver webPageDriver, String baseURL) {
 		// TODO Auto-generated constructor stub
 		driver = webPageDriver;
 		baseUrl = baseURL;
@@ -35,7 +35,13 @@ public class CommonFunctions extends CommonVariables {
 			Reporter.log(Description.toUpperCase() + "<b> <font color='blue' font size = 4>" + " ==> PASS" + "</font></b>");
 		}
 	}
-
+   /**
+    * 
+    * @param elementType
+    * @param elementValue
+    * @param expectedValue
+    * @return
+    */
 	public boolean stringComparion(String elementType, String elementValue, String expectedValue) {
 		boolean flag = false;
 		String getValue = "";
@@ -51,32 +57,53 @@ public class CommonFunctions extends CommonVariables {
 		org.testng.Assert.assertEquals(getValue, expectedValue);
 		return flag;
 	}
-	
+	/**
+	 * 
+	 * @param XPath
+	 */
 	public void clickByXpath(String XPath) {
 		waitForElementPresent(driver, By.xpath(XPath));
 		if (iselementPresent(By.xpath(XPath))) {
 			driver.findElement(By.xpath(XPath)).click();
 		}
 	}
-
+    /**
+     * 
+     * @param Id
+     */
 	public void clickById(String Id) {
 		if (iselementPresent(By.id(Id))) {
 			driver.findElement(By.id(Id)).click();
 		}
 	}
-
+    /**
+     * 
+     * @param Name
+     */
 	public void clickByName(String Name) {
 		if (iselementPresent(By.name(Name))) {
 			driver.findElement(By.name(Name)).click();
 		}
 	}
-
+    /**
+     * 
+     * @param ClassName
+     */
 	public void clickByClassName(String ClassName) {
 		if (iselementPresent(By.className(ClassName))) {
 			driver.findElement(By.className(ClassName)).click();
 		}
 	}
-
+	public void clickByxpath(String tag,String attribute, String attributeValue) {
+		if (iselementPresent(By.xpath("//"+tag+"[@"+attribute+"='"+attributeValue+"']"))) {
+			driver.findElement(By.xpath("//"+tag+"[@"+attribute+"='"+attributeValue+"']")).click();
+		}
+	}
+    /**
+     * 
+     * @param by
+     * @return
+     */
 	public static boolean iselementPresent(By by) {
 		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
 		try {
@@ -88,35 +115,55 @@ public class CommonFunctions extends CommonVariables {
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
 	}
-
+    /**
+     * 
+     * @param xpath
+     * @param passData
+     */
 	public void findAndPassbyxpath(String xpath, String passData) {
 		if (iselementPresent(By.xpath(xpath))) {
 			driver.findElement(By.xpath(xpath)).clear();
 			driver.findElement(By.xpath(xpath)).sendKeys(passData);
 		}
 	}
-
+    /**
+     * 
+     * @param id
+     * @param passData
+     */
 	public void findAndPassbyid(String id, String passData) {
 		if (iselementPresent(By.id(id))) {
 			driver.findElement(By.id(id)).clear();
 			driver.findElement(By.id(id)).sendKeys(passData);
 		}
 	}
-
+    /**
+     * 
+     * @param name
+     * @param passData
+     */
 	public void findAndPassbyname(String name, String passData) {
 		if (iselementPresent(By.name(name))) {
 			driver.findElement(By.name(name)).clear();
 			driver.findElement(By.name(name)).sendKeys(passData);
 		}
 	}
-
+    /**
+     * 
+     * @param Classname
+     * @param passData
+     */
 	public void findAndPassbyClassname(String Classname, String passData) {
 		if (iselementPresent(By.className(Classname))) {
 			driver.findElement(By.className(Classname)).clear();
 			driver.findElement(By.className(Classname)).sendKeys(passData);
 		}
 	}
-
+    /**
+     * 
+     * @param driver
+     * @param by
+     */
 	public static void waitForElementPresent(final WebDriver driver, final By by) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT_SECONDS));
 		try {
@@ -143,7 +190,11 @@ public class CommonFunctions extends CommonVariables {
 			// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		}
 	}
-	
+	/**
+	 * 
+	 * @param xpath
+	 * @param text
+	 */
 	public void forloopClick (String xpath, String text) {
 		int noOfData = 0;
 		List<WebElement> dataCount = driver.findElements(By.xpath(xpath));

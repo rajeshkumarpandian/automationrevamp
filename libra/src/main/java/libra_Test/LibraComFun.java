@@ -1,6 +1,8 @@
 package libra_Test;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -12,8 +14,9 @@ import org.openqa.selenium.support.ui.Select;
 import com.aventstack.extentreports.ExtentTest;
 import org.testng.*;
 import jxl.common.Assert;
+import selenium_module_Test.ComVar;
 
-public class LibraComFun extends selenium_module_Test.CommonFunctions {
+public class LibraComFun extends selenium_module_Test.ComFun{
 
 	public LibraComFun(WebDriver webPageDriver, String baseURL) {
 		super(webPageDriver, baseURL);
@@ -475,55 +478,72 @@ public class LibraComFun extends selenium_module_Test.CommonFunctions {
 		clickByXpath(LibraComVar.BTN_CREATE_COMP_CARD_VIEW);		
 	}
 	
-	public void CaseDetails(String CaseTitle, String Casetype, String CourtType, String CaseCourtStateComTrib,String CaseDisCourtTrib,String DisCaseTrib,String DisCaseTypeTrib, String OthersCourtName,
-			String OthersCaseType, String CaseNum,String CaseYear, String CaseTag, String FilingDate, String batchNum, String PracticeArea,String Prayer) {
+	public void CaseDetails(String CaseTitle, String Casetype, String CourtType, String CaseCourtStateComTrib,String CaseDisCourtTrib,String DisCaseTrib,String DisCaseTypeTrib,
+			String CaseNum,String CaseYear, String CaseTag, String FilingDate, String batchNum, String PracticeArea,String Prayer) {
+		Date date = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		String ExpiryDate = formatter.format(date);
 		driver.get(baseUrl + LibraComVar.ADD_CASE);
+		forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
 		findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
-		forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);					
-		if(CourtType.contains("Supreme Court") || CourtType.contains("High Court") ||(CourtType.contains("District Court"))|| CourtType.contains("Consumer Court") ||(CourtType.contains("Tribunal"))){			
-			forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);
-			SingleSearchdropdownSelection(LibraComVar.SUP_CASE_TYPE, LibraComVar.SUP_CASE_TYPE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, CaseCourtStateComTrib);
-			if (CourtType.contains("High Court")) {
-				SingleSearchdropdownSelection(LibraComVar.CASEDISCOURTTRIB,LibraComVar.CASEDISCOURTTRIB_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, CaseDisCourtTrib);
-			}
-			if (CourtType.contains("District Court")) {
-				SingleSearchdropdownSelection(LibraComVar.DIS_COURT,LibraComVar.DIS_SEARCH, LibraComVar.ON_REC_SEARCH_LIST,CaseDisCourtTrib);
-				SingleSearchdropdownSelection(LibraComVar.DISCASETRIB,LibraComVar.DIS_CASE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,DisCaseTrib);
-				SingleSearchdropdownSelection(LibraComVar.CASEDISCOURTTRIB,LibraComVar.DIS_COURT_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,DisCaseTypeTrib);
-			}
-			if (CourtType.contains("Consumer Court")) {
-				SingleSearchdropdownSelection(LibraComVar.DISCASETRIB,LibraComVar.CON_COURT_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,CaseDisCourtTrib);
-				SingleSearchdropdownSelection(LibraComVar.CASEDISCOURTTRIB,LibraComVar.CON_CASE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,DisCaseTrib);
-			}
-			if (CourtType.contains("Tribunal")) {
-				SingleSearchdropdownSelection(LibraComVar.DISCASETRIB,LibraComVar.TRIB_CASE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,CaseDisCourtTrib);
-				SingleSearchdropdownSelection(LibraComVar.CASEDISCOURTTRIB,LibraComVar.TRIB_COURT_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,DisCaseTrib);
-				SingleSearchdropdownSelection(LibraComVar.CASE_STAGE,LibraComVar.TRIB_STAGE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,DisCaseTypeTrib);
-			}
-		} 
-		if (CourtType.contains("Other Courts")) {
-			waitForElementPresent(driver,By.name(LibraComVar.AD_CASE_COURT_NAME));
-			findAndPassbyname(LibraComVar.AD_CASE_COURT_NAME, OthersCourtName);
-			findAndPassbyname(LibraComVar.AD_CASE_TYPE, OthersCaseType);
-		}	
-		if(!Casetype.contains("None")) {
-			findAndPassbyname(LibraComVar.AD_CASE_NUM, CaseNum);
-			findAndPassbyname(LibraComVar.AD_CASE_YEAR, CaseYear);	
-		}				
-		if (!CaseTag.isEmpty()) {
-			SingleSearchdropdownSelection(LibraComVar.AD_CASE_TAG, LibraComVar.AD_CASE_TAG_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, CaseTag);
-		}
-		findAndPassbyname(LibraComVar.AD_CASE_FILLING_DATE, FilingDate);		
 		if(Casetype.equals("Litigation")) {
+			forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);
+			if(CourtType.contains("Supreme Court") || CourtType.contains("High Court") ||(CourtType.contains("District Court"))|| CourtType.contains("Consumer Court") ||(CourtType.contains("Tribunal"))){						
+				SingleSearchdropdownSelection(LibraComVar.SUP_CASE_TYPE, LibraComVar.SUP_CASE_TYPE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, CaseCourtStateComTrib);
+				if (CourtType.contains("High Court")) {
+					SingleSearchdropdownSelection(LibraComVar.CASEDISCOURTTRIB,LibraComVar.CASEDISCOURTTRIB_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, CaseDisCourtTrib);
+				}
+				if (CourtType.contains("District Court")) {
+					SingleSearchdropdownSelection(LibraComVar.DIS_COURT,LibraComVar.DIS_SEARCH, LibraComVar.ON_REC_SEARCH_LIST,CaseDisCourtTrib);
+					SingleSearchdropdownSelection(LibraComVar.DISCASETRIB,LibraComVar.DIS_CASE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,DisCaseTrib);
+					SingleSearchdropdownSelection(LibraComVar.CASEDISCOURTTRIB,LibraComVar.DIS_COURT_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,DisCaseTypeTrib);
+				}
+				if (CourtType.contains("Consumer Court")) {
+					SingleSearchdropdownSelection(LibraComVar.DISCASETRIB,LibraComVar.CON_COURT_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,CaseDisCourtTrib);
+					SingleSearchdropdownSelection(LibraComVar.CASEDISCOURTTRIB,LibraComVar.CON_CASE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,DisCaseTrib);
+				}
+				if (CourtType.contains("Tribunal")) {
+					SingleSearchdropdownSelection(LibraComVar.DISCASETRIB,LibraComVar.TRIB_CASE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,CaseDisCourtTrib);
+					SingleSearchdropdownSelection(LibraComVar.CASEDISCOURTTRIB,LibraComVar.TRIB_COURT_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,DisCaseTrib);
+					SingleSearchdropdownSelection(LibraComVar.CASE_STAGE,LibraComVar.TRIB_STAGE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,DisCaseTypeTrib);
+				}
+				findAndPassbyname(LibraComVar.AD_CASE_NUM, CaseNum);
+				findAndPassbyname(LibraComVar.AD_CASE_YEAR, CaseYear);
+			}
+			if (CourtType.contains("Other Courts")) {
+				waitForElementPresent(driver, By.name(LibraComVar.AD_CASE_COURT_NAME));
+				findAndPassbyname(LibraComVar.AD_CASE_COURT_NAME, CaseCourtStateComTrib);
+				findAndPassbyname(LibraComVar.AD_CASE_TYPE, CaseDisCourtTrib);				
+			}
 			findAndPassbyname(LibraComVar.AD_CASE_BATCH_NUM, batchNum);
 		}
+		findAndPassbyname(LibraComVar.AD_CASE_FILLING_DATE, FilingDate);
+		if(Casetype.equals("Caveat")) {
+			findAndPassbyname(LibraComVar.AD_CASE_COURT_NAME, CaseCourtStateComTrib);	
+			findAndPassbyname(LibraComVar.AD_CASE_CAVEAT_NUM, CaseNum);
+			findAndPassbyname(LibraComVar.AD_CASE_EXP_DATE, ExpiryDate);
+		}
+		if (!CaseTag.isEmpty()) {
+			SingleSearchdropdownSelection(LibraComVar.AD_CASE_TAG, LibraComVar.AD_CASE_TAG_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, CaseTag);
+		}							
 		SingleSearchdropdownSelection(LibraComVar.AD_CASE_PRACTICE_AREA, LibraComVar.INV_CONT_SEARCH_BOX,LibraComVar.ON_REC_SEARCH_LIST, PracticeArea);
 		findAndPassbyname(LibraComVar.AD_CASE_PRAYER, Prayer);	
 		clickById(LibraComVar.CASE_NEXT);
 	}	
 	
-	public void LawyerDetails() {
-		
+	public void LawyerDetails(String OnRecCouncil,String AdvocateSide,String SeniorCounsel,String NewCounselName,String NewCounselEmail,String NewCounselNum,String Referredby) {
+		SingleSearchdropdownSelection(LibraComVar.ON_REC_CLICK, LibraComVar.ON_REC_SEARCH, LibraComVar.ON_REC_SEARCH_LIST,OnRecCouncil);
+		clickByxpath(ComVar.INPUT,ComVar.VALUE,AdvocateSide);
+		clickByxpath(ComVar.LABEL,ComVar.FOR,SeniorCounsel);
+		if(SeniorCounsel.contains("type_custom")) {
+			findAndPassbyname(LibraComVar.NEW_COUNSEL_NAME, NewCounselName);	
+			findAndPassbyname(LibraComVar.NEW_COUNSEL_EMAIL, NewCounselEmail);
+			findAndPassbyname(LibraComVar.NEW_COUNSEL_NUM, NewCounselNum);				
+		} else {
+			SingleSearchdropdownSelection("s2id_court_case_senior_counsel_id","s2id_autogen6_search",LibraComVar.ON_REC_SEARCH_LIST,OnRecCouncil);	
+		}
+		findAndPassbyname(LibraComVar.REFER_BY, Referredby);
+		clickById(LibraComVar.LAWYER_NEXT);
 	}
 	
 	

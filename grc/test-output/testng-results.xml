@@ -5,16 +5,16 @@
       <![CDATA[CHECKING NULL EMAIL AND PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
     </line>
   </reporter-output>
-  <suite started-at="2022-11-15T17:12:21 IST" name="Default suite" finished-at="2022-11-15T17:12:27 IST" duration-ms="5770">
+  <suite started-at="2022-12-01T10:25:39 IST" name="Default suite" finished-at="2022-12-01T10:25:45 IST" duration-ms="5392">
     <groups>
     </groups>
-    <test started-at="2022-11-15T17:12:21 IST" name="Default test" finished-at="2022-11-15T17:12:27 IST" duration-ms="5770">
+    <test started-at="2022-12-01T10:25:39 IST" name="Default test" finished-at="2022-12-01T10:25:45 IST" duration-ms="5392">
       <class name="grc_Module.Login">
-        <test-method is-config="true" signature="openbrowser()[pri:0, instance:grc_Module.Login@5a56cdac]" started-at="2022-11-15T17:12:21 IST" name="openbrowser" finished-at="2022-11-15T17:12:23 IST" duration-ms="2177" status="PASS">
+        <test-method is-config="true" signature="openbrowser()[pri:0, instance:grc_Module.Login@5a56cdac]" started-at="2022-12-01T10:25:39 IST" name="openbrowser" finished-at="2022-12-01T10:25:41 IST" duration-ms="2013" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openbrowser -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Login@5a56cdac]" started-at="2022-11-15T17:12:23 IST" name="beforeMethod" finished-at="2022-11-15T17:12:25 IST" duration-ms="1658" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Login@5a56cdac]" started-at="2022-12-01T10:25:41 IST" name="beforeMethod" finished-at="2022-12-01T10:25:42 IST" duration-ms="1090" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -25,7 +25,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test01_checkLogin()[pri:1, instance:grc_Module.Login@5a56cdac]" started-at="2022-11-15T17:12:25 IST" name="test01_checkLogin" finished-at="2022-11-15T17:12:27 IST" duration-ms="1897" status="PASS">
+        <test-method signature="test01_checkLogin()[pri:1, instance:grc_Module.Login@5a56cdac]" started-at="2022-12-01T10:25:42 IST" name="test01_checkLogin" finished-at="2022-12-01T10:25:45 IST" duration-ms="2252" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[CHECKING NULL EMAIL AND PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b>]]>
