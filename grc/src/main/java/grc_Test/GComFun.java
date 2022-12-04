@@ -13,7 +13,7 @@ import com.aventstack.extentreports.ExtentTest;
 import org.testng.*;
 import jxl.common.Assert;
 
-public class GComFun extends selenium_module_Test.CommonFunctions {
+public class GComFun extends selenium_module_Test.ComFun{
 
 	public GComFun(WebDriver webPageDriver, String baseURL) {
 		super(webPageDriver, baseURL);
