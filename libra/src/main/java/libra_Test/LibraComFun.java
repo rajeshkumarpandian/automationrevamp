@@ -540,13 +540,30 @@ public class LibraComFun extends selenium_module_Test.ComFun{
 			findAndPassbyname(LibraComVar.NEW_COUNSEL_EMAIL, NewCounselEmail);
 			findAndPassbyname(LibraComVar.NEW_COUNSEL_NUM, NewCounselNum);				
 		} else {
-			SingleSearchdropdownSelection("s2id_court_case_senior_counsel_id","s2id_autogen6_search",LibraComVar.ON_REC_SEARCH_LIST,OnRecCouncil);	
+			SingleSearchdropdownSelection(LibraComVar.SENIOR_COUNSEL,LibraComVar.SENIOR_COUNSEL_SEARCH,LibraComVar.ON_REC_SEARCH_LIST,OnRecCouncil);
 		}
 		findAndPassbyname(LibraComVar.REFER_BY, Referredby);
 		clickById(LibraComVar.LAWYER_NEXT);
 	}
 	
-	
+	public void PartyDetails (String ClientName,String FirstName,String LastName,String Email,String MobileNum,String StreetAddress,String Locality,String City,String State,String Pin) {
+		if(!ClientName.isEmpty()) {
+			SingleSearchdropdownSelection(LibraComVar.CLIENT_CLICK, LibraComVar.CLIENT_CLICK, LibraComVar.CLIENT_SEARCH_LIST, ClientName);	
+		}else {
+			clickById(LibraComVar.AD_CASE_NEW_PER_BUT);
+			waitForElementPresent(driver, By.name(LibraComVar.COMP_NEW_PER_FN));
+			findAndPassbyname(FirstName, LibraComVar.COMP_NEW_PER_FN);
+			findAndPassbyname(LastName, LibraComVar.COMP_NEW_PER_LN);
+			findAndPassbyname(Email, LibraComVar.COMP_NEW_PER_EMAIL);
+			findAndPassbyname(MobileNum, LibraComVar.COMP_NEW_PER_MOB);
+			findAndPassbyname(StreetAddress, LibraComVar.PER_ADDRESS);
+			findAndPassbyname(Locality, LibraComVar.PER_LOCALITY);
+			findAndPassbyname(City, LibraComVar.PER_CITY);
+			findAndPassbyname(State, LibraComVar.PER_STATE);
+			findAndPassbyname(Pin, LibraComVar.PER_PIN);			
+		}
+		clickByXpath(LibraComVar.PARTY_DET_NEXT);		
+	}
 	
 	
 	

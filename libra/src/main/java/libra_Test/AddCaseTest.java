@@ -658,10 +658,21 @@ public class AddCaseTest extends LibraComFun {
 			String NewCounselName = strHM.get("NewCounselName");
 			String NewCounselEmail = strHM.get("NewCounselEmail");
 			String NewCounselNum = strHM.get("NewCounselNum");
-			String Referredby = strHM.get("Referredby");
+			String Referredby = strHM.get("Referredby");			
+			String ClientName = strHM.get("ClientName");
+			String FirstName = strHM.get("FirstName");
+			String LastName = strHM.get("LastName");
+			String Email = strHM.get("Email");
+			String MobileNum = strHM.get("MobileNum");
+			String StreetAddress = strHM.get("StreetAddress");
+			String Locality = strHM.get("Locality");
+			String City = strHM.get("City");
+			String State = strHM.get("State");
+			String Pin = strHM.get("Pin");			
 			if (Test_Scenario.equals("Positive") && (Scenario.equals("AddCaseNone"))) {				
 				CaseDetails(CaseTitle,Casetype,CourtType,CaseCourtStateComTrib,CaseDisCourtTrib,DisCaseTrib,DisCaseTypeTrib,CaseNum,CaseYear,CaseTag,FilingDate,batchNum,PracticeArea,Prayer);
 				LawyerDetails(OnRecCouncil, AdvocateSide,SeniorCounsel,NewCounselName,NewCounselEmail,NewCounselNum,Referredby);
+				PartyDetails (ClientName,FirstName,LastName,Email,MobileNum,StreetAddress,Locality,City,State,Pin);
 			}
 		}
 	}

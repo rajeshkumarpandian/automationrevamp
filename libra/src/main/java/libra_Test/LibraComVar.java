@@ -185,6 +185,8 @@ public class LibraComVar {
 	public static final String NEW_COUNSEL_EMAIL = "court_case[case_point_of_contacts_attributes][3][email]";
 	public static final String NEW_COUNSEL_NUM = "court_case[case_point_of_contacts_attributes][3][number]";
 	public static final String REFER_BY =  "court_case[referred_by]";
+	public static final String SENIOR_COUNSEL = "s2id_court_case_senior_counsel_id";
+	public static final String SENIOR_COUNSEL_SEARCH = "s2id_autogen6_search";
 	
 	        
 	        		
