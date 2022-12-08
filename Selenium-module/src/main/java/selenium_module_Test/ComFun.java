@@ -206,6 +206,27 @@ public class ComFun extends ComVar{
 				break;
 			}
 		}
+	}	
+	/**
+	 * 
+	 * @param xpath
+	 * @param Data
+	 * @return
+	 */	
+	public boolean MulDataClick (String xpath, String Data) {
+		boolean flag = false;
+		int Count = 0;
+		List<WebElement> count = driver.findElements(By.xpath(xpath));
+		Count = count.size();
+		for (int k = 1; k <= Count; k++) {
+			String SelectContact = driver.findElement(By.xpath("" + xpath + "[" + k + "]")).getText();		
+			if (SelectContact.contains(Data)) {					
+				clickByXpath("" + xpath + "[" + k + "]");
+				flag = true;
+				break;
+			}
+		}				
+		return flag;
 	}
 
 }

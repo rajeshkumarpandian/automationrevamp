@@ -484,7 +484,7 @@ public class AddCaseTest extends LibraComFun {
 			String Casetype = strHM.get("Casetype");						
 			String CaseTitle = strHM.get("CaseTitle");		
 			String OnRecCouncil = strHM.get("OnRecCouncil");	
-			String NewContNum = strHM.get("NewContNum");
+			String NewContNum = strHM.get("MobileNum");
 			if (Test_Scenario.equals("Negative") && (Scenario.equals("NewContFNNull"))) {
 				driver.get(baseUrl + LibraComVar.ADD_CASE);		
 				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
@@ -524,7 +524,7 @@ public class AddCaseTest extends LibraComFun {
 			String Casetype = strHM.get("Casetype");						
 			String CaseTitle = strHM.get("CaseTitle");		
 			String OnRecCouncil = strHM.get("OnRecCouncil");	
-			String NewContFN = strHM.get("NewContFN");
+			String NewContFN = strHM.get("FirstName");
 			if (Test_Scenario.equals("Negative") && (Scenario.equals("NewContNumNull"))) {
 				driver.get(baseUrl + LibraComVar.ADD_CASE);		
 				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
@@ -564,8 +564,8 @@ public class AddCaseTest extends LibraComFun {
 			String Casetype = strHM.get("Casetype");						
 			String CaseTitle = strHM.get("CaseTitle");		
 			String OnRecCouncil = strHM.get("OnRecCouncil");	
-			String NewContFN = strHM.get("NewContFN");
-			String NewContNum = strHM.get("NewContNum");
+			String NewContFN = strHM.get("FirstName");
+			String NewContNum = strHM.get("MobileNum");
 			if (Test_Scenario.equals("Negative") && (Scenario.equals("NewContNumShort"))) {
 				driver.get(baseUrl + LibraComVar.ADD_CASE);		
 				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
@@ -606,7 +606,7 @@ public class AddCaseTest extends LibraComFun {
 			String Casetype = strHM.get("Casetype");						
 			String CaseTitle = strHM.get("CaseTitle");		
 			String OnRecCouncil = strHM.get("OnRecCouncil");				
-			String NewClientEmail = strHM.get("NewClientEmail");
+			String NewClientEmail = strHM.get("Email");
 			if (Test_Scenario.equals("Negative") && (Scenario.equals("NewClientEmailText"))) {
 				driver.get(baseUrl + LibraComVar.ADD_CASE);		
 				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
@@ -646,7 +646,7 @@ public class AddCaseTest extends LibraComFun {
 			String DisCaseTrib = strHM.get("DisCaseTrib");			
 			String DisCaseTypeTrib = strHM.get("DisCaseTypeTrib");											
 			String CaseNum = strHM.get("CaseNum");
-			String CaseTag = strHM.get("CaseTag");
+			String CaseTag = strHM.get("CaseTags");
 			String FilingDate = strHM.get("FilingDate");
 			String batchNum = strHM.get("BatchNum");
 			String PracticeArea = strHM.get("PracticeArea");
@@ -668,11 +668,25 @@ public class AddCaseTest extends LibraComFun {
 			String Locality = strHM.get("Locality");
 			String City = strHM.get("City");
 			String State = strHM.get("State");
-			String Pin = strHM.get("Pin");			
+			String Pin = strHM.get("Pin");	
+			String billingType = strHM.get("BillingType");					
+			String BillClientName = strHM.get("BillClientName");
+			String BillClientEmail = strHM.get("BillClientEmail");
+			String BillClientNum = strHM.get("BillClientNum");	
+			String DiaryNum = strHM.get("DiaryNum");			
 			if (Test_Scenario.equals("Positive") && (Scenario.equals("AddCaseNone"))) {				
 				CaseDetails(CaseTitle,Casetype,CourtType,CaseCourtStateComTrib,CaseDisCourtTrib,DisCaseTrib,DisCaseTypeTrib,CaseNum,CaseYear,CaseTag,FilingDate,batchNum,PracticeArea,Prayer);
 				LawyerDetails(OnRecCouncil, AdvocateSide,SeniorCounsel,NewCounselName,NewCounselEmail,NewCounselNum,Referredby);
 				PartyDetails (ClientName,FirstName,LastName,Email,MobileNum,StreetAddress,Locality,City,State,Pin);
+				BillingDetails(billingType,BillClientName,BillClientEmail,BillClientNum);
+				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_INVAL_PWD));
+				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_INVAL_PWD, ValidationMessage);		
+				
+				CaseInnerPage(CaseTitle,OnRecCouncil);
+				//Dependency Check   Case List,
+				
+				//chooseNewCalendarDate(FilingDate,"");
+				//*[@id='cases_list']/div[@class='case-card']
 			}
 		}
 	}

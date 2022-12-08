@@ -1,7 +1,9 @@
 package libra_Test;
 
 import java.io.File;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -416,27 +418,7 @@ public class LibraComFun extends selenium_module_Test.ComFun{
 		}												
 		return flag;
 	}
-	/**
-	 * 
-	 * @param xpath
-	 * @param Data
-	 * @return
-	 */
-	public boolean MulDataClick (String xpath, String Data) {
-		boolean flag = false;
-		int Count = 0;
-		List<WebElement> count = driver.findElements(By.xpath(xpath));
-		Count = count.size();
-		for (int k = 1; k <= Count; k++) {
-			String SelectContact = driver.findElement(By.xpath("" + xpath + "[" + k + "]")).getText();		
-			if (SelectContact.contains(Data)) {					
-				clickByXpath("" + xpath + "[" + k + "]");
-				flag = true;
-				break;
-			}
-		}				
-		return flag;
-	}
+
 	/**
 	 * 
 	 * @param FirstName
@@ -516,7 +498,7 @@ public class LibraComFun extends selenium_module_Test.ComFun{
 				findAndPassbyname(LibraComVar.AD_CASE_TYPE, CaseDisCourtTrib);				
 			}
 			findAndPassbyname(LibraComVar.AD_CASE_BATCH_NUM, batchNum);
-		}
+		}		
 		findAndPassbyname(LibraComVar.AD_CASE_FILLING_DATE, FilingDate);
 		if(Casetype.equals("Caveat")) {
 			findAndPassbyname(LibraComVar.AD_CASE_COURT_NAME, CaseCourtStateComTrib);	
@@ -552,19 +534,43 @@ public class LibraComFun extends selenium_module_Test.ComFun{
 		}else {
 			clickById(LibraComVar.AD_CASE_NEW_PER_BUT);
 			waitForElementPresent(driver, By.name(LibraComVar.COMP_NEW_PER_FN));
-			findAndPassbyname(FirstName, LibraComVar.COMP_NEW_PER_FN);
-			findAndPassbyname(LastName, LibraComVar.COMP_NEW_PER_LN);
-			findAndPassbyname(Email, LibraComVar.COMP_NEW_PER_EMAIL);
-			findAndPassbyname(MobileNum, LibraComVar.COMP_NEW_PER_MOB);
-			findAndPassbyname(StreetAddress, LibraComVar.PER_ADDRESS);
-			findAndPassbyname(Locality, LibraComVar.PER_LOCALITY);
-			findAndPassbyname(City, LibraComVar.PER_CITY);
-			findAndPassbyname(State, LibraComVar.PER_STATE);
-			findAndPassbyname(Pin, LibraComVar.PER_PIN);			
+			findAndPassbyname(LibraComVar.COMP_NEW_PER_FN,FirstName);									
+			findAndPassbyname(LibraComVar.COMP_NEW_PER_LN,LastName);			
+			findAndPassbyname(LibraComVar.COMP_NEW_PER_EMAIL,Email);			
+			findAndPassbyname(LibraComVar.COMP_NEW_PER_MOB,MobileNum);						
+			findAndPassbyname(LibraComVar.PER_ADDRESS,StreetAddress);
+			findAndPassbyname(LibraComVar.PER_LOCALITY,Locality);
+			findAndPassbyname(LibraComVar.PER_CITY,City);
+			findAndPassbyname(LibraComVar.PER_STATE,State);
+			findAndPassbyname(LibraComVar.PER_PIN,Pin);			
 		}
 		clickByXpath(LibraComVar.PARTY_DET_NEXT);		
 	}
 	
+	public void BillingDetails(String billingType, String BillClientName,String BillClientEmail,String BillClientNum) {
+		SingleSearchdropdownSelection(LibraComVar.BILLING_TYPE,LibraComVar.BILLING_TYPE_SEARCH,LibraComVar.BILLING_TYPE_VALUE, billingType);
+		if (!BillClientName.isEmpty()) {
+			clickByXpath(LibraComVar.BILLING_CONTACT);
+			findAndPassbyname(LibraComVar.BILLING_CONTACT_NAME, BillClientName);
+			findAndPassbyname(LibraComVar.AD_CASE_CLIENT_EMAIL, BillClientEmail);
+			findAndPassbyname(LibraComVar.BILLING_CONTACT_NUM, BillClientNum);				
+		}
+		clickByXpath(LibraComVar.CREATE_CASE);
+	}
 	
-	
+	public void CaseInnerPage(String CaseTitle,String OnRecCouncil ) {
+		String Lawyer =   "Lawyer: "+OnRecCouncil+"";
+		//*[@class='col-md-10']//ul/li
+		
+		
+		
+		stringComparion(LibraComVar.XPATH,LibraComVar.CASE_EDIT_PAGE_TITLE, CaseTitle); 
+		stringComparion(LibraComVar.XPATH,LibraComVar.CASE_EDIT_PAGE_LAWYER, Lawyer);
+		
+		
+		
+		
+		
+	}
+
 }

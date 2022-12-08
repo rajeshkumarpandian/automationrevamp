@@ -187,6 +187,16 @@ public class LibraComVar {
 	public static final String REFER_BY =  "court_case[referred_by]";
 	public static final String SENIOR_COUNSEL = "s2id_court_case_senior_counsel_id";
 	public static final String SENIOR_COUNSEL_SEARCH = "s2id_autogen6_search";
+	public static final String BILLING_CONTACT = "//*[@for='court_case_billing_same_as_client']";
+	public static final String BILLING_CONTACT_NAME = "court_case[case_point_of_contacts_attributes][2][name]";
+	public static final String BILLING_CONTACT_NUM = "court_case[case_point_of_contacts_attributes][2][number]";
+	public static final String BILLING_TYPE = "s2id_court_case_billing_type_id";
+	public static final String BILLING_TYPE_SEARCH = "s2id_autogen3_search";
+	public static final String BILLING_TYPE_VALUE = "//*[@class='select2-result-label']/span";
+	public static final String LNK_CALENDAR = "/calendar";
+	public static final String CASE_EDIT_PAGE_TITLE = "//*[@class='col-md-10']//h5/span";
+	public static final String CASE_EDIT_PAGE_LAWYER ="//*[@class='col-md-10']//ul/li[4]";
+	
 	
 	        
 	        		

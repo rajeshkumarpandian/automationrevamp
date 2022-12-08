@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Vakilsearch\AppData\Local\Temp\testng-eclipse-1754469028\testng-customsuite.xml</span>
+                    <span>C:\Users\Vakilsearch\AppData\Local\Temp\testng-eclipse--1904258111\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -144,15 +144,15 @@
                   <a name="test19_checkAddCaseManually">
                   </a> <!-- test19_checkAddCaseManually -->
                   <span class="method-name">test19_checkAddCaseManually</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;*[name=&apos;AdcaseFN1&apos;]&quot;}
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@class=&apos;col-md-10&apos;]//ul/li[4]&quot;}
   (Session info: chrome=108.0.5359.95)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
 System info: host: &apos;DESKTOP-LHQEHTF&apos;, ip: &apos;192.168.29.221&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [55b00abc605b34c662fbdf089bcefbad, findElement {using=name, value=AdcaseFN1}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.95, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\VAKILS~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50169}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50169/devtoo..., se:cdpVersion: 108.0.5359.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 55b00abc605b34c662fbdf089bcefbad
+Command: [91d724e237513e7fad5046783792c9b7, findElement {using=xpath, value=//*[@class=&apos;col-md-10&apos;]//ul/li[4]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.95, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\VAKILS~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:58313}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58313/devtoo..., se:cdpVersion: 108.0.5359.95, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 91d724e237513e7fad5046783792c9b7
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -169,9 +169,9 @@ Session ID: 55b00abc605b34c662fbdf089bcefbad
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at selenium_module_Test.ComFun.findAndPassbyname(ComFun.java:147)
-	at libra_Test.LibraComFun.PartyDetails(LibraComFun.java:554)
-	at libra_Test.AddCaseTest.AddCaseManually(AddCaseTest.java:675)
+	at selenium_module_Test.ComFun.stringComparion(ComFun.java:49)
+	at libra_Test.LibraComFun.CaseInnerPage(LibraComFun.java:585)
+	at libra_Test.AddCaseTest.AddCaseManually(AddCaseTest.java:685)
 	at libra_Module.AddCase.test19_checkAddCaseManually(AddCase.java:208)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -225,7 +225,7 @@ Session ID: 55b00abc605b34c662fbdf089bcefbad
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Vakilsearch\AppData\Local\Temp\testng-eclipse-1754469028\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Vakilsearch\AppData\Local\Temp\testng-eclipse--1904258111\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -294,16 +294,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'test19_checkAddCaseManually')
 data.setCell(0, 2, 'libra_Module.AddCase')
-data.setCell(0, 3, 39075);
+data.setCell(0, 3, 96356);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'test0001_checkLogin')
 data.setCell(1, 2, 'libra_Module.AddCase')
-data.setCell(1, 3, 3882);
+data.setCell(1, 3, 4463);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 42 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -348,21 +348,21 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod(public void libra_Module.AddCase.test0001_checkLogin() throws java.lang.Exception)</span>
-                <span class="method-start">2067 ms</span>
+                <span class="method-start">2246 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">test0001_checkLogin</span>
-                <span class="method-start">3325 ms</span>
+                <span class="method-start">3661 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod(public void libra_Module.AddCase.test19_checkAddCaseManually() throws java.lang.Exception)</span>
-                <span class="method-start">7209 ms</span>
+                <span class="method-start">8126 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">test19_checkAddCaseManually</span>
-                <span class="method-start">8451 ms</span>
+                <span class="method-start">9600 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
