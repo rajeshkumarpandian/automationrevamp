@@ -941,7 +941,7 @@ public class PersonTest extends LibraComFun {
 			String FullName = FirstName +" "+ LastName;
 			if (Test_Scenario.equals("Positive") && (Scenario.equals("EditperFromInnerPage"))) {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);											
-				MulDataClick(LibraComVar.CONT_TILE, ExPerson);	
+				forloopClick(LibraComVar.CONT_TILE, ExPerson);	
 				clickByXpath(LibraComVar.CONT_INNER_EDIT);
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,Email,StreetAddress,Locality,City,State,PinCode);
 				waitForElementPresent(driver,By.xpath(LibraComVar.LOGIN_INVAL_PWD));

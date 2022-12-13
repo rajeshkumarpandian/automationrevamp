@@ -27,7 +27,8 @@ import org.testng.annotations.Test;
 import grc_Test.*;
 import io.netty.handler.logging.LogLevel;
 
-public class Login {
+
+public class Myservices {
 
 	private enum TestBrowser {
 		HTMLUNIT, FIREFOX, IE, CHROME
@@ -66,13 +67,26 @@ public class Login {
 	public void beforeMethod(Method m) throws Exception {		
 		driver.get(baseUrl);		
 	}
+	
+	//@Test(priority = 1)
+	public void test01_checkBrokenLinks() throws Exception {		
+		MyservicesTest grPageTest = new MyservicesTest(Myservices.driver, Myservices.baseUrl);
+		grPageTest.HTTPErrorCheck();
+	}
 
 	@Test(priority = 1)
 	public void test01_checkLogin() throws Exception {		
-		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
-		libraPageTest.Login(username,password);
+		LoginTest grPageTest = new LoginTest(Myservices.driver, Myservices.baseUrl);
+		grPageTest.Login(username,password);
 	}
-	
+
+	//@Test(priority = 2)
+	public void test02_checkSelectServices() throws Exception {		
+		String sheetname = GComVar.GRC;
+		MyservicesTest grcPageTest = new MyservicesTest(Myservices.driver, Myservices.baseUrl);
+		grcPageTest.SelectServices(sheetname);
+	}
+		
 	//@AfterTest
 	public void aftertest() throws Exception {		
 		driver.quit();

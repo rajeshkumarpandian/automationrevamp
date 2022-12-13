@@ -1,6 +1,10 @@
 package selenium_module_Test;
 
 import java.io.File;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -19,7 +23,8 @@ public class ComFun extends ComVar{
 	protected static WebDriver driver;
 	protected static String baseUrl;
 	public File parameters;	
-
+	private static int	statusCode;
+	
 	public ComFun(WebDriver webPageDriver, String baseURL) {
 		// TODO Auto-generated constructor stub
 		driver = webPageDriver;
@@ -28,11 +33,15 @@ public class ComFun extends ComVar{
 
 	
 	public void reportlog(String testStatus, String Description) throws Exception {
+		
 		if (testStatus.toLowerCase().equals("fail")) {
-			Reporter.log(Description);
+			Reporter.log("\n" + Description.toUpperCase() + "<b> <font color='red' font size = 4>" + " ==> FAIL" + "</font></b>");
 		}
 		if (testStatus.toLowerCase().equals("pass")) {
-			Reporter.log(Description.toUpperCase() + "<b> <font color='blue' font size = 4>" + " ==> PASS" + "</font></b>");
+			Reporter.log("\n" + Description.toUpperCase() + "<b> <font color='blue' font size = 4>" + " ==> PASS" + "</font></b>");
+		}
+		if (testStatus.toLowerCase().equals("warning")) {
+			Reporter.log("\n" + Description.toUpperCase() + "<b> <font color='yellow' font size = 4>" + " ==> WARNING" + "</font></b>");
 		}
 	}
    /**
@@ -46,23 +55,25 @@ public class ComFun extends ComVar{
 		boolean flag = false;
 		String getValue = "";
 		if (elementType.equals("XPATH")) {
-			getValue = driver.findElement(By.xpath(elementValue)).getText();
+			getValue = driver.findElement(By.xpath(elementValue)).getText().trim();
 		} else if (elementType.equals("ID")) {
-			getValue = driver.findElement(By.id(elementValue)).getText();
+			getValue = driver.findElement(By.id(elementValue)).getText().trim();
 		} else if (elementType.equals("NAME")) {
-			getValue = driver.findElement(By.name(elementValue)).getText();
+			getValue = driver.findElement(By.name(elementValue)).getText().trim();
 		} else if (elementType.equals("CLASSNAME")) {
-			getValue = driver.findElement(By.className(elementValue)).getText();
+			getValue = driver.findElement(By.className(elementValue)).getText().trim();
 		}
-		org.testng.Assert.assertEquals(getValue, expectedValue);
+		if(getValue.equals(expectedValue)) {
+			flag = true;
+		}
+		//org.testng.Assert.assertEquals(getValue, expectedValue);
 		return flag;
 	}
 	/**
 	 * 
 	 * @param XPath
 	 */
-	public void clickByXpath(String XPath) {
-		waitForElementPresent(driver, By.xpath(XPath));
+	public void clickByXpath(String XPath) {		
 		if (iselementPresent(By.xpath(XPath))) {
 			driver.findElement(By.xpath(XPath)).click();
 		}
@@ -164,7 +175,7 @@ public class ComFun extends ComVar{
      * @param driver
      * @param by
      */
-	public static void waitForElementPresent(final WebDriver driver, final By by) {
+	public static void waitForElementPresent(final By by) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT_SECONDS));
 		try {
 			ExpectedCondition<Boolean> elementIsDisplayed = new ExpectedCondition<Boolean>() {
@@ -195,38 +206,117 @@ public class ComFun extends ComVar{
 	 * @param xpath
 	 * @param text
 	 */
-	public void forloopClick (String xpath, String text) {
+	public void forloopClick(String xpath) {
 		int noOfData = 0;
 		List<WebElement> dataCount = driver.findElements(By.xpath(xpath));
 		noOfData = dataCount.size();
-		for (int i = 1; i <= noOfData; i++) {
-			String data = driver.findElement(By.xpath(" " + xpath + " [" + i + "]")).getText();
-			if(data.contains(text)) {
-				clickByXpath(" " + xpath + " [" + i + "]");
-				break;
-			}
+		for (int i = 1; i <= noOfData; i++) {			
+			clickByXpath(" " + xpath + "[" + i + "]");			
 		}
-	}	
+	}
+	
+	public void forloopClickWithWait(String xpath,String waitpath) {
+		int noOfData = 0;
+		List<WebElement> dataCount = driver.findElements(By.xpath(xpath));
+		noOfData = dataCount.size();
+		for (int i = 1; i <= noOfData; i++) {				
+			if(!waitpath.isEmpty()) {
+				waitForElementPresent(By.xpath(waitpath));				
+			}
+			clickByXpath(" " + xpath + "[" + i + "]");					
+		}
+	}
+	
 	/**
 	 * 
-	 * @param xpath
-	 * @param Data
+	 * @param by
 	 * @return
-	 */	
-	public boolean MulDataClick (String xpath, String Data) {
-		boolean flag = false;
-		int Count = 0;
-		List<WebElement> count = driver.findElements(By.xpath(xpath));
-		Count = count.size();
-		for (int k = 1; k <= Count; k++) {
-			String SelectContact = driver.findElement(By.xpath("" + xpath + "[" + k + "]")).getText();		
-			if (SelectContact.contains(Data)) {					
-				clickByXpath("" + xpath + "[" + k + "]");
-				flag = true;
-				break;
-			}
-		}				
-		return flag;
+	 */
+	protected static boolean isElementPresent(By by) {
+		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+		try {
+			driver.findElement(by);
+			return true;
+		} catch (Exception e) {
+			return false;
+		} finally {
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		}
 	}
+    /**
+     * 
+     * @param driver
+     * @param by
+     */
+	public static void waitForElementToDisappear(final By by){
+		WebDriverWait wait = new WebDriverWait(driver, ComVar.SERVER_TIMEOUT);
+		try {
+			wait.until(new ExpectedCondition<Boolean>() {
+				public Boolean apply(WebDriver webDriver) {
+					return (!isElementPresent(by));
+				}
+			});
+
+		}
+		catch (Exception e) {
+			// Ignore the timeout exception
+		}
+	}
+	
+	protected static boolean isElementPresentWaitForDisappear(By by) {
+		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+		try {
+			driver.findElement(by);
+			waitForElementToDisappear(by);
+			return true;
+		} catch (Exception e) {
+			return false;
+		} finally {
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		}
+	}
+	
+	public static int getResponseCode(String urlString) throws MalformedURLException, IOException {
+		URL url = new URL(urlString);
+		//System.out.println(url);
+		HttpURLConnection huc = (HttpURLConnection) url.openConnection();
+		huc.setRequestMethod("GET");
+		huc.connect();
+		return huc.getResponseCode();
+	}
+	
+	public void HTTPErrorCheck() throws Exception {		
+		try{
+			List<WebElement> links = driver.findElements(By.tagName("a"));
+			for (int i = 0; i < links.size(); i++) {
+				if (!(links.get(i).getAttribute("href") == null) && !(links.get(i).getAttribute("href").equals(""))) {
+					if (links.get(i).getAttribute("href").contains("http")) {
+						statusCode = getResponseCode(links.get(i).getAttribute("href").trim());
+						if (statusCode == 403) {
+							reportlog("fail","HTTP 403 Forbidden @ " + links.get(i).getAttribute("href") + "\n");
+						} else if (statusCode == 500) {
+							reportlog("fail","HTTP 500 Internal Server Error @ " + links.get(i).getAttribute("href") + "\n");
+						} else if (statusCode == 301) {
+							reportlog("fail","HTTP 301 Moved Permanently @ " + links.get(i).getAttribute("href") + "\n");
+						} else if (statusCode == 502) {
+							reportlog("fail","HTTP 502 Bad Gateway @ " + links.get(i).getAttribute("href") + "\n");
+						} else if (statusCode == 404) {
+							reportlog("fail","HTTP 404 Not Found @ " + links.get(i).getAttribute("href") + "\n");
+						} else if (statusCode == 503) {
+							reportlog("fail","HTTP 503 Service Unavailable @ " + links.get(i).getAttribute("href") + "\n");
+						} else if (statusCode == 302) {
+							reportlog("fail","HTTP 302 Moved temporarily @ " + links.get(i).getAttribute("href") + "\n");
+						}
+					}
+				}
+			}			
+		} catch (Exception e){
+			//System.out.println(e);
+		}	
+	}
+	
+
+	
+	
 
 }

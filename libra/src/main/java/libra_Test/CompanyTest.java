@@ -929,7 +929,7 @@ public class CompanyTest extends LibraComFun {
 			String ExCompName = strHM.get("ExCompName");			
 			if (Test_Scenario.equals("Positive") && (Scenario.equals("EditCompFromInnerPage"))) {
 				driver.get(baseUrl + LibraComVar.CONT_COMP_CARD_VIEW);
-				MulDataClick(LibraComVar.CONT_TILE, ExCompName);	
+				forloopClick(LibraComVar.CONT_TILE, ExCompName);	
 				clickByXpath(LibraComVar.CONT_INNER_EDIT);
 				addCompanyCardView(CompanyName, Email, Website, Mobile, Phone, StreetAddress, Locality, City, State,PinCode,"","","","","");
 				waitForElementPresent(driver,By.xpath(LibraComVar.LOGIN_INVAL_PWD));
