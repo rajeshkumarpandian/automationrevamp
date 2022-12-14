@@ -24,6 +24,7 @@ public class ComFun extends ComVar{
 	protected static String baseUrl;
 	public File parameters;	
 	private static int	statusCode;
+	public static StringBuffer	verificationErrors	= new StringBuffer();
 	
 	public ComFun(WebDriver webPageDriver, String baseURL) {
 		// TODO Auto-generated constructor stub
@@ -35,13 +36,13 @@ public class ComFun extends ComVar{
 	public void reportlog(String testStatus, String Description) throws Exception {
 		
 		if (testStatus.toLowerCase().equals("fail")) {
-			Reporter.log("\n" + Description.toUpperCase() + "<b> <font color='red' font size = 4>" + " ==> FAIL" + "</font></b>");
+			Reporter.log(""+ Description.toUpperCase() + "<b> <font color='red' font size = 4>" + " ==> FAIL" + "</font></b> \n");
 		}
 		if (testStatus.toLowerCase().equals("pass")) {
-			Reporter.log("\n" + Description.toUpperCase() + "<b> <font color='blue' font size = 4>" + " ==> PASS" + "</font></b>");
+			Reporter.log(""+ Description.toUpperCase() + "<b> <font color='blue' font size = 4>" + " ==> PASS" + "</font></b> \n");
 		}
 		if (testStatus.toLowerCase().equals("warning")) {
-			Reporter.log("\n" + Description.toUpperCase() + "<b> <font color='yellow' font size = 4>" + " ==> WARNING" + "</font></b>");
+			Reporter.log("" + Description.toUpperCase() + "<b> <font color='yellow' font size = 4>" + " ==> WARNING" + "</font></b> \n");
 		}
 	}
    /**
@@ -206,15 +207,19 @@ public class ComFun extends ComVar{
 	 * @param xpath
 	 * @param text
 	 */
-	public void forloopClick(String xpath) {
+	public void forloopClick(String xpath, String text) {
 		int noOfData = 0;
 		List<WebElement> dataCount = driver.findElements(By.xpath(xpath));
 		noOfData = dataCount.size();
-		for (int i = 1; i <= noOfData; i++) {			
-			clickByXpath(" " + xpath + "[" + i + "]");			
+		for (int i = 1; i <= noOfData; i++) {
+			String Datas = driver.findElement(By.xpath(" " + xpath + "[" + i + "]")).getText();
+			if (Datas.contains(text)) {
+				clickByXpath(" " + xpath + "[" + i + "]");
+				break;
+			}
 		}
 	}
-	
+
 	public void forloopClickWithWait(String xpath,String waitpath) {
 		int noOfData = 0;
 		List<WebElement> dataCount = driver.findElements(By.xpath(xpath));
@@ -285,35 +290,39 @@ public class ComFun extends ComVar{
 		return huc.getResponseCode();
 	}
 	
-	public void HTTPErrorCheck() throws Exception {		
-		try{
+	public String HTTPErrorCheck() throws Exception {
+		String errLog = "";
+		try {
 			List<WebElement> links = driver.findElements(By.tagName("a"));
 			for (int i = 0; i < links.size(); i++) {
 				if (!(links.get(i).getAttribute("href") == null) && !(links.get(i).getAttribute("href").equals(""))) {
 					if (links.get(i).getAttribute("href").contains("http")) {
 						statusCode = getResponseCode(links.get(i).getAttribute("href").trim());
 						if (statusCode == 403) {
-							reportlog("fail","HTTP 403 Forbidden @ " + links.get(i).getAttribute("href") + "\n");
+							errLog += ("HTTP 403 Forbidden @ " + links.get(i).getAttribute("href") + "\n");
 						} else if (statusCode == 500) {
-							reportlog("fail","HTTP 500 Internal Server Error @ " + links.get(i).getAttribute("href") + "\n");
+							errLog += ("HTTP 500 Internal Server Error @ " + links.get(i).getAttribute("href") + "\n");
 						} else if (statusCode == 301) {
-							reportlog("fail","HTTP 301 Moved Permanently @ " + links.get(i).getAttribute("href") + "\n");
+							errLog += ("HTTP 301 Moved Permanently @ " + links.get(i).getAttribute("href") + "\n");
 						} else if (statusCode == 502) {
-							reportlog("fail","HTTP 502 Bad Gateway @ " + links.get(i).getAttribute("href") + "\n");
+							errLog += ("HTTP 502 Bad Gateway @ " + links.get(i).getAttribute("href") + "\n");
 						} else if (statusCode == 404) {
-							reportlog("fail","HTTP 404 Not Found @ " + links.get(i).getAttribute("href") + "\n");
+							errLog += ("HTTP 404 Not Found @ " + links.get(i).getAttribute("href") + "\n");
 						} else if (statusCode == 503) {
-							reportlog("fail","HTTP 503 Service Unavailable @ " + links.get(i).getAttribute("href") + "\n");
+							errLog += ("HTTP 503 Service Unavailable @ " + links.get(i).getAttribute("href") + "\n");
 						} else if (statusCode == 302) {
-							reportlog("fail","HTTP 302 Moved temporarily @ " + links.get(i).getAttribute("href") + "\n");
+							errLog += ("HTTP 302 Moved temporarily @ " + links.get(i).getAttribute("href") + "\n");
 						}
 					}
 				}
-			}			
-		} catch (Exception e){
-			//System.out.println(e);
-		}	
+			}
+			verificationErrors.append(errLog);
+		} catch (Exception e) {
+		}
+		return (errLog);
 	}
+	
+
 	
 
 	

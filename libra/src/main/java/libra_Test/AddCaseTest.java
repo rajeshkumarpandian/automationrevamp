@@ -35,7 +35,7 @@ public class AddCaseTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.ADD_CASE);				
 				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
 				clickById(LibraComVar.CASE_NEXT);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_PWD_NULL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_PWD_NULL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_PWD_NULL_VALID, ValidationMessage);								
 			}
 		}
@@ -69,7 +69,7 @@ public class AddCaseTest extends LibraComFun {
 				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
 				forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);				
 				clickById(LibraComVar.CASE_NEXT);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
 			}
 		}
@@ -105,7 +105,7 @@ public class AddCaseTest extends LibraComFun {
 				forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);	
 				SingleSearchdropdownSelection(LibraComVar.SUP_CASE_TYPE,LibraComVar.SUP_CASE_TYPE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, CaseCourtStateComTrib);
 				clickById(LibraComVar.CASE_NEXT);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
 			}
 		}
@@ -143,7 +143,7 @@ public class AddCaseTest extends LibraComFun {
 				SingleSearchdropdownSelection(LibraComVar.SUP_CASE_TYPE,LibraComVar.SUP_CASE_TYPE_SEARCH,LibraComVar.ON_REC_SEARCH_LIST, CaseCourtStateComTrib);
 				findAndPassbyname(LibraComVar.CASE_NUM, CaseNum);
 				clickById(LibraComVar.CASE_NEXT);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
 			}
 		}
@@ -176,9 +176,9 @@ public class AddCaseTest extends LibraComFun {
 				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
 				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
 				forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);	
-				waitForElementPresent(driver,By.name(LibraComVar.CASE_NUM));
+				waitForElementPresent(By.name(LibraComVar.CASE_NUM));
 				clickById(LibraComVar.CASE_NEXT);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
 			}
 		}
@@ -211,9 +211,9 @@ public class AddCaseTest extends LibraComFun {
 				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
 				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
 				forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);	
-				waitForElementPresent(driver,By.name(LibraComVar.CASE_NUM));
+				waitForElementPresent(By.name(LibraComVar.CASE_NUM));
 				clickById(LibraComVar.CASE_NEXT);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
 			}
 		}
@@ -246,9 +246,9 @@ public class AddCaseTest extends LibraComFun {
 				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
 				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
 				forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);	
-				waitForElementPresent(driver,By.name(LibraComVar.CASE_NUM));
+				waitForElementPresent(By.name(LibraComVar.CASE_NUM));
 				clickById(LibraComVar.CASE_NEXT);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
 			}
 		}
@@ -281,9 +281,9 @@ public class AddCaseTest extends LibraComFun {
 				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
 				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
 				forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);	
-				waitForElementPresent(driver,By.name(LibraComVar.CASE_NUM));
+				waitForElementPresent(By.name(LibraComVar.CASE_NUM));
 				clickById(LibraComVar.CASE_NEXT);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
 			}
 		}
@@ -316,9 +316,9 @@ public class AddCaseTest extends LibraComFun {
 				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
 				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);
 				forloopClick(LibraComVar.SEL_COURT_TYPE, CourtType);	
-				waitForElementPresent(driver,By.name(LibraComVar.CASE_NUM));
+				waitForElementPresent(By.name(LibraComVar.CASE_NUM));
 				clickById(LibraComVar.CASE_NEXT);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
 			}
 		}
@@ -349,9 +349,9 @@ public class AddCaseTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.ADD_CASE);		
 				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
 				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);					
-				waitForElementPresent(driver,By.name(LibraComVar.CASE_TITLE));
+				waitForElementPresent(By.name(LibraComVar.CASE_TITLE));
 				clickById(LibraComVar.CASE_NEXT);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
 			}
 		}
@@ -384,9 +384,9 @@ public class AddCaseTest extends LibraComFun {
 				findAndPassbyname(LibraComVar.CASE_TITLE, CaseTitle);
 				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);	
 				findAndPassbyname(LibraComVar.AD_CASE_COURT_NAME, CourtName);
-				waitForElementPresent(driver,By.name(LibraComVar.CASE_TITLE));
+				waitForElementPresent(By.name(LibraComVar.CASE_TITLE));
 				clickById(LibraComVar.CASE_NEXT);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
 			}
 		}
@@ -421,9 +421,9 @@ public class AddCaseTest extends LibraComFun {
 				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);	
 				findAndPassbyname(LibraComVar.AD_CASE_COURT_NAME, CourtName);
 				findAndPassbyname(LibraComVar.AD_CASE_CAVEAT_NUM, CaveatNum);
-				waitForElementPresent(driver,By.name(LibraComVar.CASE_TITLE));
+				waitForElementPresent(By.name(LibraComVar.CASE_TITLE));
 				clickById(LibraComVar.CASE_NEXT);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
 			}
 		}
@@ -456,7 +456,7 @@ public class AddCaseTest extends LibraComFun {
 				forloopClick(LibraComVar.SEL_CASE_TYPE, Casetype);									
 				clickById(LibraComVar.CASE_NEXT);
 				clickById(LibraComVar.LAWYER_NEXT);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
 			}
 		}
@@ -493,10 +493,10 @@ public class AddCaseTest extends LibraComFun {
 				SingleSearchdropdownSelection(LibraComVar.ON_REC_CLICK, LibraComVar.ON_REC_SEARCH, LibraComVar.ON_REC_SEARCH_LIST,OnRecCouncil);
 				clickById(LibraComVar.LAWYER_NEXT);
 				clickById(LibraComVar.AD_CASE_NEW_PER_BUT);
-				waitForElementPresent(driver,By.name(LibraComVar.COMP_NEW_PER_MOB));
+				waitForElementPresent(By.name(LibraComVar.COMP_NEW_PER_MOB));
 				findAndPassbyname(LibraComVar.COMP_NEW_PER_MOB, NewContNum);
 				clickByXpath(LibraComVar.PARTY_DET_NEXT);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
 			}
 		}
@@ -533,10 +533,10 @@ public class AddCaseTest extends LibraComFun {
 				SingleSearchdropdownSelection(LibraComVar.ON_REC_CLICK, LibraComVar.ON_REC_SEARCH, LibraComVar.ON_REC_SEARCH_LIST,OnRecCouncil);
 				clickById(LibraComVar.LAWYER_NEXT);
 				clickById(LibraComVar.AD_CASE_NEW_PER_BUT);
-				waitForElementPresent(driver,By.name(LibraComVar.COMP_NEW_PER_MOB));
+				waitForElementPresent(By.name(LibraComVar.COMP_NEW_PER_MOB));
 				findAndPassbyname(LibraComVar.COMP_NEW_PER_FN, NewContFN);
 				clickByXpath(LibraComVar.PARTY_DET_NEXT);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
 			}
 		}
@@ -574,11 +574,11 @@ public class AddCaseTest extends LibraComFun {
 				SingleSearchdropdownSelection(LibraComVar.ON_REC_CLICK, LibraComVar.ON_REC_SEARCH, LibraComVar.ON_REC_SEARCH_LIST,OnRecCouncil);
 				clickById(LibraComVar.LAWYER_NEXT);
 				clickById(LibraComVar.AD_CASE_NEW_PER_BUT);
-				waitForElementPresent(driver,By.name(LibraComVar.COMP_NEW_PER_MOB));
+				waitForElementPresent(By.name(LibraComVar.COMP_NEW_PER_MOB));
 				findAndPassbyname(LibraComVar.COMP_NEW_PER_FN, NewContFN);
 				findAndPassbyname(LibraComVar.COMP_NEW_PER_MOB, NewContNum);
 				clickByXpath(LibraComVar.PARTY_DET_NEXT);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_EMAIL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_EMAIL_VALID, ValidationMessage);								
 			}
 		}
@@ -618,7 +618,7 @@ public class AddCaseTest extends LibraComFun {
 				clickByXpath(LibraComVar.AD_CASE_NEW_CLIENT);				
 				findAndPassbyname(LibraComVar.AD_CASE_CLIENT_EMAIL, NewClientEmail);
 				clickByXpath(LibraComVar.CREATE_CASE);
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_EMAIL));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_EMAIL));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, ValidationMessage);								
 			}
 		}
@@ -679,7 +679,7 @@ public class AddCaseTest extends LibraComFun {
 				LawyerDetails(OnRecCouncil, AdvocateSide,SeniorCounsel,NewCounselName,NewCounselEmail,NewCounselNum,Referredby);
 				PartyDetails (ClientName,FirstName,LastName,Email,MobileNum,StreetAddress,Locality,City,State,Pin);
 				BillingDetails(billingType,BillClientName,BillClientEmail,BillClientNum);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_INVAL_PWD));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_INVAL_PWD));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_INVAL_PWD, ValidationMessage);		
 				
 				CaseInnerPage(CaseTitle,OnRecCouncil);

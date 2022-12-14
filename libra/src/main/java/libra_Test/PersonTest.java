@@ -34,7 +34,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);				  
 				clickByXpath(LibraComVar.BTN_CREATE_COMP_CARD_VIEW);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_PWD_NULL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_PWD_NULL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_PWD_NULL_VALID, ValidationMessage);				
 			}
 		}
@@ -61,7 +61,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);		
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,"","","","","","");												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_EMAIL));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_EMAIL));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, ValidationMessage);				
 			}
 		}
@@ -88,7 +88,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);		
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,"","","","","","");												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_EMAIL));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_EMAIL));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, ValidationMessage);				
 			}
 		}
@@ -115,7 +115,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);		
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,"","","","","","");												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_EMAIL));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_EMAIL));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, ValidationMessage);				
 			}
 		}
@@ -144,7 +144,7 @@ public class PersonTest extends LibraComFun {
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);		
 				clickByXpath(LibraComVar.BTN_CREATE_COMP_CARD_VIEW);
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,Email,"","","","","");												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_EMAIL));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_EMAIL));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, ValidationMessage);				
 			}
 		}
@@ -173,7 +173,7 @@ public class PersonTest extends LibraComFun {
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);		
 				clickByXpath(LibraComVar.BTN_CREATE_COMP_CARD_VIEW);
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,Email,"","","","","");												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_EMAIL));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_EMAIL));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, ValidationMessage);				
 			}
 		}
@@ -202,7 +202,7 @@ public class PersonTest extends LibraComFun {
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);		
 				clickByXpath(LibraComVar.BTN_CREATE_COMP_CARD_VIEW);
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,Email,"","","","","");												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_EMAIL));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_EMAIL));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, ValidationMessage);				
 			}
 		}
@@ -231,7 +231,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,Email,"","",City,"","");												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_CITY));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_CITY));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_CITY, ValidationMessage);				
 			}
 		}
@@ -260,7 +260,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,Email,"","",City,"","");												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_CITY));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_CITY));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_CITY, ValidationMessage);				
 			}
 		}
@@ -289,7 +289,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,Email,"","",City,"","");												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_CITY));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_CITY));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_CITY, ValidationMessage);				
 			}
 		}
@@ -319,7 +319,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,Email,"","",City,State,"");												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_CITY));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_CITY));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_CITY, ValidationMessage);				
 			}
 		}
@@ -349,7 +349,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,Email,"","",City,State,"");												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_CITY));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_CITY));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_CITY, ValidationMessage);				
 			}
 		}
@@ -379,7 +379,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,Email,"","",City,State,"");												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_CITY));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_CITY));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_CITY, ValidationMessage);				
 			}
 		}
@@ -410,7 +410,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,Email,"","",City,State,PinCode);												
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_LESS_8_CHAR_PWD));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_LESS_8_CHAR_PWD));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_LESS_8_CHAR_PWD, ValidationMessage);				
 			}
 		}
@@ -441,7 +441,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,Email,"","",City,State,PinCode);												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_EMAIL));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_EMAIL));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, ValidationMessage);				
 			}
 		}
@@ -465,12 +465,12 @@ public class PersonTest extends LibraComFun {
 			if (Test_Scenario.equals("Negative") && (Scenario.equals("PerCompNameNull"))) {				
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);	
-				waitForElementPresent(driver,By.name( LibraComVar.COMP_NEW_PER_FN));
+				waitForElementPresent(By.name( LibraComVar.COMP_NEW_PER_FN));
 				findAndPassbyname(LibraComVar.COMP_NEW_PER_FN, FirstName); 
 				clickById(LibraComVar.PER_ADD_COMP);
-				waitForElementPresent(driver,By.name(LibraComVar.COMP_NAME));
+				waitForElementPresent(By.name(LibraComVar.COMP_NAME));
 				clickByXpath(LibraComVar.BTN_CREATE_COMP_CARD_VIEW);															
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_PWD_NULL_VALID));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_PWD_NULL_VALID));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_PWD_NULL_VALID, ValidationMessage);				
 			}
 		}
@@ -503,7 +503,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,"",CompName,CompMail,"",Mobile,Email,"","",City,State,PinCode);												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_EMAIL));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_EMAIL));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, ValidationMessage);				
 			}
 		}
@@ -536,7 +536,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,"",CompName,CompMail,"",Mobile,Email,"","",City,State,PinCode);												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_EMAIL));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_EMAIL));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, ValidationMessage);				
 			}
 		}
@@ -569,7 +569,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,"",CompName,CompMail,"",Mobile,Email,"","",City,State,PinCode);												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_EMAIL));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_EMAIL));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, ValidationMessage);				
 			}
 		}
@@ -602,7 +602,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,"",CompName,CompMail,"",Mobile,Email,"","",City,State,PinCode);												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_EMAIL));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_EMAIL));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, ValidationMessage);				
 			}
 		}
@@ -636,7 +636,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,"",CompName,CompMail,CompNum,Mobile,Email,"","",City,State,PinCode);												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_EMAIL));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_EMAIL));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, ValidationMessage);				
 			}
 		}
@@ -670,7 +670,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,"",CompName,CompMail,CompNum,Mobile,Email,"","",City,State,PinCode);												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_EMAIL));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_EMAIL));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, ValidationMessage);				
 			}
 		}
@@ -704,7 +704,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,"",CompName,CompMail,CompNum,Mobile,Email,"","",City,State,PinCode);												
-				waitForElementPresent(driver, By.xpath(LibraComVar.VALID_MSG_EMAIL));
+				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_EMAIL));
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, ValidationMessage);				
 			}
 		}
@@ -741,7 +741,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,Email,StreetAddress,Locality,City,State,PinCode);												
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_INVAL_PWD));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_INVAL_PWD));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_INVAL_PWD, ValidationMessage);									
 				if (Dependency.contains("Yes")) {
 					// CONTACT PAGES
@@ -791,7 +791,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,CompName,"","","",Mobile,Email,StreetAddress,Locality,City,State,PinCode);												
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_INVAL_PWD));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_INVAL_PWD));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_INVAL_PWD, ValidationMessage);									
 				if (Dependency.contains("Yes")) {
 					// CONTACT PAGES
@@ -843,7 +843,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				clickByXpath(LibraComVar.ADD_PER_CARD_VIEW);						
 				addPersonCardView(FirstName,LastName,"",CompName,CompMail,CompNum,Mobile,Email,StreetAddress,Locality,City,State,PinCode);												
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_INVAL_PWD));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_INVAL_PWD));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_INVAL_PWD, ValidationMessage);													
 				if (Dependency.contains("Yes")) {
 					// CONTACT PAGES
@@ -893,7 +893,7 @@ public class PersonTest extends LibraComFun {
 				driver.get(baseUrl+LibraComVar.CONT_PEOPLE_CARD_VIEW);
 				ContactCardEditDelete(LibraComVar.ALL_PAGE_CARD_LIST, ExPerson, "edit");				
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,Email,StreetAddress,Locality,City,State,PinCode);	
-				waitForElementPresent(driver,By.xpath(LibraComVar.LOGIN_INVAL_PWD));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_INVAL_PWD));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_INVAL_PWD, ValidationMessage);									
 				if (Dependency.contains("Yes")) {
 					// CONTACT PAGES
@@ -944,7 +944,7 @@ public class PersonTest extends LibraComFun {
 				forloopClick(LibraComVar.CONT_TILE, ExPerson);	
 				clickByXpath(LibraComVar.CONT_INNER_EDIT);
 				addPersonCardView(FirstName,LastName,"","","","",Mobile,Email,StreetAddress,Locality,City,State,PinCode);
-				waitForElementPresent(driver,By.xpath(LibraComVar.LOGIN_INVAL_PWD));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_INVAL_PWD));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_INVAL_PWD, ValidationMessage);									
 				if (Dependency.contains("Yes")) {
 					// CONTACT PAGES

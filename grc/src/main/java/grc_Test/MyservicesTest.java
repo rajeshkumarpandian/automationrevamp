@@ -42,7 +42,7 @@ public class MyservicesTest extends GComFun {
 			if (Test_Scenario.equals("Positive") && (Scenario.equals("Clicks"))) {
 				
 								
-				forloopClick("//*[@id='dashboard_left_section_home']/li");
+				forloopClick("//*[@id='dashboard_left_section_home']/li","");
 				clickById("myServicesNavPill");			
 				if (iselementPresent(By.xpath("//*[@id='ongoing']/div/table[@class='service-ongoing']")) == false) {
 					reportlog("fail", "No tickets is listing.");

@@ -106,7 +106,7 @@ public class LoginTest extends LibraComFun {
 				findAndPassbyid(LibraComVar.LOGIN_EMAIL, Email);
 				findAndPassbyid(LibraComVar.LOGIN_PWD, Password);
 				clickByXpath(LibraComVar.LOGIN_BTN);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_INVAL_PWD));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_INVAL_PWD));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_INVAL_PWD, expectedEmailAlert);								
 			}
 		}
@@ -157,7 +157,7 @@ public class LoginTest extends LibraComFun {
 				findAndPassbyid(LibraComVar.LOGIN_EMAIL, Email);
 				findAndPassbyid(LibraComVar.LOGIN_PWD, Password);
 				clickByXpath(LibraComVar.LOGIN_BTN);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_INVAL_PWD));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_INVAL_PWD));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_INVAL_PWD, expectedPasswordAlert);								
 			}
 		}
@@ -208,7 +208,7 @@ public class LoginTest extends LibraComFun {
 				findAndPassbyid(LibraComVar.LOGIN_EMAIL, Email);
 				findAndPassbyid(LibraComVar.LOGIN_PWD, Password);
 				clickByXpath(LibraComVar.LOGIN_BTN);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_INVAL_PWD));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_INVAL_PWD));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_INVAL_PWD, expectedPasswordAlert);								
 			}
 		}
@@ -235,7 +235,7 @@ public class LoginTest extends LibraComFun {
 				findAndPassbyid(LibraComVar.LOGIN_EMAIL, Email);
 				findAndPassbyid(LibraComVar.LOGIN_PWD, Password);
 				clickByXpath(LibraComVar.LOGIN_BTN);
-				waitForElementPresent(driver, By.xpath(LibraComVar.LOGIN_LESS_8_CHAR_PWD));
+				waitForElementPresent(By.xpath(LibraComVar.LOGIN_LESS_8_CHAR_PWD));
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_LESS_8_CHAR_PWD, expectedPasswordAlert);
 				stringComparion(LibraComVar.XPATH,LibraComVar.VALID_MSG_EMAIL, expectedEmailAlert);			
 			}
@@ -261,7 +261,7 @@ public class LoginTest extends LibraComFun {
 				findAndPassbyid(LibraComVar.LOGIN_EMAIL, Email);
 				findAndPassbyid(LibraComVar.LOGIN_PWD, Password);
 				clickByXpath(LibraComVar.LOGIN_BTN);
-				waitForElementPresent(driver, By.xpath(LibraComVar.HOME_ACCOUNT_CIRCLE));
+				waitForElementPresent(By.xpath(LibraComVar.HOME_ACCOUNT_CIRCLE));
 				if (sheetName.equals(LibraComVar.LOGIN)) {
 					clickByXpath(LibraComVar.HOME_ACCOUNT_CIRCLE);
 					stringComparion(LibraComVar.XPATH,LibraComVar.HOME_AGENT_EMAIL, Email);

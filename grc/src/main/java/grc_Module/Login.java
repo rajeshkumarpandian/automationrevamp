@@ -66,11 +66,30 @@ public class Login {
 	public void beforeMethod(Method m) throws Exception {		
 		driver.get(baseUrl);		
 	}
-
+	
 	@Test(priority = 1)
-	public void test01_checkLogin() throws Exception {		
+	public void test01_checkHTTPError() throws Exception {		
+		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
+		libraPageTest.BrokenLink();
+	}
+
+	@Test(priority = 2)
+	public void test02_checkLogin() throws Exception {		
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.Login(username,password);
+	}
+	
+	@Test(priority = 3)
+	public void test03_checkHTTPErrorAfterLogin() throws Exception {		
+		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
+		libraPageTest.BrokenLink();
+	}
+	
+
+	@Test(priority = 4)
+	public void test04_checkMenuClicks() throws Exception {		
+		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
+		libraPageTest.MenuClicks();
 	}
 	
 	//@AfterTest

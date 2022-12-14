@@ -26,7 +26,7 @@ public class LibraComFun extends selenium_module_Test.ComFun{
 	}
 
 	public void addCompanyCardView(String COMPName, String Email, String Website, String Mobile, String Phone,String StreetAddress, String Locality, String City, String State, String PinCode, String ExistingPerson,String NewPerson,String NewPersonLN, String NewPerEmail, String NewPerMobile) {		
-		waitForElementPresent(driver,By.name(LibraComVar.COMP_NAME));
+		waitForElementPresent(By.name(LibraComVar.COMP_NAME));
 		findAndPassbyname(LibraComVar.COMP_NAME, COMPName);
 		if (!ExistingPerson.isEmpty()) {
 			if (ExistingPerson.contains("&")) {
@@ -37,7 +37,7 @@ public class LibraComFun extends selenium_module_Test.ComFun{
 		}
 		if (!NewPerson.isEmpty()) {
 			clickByXpath(LibraComVar.COMP_NEW_PER);
-			waitForElementPresent(driver, By.xpath(LibraComVar.COMP_NEW_PER_FORM));			
+			waitForElementPresent(By.xpath(LibraComVar.COMP_NEW_PER_FORM));			
 				findAndPassbyname(LibraComVar.COMP_NEW_PER_FN, NewPerson);
 				findAndPassbyname(LibraComVar.COMP_NEW_PER_LN, NewPersonLN);
 			findAndPassbyname(LibraComVar.COMP_NEW_PER_EMAIL, NewPerEmail);
@@ -309,14 +309,14 @@ public class LibraComFun extends selenium_module_Test.ComFun{
 	 */
 	public void SingleSearchdropdownSelection(String ID,String Searchbox, String Listxpath, String value) {
 		int noOfContact = 0;
-		waitForElementPresent(driver,By.id(ID));
+		waitForElementPresent(By.id(ID));
 		clickById(ID);						
 		if (value.contains("&")) {
 			String[] contact = value.split("&");
 			int noOfContacts = contact.length;
 			for (int i = 0; i <= noOfContacts; i++) {
 				driver.findElement(By.id(Searchbox)).sendKeys(contact[i]);
-				waitForElementPresent(driver, By.xpath(Listxpath));
+				waitForElementPresent(By.xpath(Listxpath));
 				List<WebElement> ContactList = driver.findElements(By.xpath(Listxpath));
 				noOfContact = ContactList.size();
 				for (int k = 1; k <= noOfContact; k++) {
@@ -331,7 +331,7 @@ public class LibraComFun extends selenium_module_Test.ComFun{
 			}
 		}else {
 			driver.findElement(By.id(Searchbox)).sendKeys(value);
-			waitForElementPresent(driver,By.xpath(Listxpath));
+			waitForElementPresent(By.xpath(Listxpath));
 			List<WebElement> ContactList = driver.findElements(By.xpath(Listxpath));
 			noOfContact = ContactList.size();
 			for (int k = 1; k <= noOfContact; k++) {
@@ -437,7 +437,7 @@ public class LibraComFun extends selenium_module_Test.ComFun{
 	 */
 	public void addPersonCardView(String FirstName, String LastName, String CompName, String NewCompName,String NewCompEmail,
 			String NewCompMob,String Mob,String mail, String Address,String locality,String City,String State,String pin) {		
-		waitForElementPresent(driver,By.name( LibraComVar.COMP_NEW_PER_FN));
+		waitForElementPresent(By.name( LibraComVar.COMP_NEW_PER_FN));
 		findAndPassbyname(LibraComVar.COMP_NEW_PER_FN, FirstName);  
 		findAndPassbyname(LibraComVar.COMP_NEW_PER_LN, LastName);	
 		if(!CompName.isEmpty()) {
@@ -445,7 +445,7 @@ public class LibraComFun extends selenium_module_Test.ComFun{
 		}
 		if(!NewCompName.isEmpty()) {
 			clickById(LibraComVar.PER_ADD_COMP);
-			waitForElementPresent(driver,By.name(LibraComVar.COMP_NAME));
+			waitForElementPresent(By.name(LibraComVar.COMP_NAME));
 			findAndPassbyname(LibraComVar.COMP_NAME, NewCompName);
 			findAndPassbyname(LibraComVar.COMP_EMAIL, NewCompEmail);
 			findAndPassbyname(LibraComVar.COMP_MOB, NewCompMob);				
@@ -493,7 +493,7 @@ public class LibraComFun extends selenium_module_Test.ComFun{
 				findAndPassbyname(LibraComVar.AD_CASE_YEAR, CaseYear);
 			}
 			if (CourtType.contains("Other Courts")) {
-				waitForElementPresent(driver, By.name(LibraComVar.AD_CASE_COURT_NAME));
+				waitForElementPresent(By.name(LibraComVar.AD_CASE_COURT_NAME));
 				findAndPassbyname(LibraComVar.AD_CASE_COURT_NAME, CaseCourtStateComTrib);
 				findAndPassbyname(LibraComVar.AD_CASE_TYPE, CaseDisCourtTrib);				
 			}
@@ -533,7 +533,7 @@ public class LibraComFun extends selenium_module_Test.ComFun{
 			SingleSearchdropdownSelection(LibraComVar.CLIENT_CLICK, LibraComVar.CLIENT_CLICK, LibraComVar.CLIENT_SEARCH_LIST, ClientName);	
 		}else {
 			clickById(LibraComVar.AD_CASE_NEW_PER_BUT);
-			waitForElementPresent(driver, By.name(LibraComVar.COMP_NEW_PER_FN));
+			waitForElementPresent(By.name(LibraComVar.COMP_NEW_PER_FN));
 			findAndPassbyname(LibraComVar.COMP_NEW_PER_FN,FirstName);									
 			findAndPassbyname(LibraComVar.COMP_NEW_PER_LN,LastName);			
 			findAndPassbyname(LibraComVar.COMP_NEW_PER_EMAIL,Email);			

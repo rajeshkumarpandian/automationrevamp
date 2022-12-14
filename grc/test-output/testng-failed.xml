@@ -6,8 +6,8 @@
       <class name="grc_Module.Login">
         <methods>
           <include name="beforeMethod"/>
+          <include name="test02_checkLogin"/>
           <include name="openbrowser"/>
-          <include name="test01_checkLogin"/>
         </methods>
       </class> <!-- grc_Module.Login -->
     </classes>

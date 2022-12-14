@@ -35,7 +35,7 @@ public class DeleteAllTest extends LibraComFun {
 			if (Test_Scenario.equals("Positive") && (Scenario.equals("Company"))) {
 				driver.get(baseUrl + LibraComVar.CONT_COMP_CARD_VIEW);				
 				ContactCardEditDelete(LibraComVar.ALL_PAGE_CARD_LIST, CompanyName, "delete");				
-				waitForElementPresent(driver,By.xpath(LibraComVar.CONT_DEL));
+				waitForElementPresent(By.xpath(LibraComVar.CONT_DEL));
 				clickByXpath(LibraComVar.CONT_DEL);
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_INVAL_PWD, ValidationMessage);																								
 			}
@@ -60,7 +60,7 @@ public class DeleteAllTest extends LibraComFun {
 			if (Test_Scenario.equals("Positive") && (Scenario.equals("Person"))) {
 				driver.get(baseUrl + LibraComVar.CONT_PEOPLE_CARD_VIEW);				
 				ContactCardEditDelete(LibraComVar.ALL_PAGE_CARD_LIST, CompanyName, "delete");				
-				waitForElementPresent(driver,By.xpath(LibraComVar.CONT_DEL));
+				waitForElementPresent(By.xpath(LibraComVar.CONT_DEL));
 				clickByXpath(LibraComVar.CONT_DEL);
 				stringComparion(LibraComVar.XPATH,LibraComVar.LOGIN_INVAL_PWD, ValidationMessage);																								
 			}
