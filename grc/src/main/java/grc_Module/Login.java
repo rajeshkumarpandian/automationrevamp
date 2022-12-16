@@ -80,7 +80,7 @@ public class Login {
 	}
 	
 	
-	//@Test(priority = 1)
+	@Test(priority = 1)
 	public void test01_checkHTTPError() throws Exception {		
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.BrokenLink();
@@ -92,7 +92,7 @@ public class Login {
 		libraPageTest.Login(username,password);
 	}
 	
-	//@Test(priority = 3)
+	@Test(priority = 3)
 	public void test03_checkHTTPErrorAfterLogin() throws Exception {		
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.BrokenLink();

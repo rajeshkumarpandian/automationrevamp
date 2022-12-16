@@ -40,8 +40,7 @@ public class Login {
 
 	private static WebDriver driver;
 	private static String baseUrl;
-	private static TestBrowser testBrowser;	
-	
+	private static TestBrowser testBrowser;
 
 	@BeforeClass
 	public void openbrowser() throws IOException {
@@ -65,19 +64,18 @@ public class Login {
 	}
 
 	@BeforeMethod
-	public void beforeMethod(Method m) throws Exception {		
-		driver.get(baseUrl);		
+	public void beforeMethod(Method m) throws Exception {
+		driver.get(baseUrl);
 	}
 
 	@Test(groups = { "sanity" })
-	public void test01_checkNullEmailandPassword() throws Exception {
-		String sheetname = LibraComVar.LOGIN;
+	public void test01_checkHTTPError() throws Exception {
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
-		libraPageTest.EmailandPasswordNull(sheetname);
+		libraPageTest.BrokenLink();
 	}
 
 	@Test(groups = { "sanity" })
-	public void test02_checkNullEmail() throws Exception {
+	public void test02_checkEmailNull() throws Exception {
 		String sheetname = LibraComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.EmailNull(sheetname);
@@ -91,56 +89,76 @@ public class Login {
 	}
 
 	@Test(groups = { "sanity" })
-	public void test04_checkValEmailInvalidPwd() throws Exception {
+	public void test04_checkEmailandPasswordNull() throws Exception {
+		String sheetname = LibraComVar.LOGIN;
+		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
+		libraPageTest.EmailandPasswordNull(sheetname);
+	}
+
+	@Test(groups = { "sanity" })
+	public void test05_checkValEmailInvalidPwd() throws Exception {
 		String sheetname = LibraComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.ValEmailInvalidPwd(sheetname);
 	}
 
 	@Test(groups = { "sanity" })
-	public void test05_checkValEmailLess8CharPwd() throws Exception {
+	public void test06_checkValEmailLess8CharPwd() throws Exception {
 		String sheetname = LibraComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.ValEmailLess8CharPwd(sheetname);
 	}
 
 	@Test(groups = { "sanity" })
-	public void test06_checkInvalidEmailValPwd() throws Exception {
+	public void test07_checkInvalidEmailValPwd() throws Exception {
 		String sheetname = LibraComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.InvalidEmailValPwd(sheetname);
 	}
 
 	@Test(groups = { "sanity" })
-	public void test07_checkInvalidEmailLess8CharPwd() throws Exception {
+	public void test08_checkInvalidEmailLess8CharPwd() throws Exception {
 		String sheetname = LibraComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.InvalidEmailLess8CharPwd(sheetname);
 	}
 
 	@Test(groups = { "sanity" })
-	public void test08_checkInvalidEmailAndPwd() throws Exception {
+	public void test09_checkInvalidEmailAndPwd() throws Exception {
 		String sheetname = LibraComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.InvalidEmailAndPwd(sheetname);
 	}
 
 	@Test(groups = { "sanity" })
-	public void test09_checkLess8CharEmailPwd() throws Exception {
+	public void test10_checkLess8CharEmailPwd() throws Exception {
 		String sheetname = LibraComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.Less8CharEmailPwd(sheetname);
 	}
 
+	@Test(groups = { "sanity" })
+	public void test11_checkLess8CharEmail() throws Exception {
+		String sheetname = LibraComVar.LOGIN;
+		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
+		libraPageTest.Less8CharEmail(sheetname);
+	}
+
 	@Test(groups = { "smoke" })
-	public void test10_checkLogin() throws Exception {
+	public void test12_checkLogin() throws Exception {
 		String sheetname = LibraComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.Login(sheetname);
 	}
 
+	@Test(groups = { "sanity" })
+	public void test13_checkHTTPErrorAfterLogin() throws Exception {
+		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
+		libraPageTest.BrokenLink();
+	}
+
 	@AfterTest
-	public void aftertest() throws Exception {		
+	public void aftertest() throws Exception {
 		driver.quit();
 	}
 }

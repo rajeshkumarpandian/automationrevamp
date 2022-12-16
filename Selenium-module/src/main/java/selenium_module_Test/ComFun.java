@@ -35,15 +35,15 @@ public class ComFun extends ComVar {
 	public void reportlog(String testStatus, String Description) throws Exception {
 
 		if (testStatus.toLowerCase().equals("fail")) {
-			Reporter.log("" + Description.toUpperCase() + "<b> <font color='red' font size = 4>" + " ==> FAIL"
+			Reporter.log("" + Description + "<b> <font color='red' font size = 4>" + " ==> FAIL"
 					+ "</font></b> \n");
 		}
 		if (testStatus.toLowerCase().equals("pass")) {
-			Reporter.log("" + Description.toUpperCase() + "<b> <font color='blue' font size = 4>" + " ==> PASS"
+			Reporter.log("" + Description + "<b> <font color='blue' font size = 4>" + " ==> PASS"
 					+ "</font></b> \n");
 		}
 		if (testStatus.toLowerCase().equals("warning")) {
-			Reporter.log("" + Description.toUpperCase() + "<b> <font color='yellow' font size = 4>" + " ==> WARNING"
+			Reporter.log("" + Description + "<b> <font color='yellow' font size = 4>" + " ==> WARNING"
 					+ "</font></b> \n");
 		}
 	}
