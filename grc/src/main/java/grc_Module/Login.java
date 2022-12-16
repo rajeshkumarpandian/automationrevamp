@@ -24,8 +24,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import atu.testrecorder.ATUTestRecorder;
+import atu.testrecorder.exceptions.ATUTestRecorderException;
 import grc_Test.*;
 import io.netty.handler.logging.LogLevel;
+import selenium_module_Test.ComVar;
 
 public class Login {
 
@@ -38,7 +41,7 @@ public class Login {
 	private static TestBrowser testBrowser;	
 	private static String username;
 	private static String password;
-
+	ATUTestRecorder recorder;
 	@BeforeClass
 	public void openbrowser() throws IOException {
 
@@ -59,15 +62,25 @@ public class Login {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-
+		driver.get(baseUrl);	
 	}
 
 	@BeforeMethod
 	public void beforeMethod(Method m) throws Exception {		
-		driver.get(baseUrl);		
+			
 	}
 	
-	@Test(priority = 1)
+	//@BeforeTest
+	public void Record () throws ATUTestRecorderException {
+		DateFormat dateFormat = new SimpleDateFormat(ComVar.CALENDAR_TEXT_FORMAT);
+		Date date = new Date();		
+		//String Methodname = new Object() {}.getClass().getEnclosingMethod().getName();
+		recorder = new ATUTestRecorder(ComVar.VIDEO_LOCATION, "TestVideo" + "-" + dateFormat.format(date),false);
+		recorder.start();
+	}
+	
+	
+	//@Test(priority = 1)
 	public void test01_checkHTTPError() throws Exception {		
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.BrokenLink();
@@ -79,21 +92,22 @@ public class Login {
 		libraPageTest.Login(username,password);
 	}
 	
-	@Test(priority = 3)
+	//@Test(priority = 3)
 	public void test03_checkHTTPErrorAfterLogin() throws Exception {		
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.BrokenLink();
 	}
 	
-
 	@Test(priority = 4)
 	public void test04_checkMenuClicks() throws Exception {		
+		String sheetname = GComVar.GRC;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
-		libraPageTest.MenuClicks();
+		libraPageTest.MenuClicks(sheetname);
 	}
 	
 	//@AfterTest
 	public void aftertest() throws Exception {		
+		recorder.stop();
 		driver.quit();
 	}
 }

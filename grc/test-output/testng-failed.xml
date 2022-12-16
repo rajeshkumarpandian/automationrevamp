@@ -6,7 +6,7 @@
       <class name="grc_Module.Login">
         <methods>
           <include name="beforeMethod"/>
-          <include name="test02_checkLogin"/>
+          <include name="test04_checkMenuClicks"/>
           <include name="openbrowser"/>
         </methods>
       </class> <!-- grc_Module.Login -->

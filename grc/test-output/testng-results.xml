@@ -1,39 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[LOGIN DONE SUCCESSFULLY IN GRC WEB USING THE USERNAME 'AUTOMATIONTEST@GMAIL.COM'<b> <font color='blue' font size = 4> ==> PASS</font></b> 
+]]>
+    </line>
+    <line>
+      <![CDATA[THERE IS NO BROKEN LINKS IN THE LOGIN PAGE<b> <font color='blue' font size = 4> ==> PASS</font></b> 
+]]>
+    </line>
+    <line>
+      <![CDATA[THERE IS NO BROKEN LINKS IN THE LOGIN PAGE<b> <font color='blue' font size = 4> ==> PASS</font></b> 
+]]>
+    </line>
+    <line>
+      <![CDATA[THERE IS NO BROKEN LINKS IN THE LOGIN PAGE<b> <font color='blue' font size = 4> ==> PASS</font></b> 
+]]>
+    </line>
     <line>
       <![CDATA[THERE IS NO BROKEN LINKS IN THE LOGIN PAGE<b> <font color='blue' font size = 4> ==> PASS</font></b> 
 ]]>
     </line>
   </reporter-output>
-  <suite started-at="2022-12-14T07:39:48 IST" name="Default suite" finished-at="2022-12-14T07:39:54 IST" duration-ms="6165">
+  <suite started-at="2022-12-15T19:44:54 IST" name="Default suite" finished-at="2022-12-15T19:46:03 IST" duration-ms="69677">
     <groups>
     </groups>
-    <test started-at="2022-12-14T07:39:48 IST" name="Default test" finished-at="2022-12-14T07:39:54 IST" duration-ms="6165">
+    <test started-at="2022-12-15T19:44:54 IST" name="Default test" finished-at="2022-12-15T19:46:03 IST" duration-ms="69677">
       <class name="grc_Module.Login">
-        <test-method is-config="true" signature="openbrowser()[pri:0, instance:grc_Module.Login@434a63ab]" started-at="2022-12-14T07:39:48 IST" name="openbrowser" finished-at="2022-12-14T07:39:49 IST" duration-ms="1762" status="PASS">
+        <test-method is-config="true" signature="openbrowser()[pri:0, instance:grc_Module.Login@17497425]" started-at="2022-12-15T19:44:54 IST" name="openbrowser" finished-at="2022-12-15T19:44:57 IST" duration-ms="3305" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openbrowser -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Login@434a63ab]" started-at="2022-12-14T07:39:49 IST" name="beforeMethod" finished-at="2022-12-14T07:39:51 IST" duration-ms="1604" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Login@17497425]" started-at="2022-12-15T19:44:57 IST" name="beforeMethod" finished-at="2022-12-15T19:44:57 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void grc_Module.Login.test01_checkHTTPError() throws java.lang.Exception]]>
+                <![CDATA[public void grc_Module.Login.test02_checkLogin() throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test01_checkHTTPError()[pri:1, instance:grc_Module.Login@434a63ab]" started-at="2022-12-14T07:39:51 IST" name="test01_checkHTTPError" finished-at="2022-12-14T07:39:54 IST" duration-ms="2767" status="PASS">
+        <test-method signature="test02_checkLogin()[pri:2, instance:grc_Module.Login@17497425]" started-at="2022-12-15T19:44:57 IST" name="test02_checkLogin" finished-at="2022-12-15T19:45:01 IST" duration-ms="4119" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[LOGIN DONE SUCCESSFULLY IN GRC WEB USING THE USERNAME 'AUTOMATIONTEST@GMAIL.COM'<b> <font color='blue' font size = 4> ==> PASS</font></b> 
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test02_checkLogin -->
+        <test-method signature="test04_checkMenuClicks()[pri:4, instance:grc_Module.Login@17497425]" started-at="2022-12-15T19:45:01 IST" name="test04_checkMenuClicks" finished-at="2022-12-15T19:46:03 IST" duration-ms="62223" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[THERE IS NO BROKEN LINKS IN THE LOGIN PAGE<b> <font color='blue' font size = 4> ==> PASS</font></b> 
 ]]>
             </line>
+            <line>
+              <![CDATA[THERE IS NO BROKEN LINKS IN THE LOGIN PAGE<b> <font color='blue' font size = 4> ==> PASS</font></b> 
+]]>
+            </line>
+            <line>
+              <![CDATA[THERE IS NO BROKEN LINKS IN THE LOGIN PAGE<b> <font color='blue' font size = 4> ==> PASS</font></b> 
+]]>
+            </line>
+            <line>
+              <![CDATA[THERE IS NO BROKEN LINKS IN THE LOGIN PAGE<b> <font color='blue' font size = 4> ==> PASS</font></b> 
+]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- test01_checkHTTPError -->
+        </test-method> <!-- test04_checkMenuClicks -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Login@17497425]" started-at="2022-12-15T19:45:01 IST" name="beforeMethod" finished-at="2022-12-15T19:45:01 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void grc_Module.Login.test04_checkMenuClicks() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
       </class> <!-- grc_Module.Login -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

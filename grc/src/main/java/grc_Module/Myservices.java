@@ -84,7 +84,7 @@ public class Myservices {
 	public void test02_checkSelectServices() throws Exception {		
 		String sheetname = GComVar.GRC;
 		MyservicesTest grcPageTest = new MyservicesTest(Myservices.driver, Myservices.baseUrl);
-		grcPageTest.SelectServices(sheetname);
+		//grcPageTest.SelectServices(sheetname);
 	}
 		
 	//@AfterTest
