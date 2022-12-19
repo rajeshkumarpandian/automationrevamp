@@ -40,6 +40,8 @@ public class LoginTest extends GComFun {
 		} else {
 			reportlog("fail", errLog + "\n");
 		}
+		
+		//https://chat.googleapis.com/v1/spaces/AAAALheYDiM/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=NyFHpd5uEz9H7g3M3CXA6kZYo9r9ZBAEqLV6SixH5Ok%3D
 	}
 	/**
 	 * 
