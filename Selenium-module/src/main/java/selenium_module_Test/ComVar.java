@@ -10,7 +10,7 @@ public class ComVar{
 	public static final Duration SERVER_TIMEOUT = Duration.ofSeconds(100);
 	
 	
-	public static final String CALENDAR_TEXT_FORMAT = "dd-MMM-yyyy"; 
+	public static final String CALENDAR_TEXT_FORMAT = "dd-MMM-yyyy HH-mm-ss"; 
 	public static final String VIDEO_LOCATION = "./src/test/resources/videos";
 	
 	public static final String FOR = "for";

@@ -74,8 +74,8 @@ public class Login {
 	public void Record () throws ATUTestRecorderException {
 		DateFormat dateFormat = new SimpleDateFormat(ComVar.CALENDAR_TEXT_FORMAT);
 		Date date = new Date();		
-		//String Methodname = new Object() {}.getClass().getEnclosingMethod().getName();
-		recorder = new ATUTestRecorder(ComVar.VIDEO_LOCATION, "TestVideo" + "-" + dateFormat.format(date),false);
+		String Methodname = new Object() {}.getClass().getEnclosingMethod().getName();
+		recorder = new ATUTestRecorder(ComVar.VIDEO_LOCATION, Methodname + "-" + dateFormat.format(date),false);
 		recorder.start();
 	}
 	
@@ -107,7 +107,7 @@ public class Login {
 	
 	//@AfterTest
 	public void aftertest() throws Exception {		
-		recorder.stop();
+		//recorder.stop();
 		driver.quit();
 	}
 }

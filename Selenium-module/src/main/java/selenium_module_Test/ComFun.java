@@ -35,16 +35,13 @@ public class ComFun extends ComVar {
 	public void reportlog(String testStatus, String Description) throws Exception {
 
 		if (testStatus.toLowerCase().equals("fail")) {
-			Reporter.log("" + Description + "<b> <font color='red' font size = 4>" + " ==> FAIL"
-					+ "</font></b> \n");
+			Reporter.log("" + Description + "<b> <font color='red' font size = 4>" + " ==> FAIL"+ "</font></b> \n");
 		}
 		if (testStatus.toLowerCase().equals("pass")) {
-			Reporter.log("" + Description + "<b> <font color='blue' font size = 4>" + " ==> PASS"
-					+ "</font></b> \n");
+			Reporter.log("" + Description + "<b> <font color='blue' font size = 4>" + " ==> PASS"+ "</font></b> \n");
 		}
 		if (testStatus.toLowerCase().equals("warning")) {
-			Reporter.log("" + Description + "<b> <font color='yellow' font size = 4>" + " ==> WARNING"
-					+ "</font></b> \n");
+			Reporter.log("" + Description + "<b> <font color='#8B008B' font size = 4>" + " ==> WARNING"+ "</font></b> \n");
 		}
 	}
 
@@ -55,9 +52,9 @@ public class ComFun extends ComVar {
 	 * @param expectedValue
 	 * @return
 	 */
-	public boolean stringComparion(String elementType, String elementValue, String expectedValue) {
-		boolean flag = false;
-		String getValue = "";
+	public String stringComparion(String elementType, String elementValue, String expectedValue) {
+		String getValue = "";	
+		String errLog = "";
 		if (elementType.equals("XPATH")) {
 			getValue = driver.findElement(By.xpath(elementValue)).getText().trim();
 		} else if (elementType.equals("ID")) {
@@ -67,11 +64,11 @@ public class ComFun extends ComVar {
 		} else if (elementType.equals("CLASSNAME")) {
 			getValue = driver.findElement(By.className(elementValue)).getText().trim();
 		}
-		if (getValue.equals(expectedValue)) {
-			flag = true;
-		}
+		if ((getValue.equals(expectedValue))==false) {
+			errLog += ("There is an error while comparing the string. Expected value is '"+expectedValue+"' but got value is '"+getValue+"'");
+		}	
 		// org.testng.Assert.assertEquals(getValue, expectedValue);
-		return flag;
+		return errLog;
 	}
 
 	/**

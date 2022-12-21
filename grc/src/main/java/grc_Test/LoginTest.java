@@ -26,21 +26,22 @@ public class LoginTest extends GComFun {
 	}
 	
 	ATUTestRecorder recorder;
+	DateFormat dateFormat = new SimpleDateFormat(CALENDAR_TEXT_FORMAT);
+	Date date = new Date();	 
 	
-	/*
-	 *  DateFormat dateFormat = new
-	 * SimpleDateFormat(CALENDAR_TEXT_FORMAT); Date date = new Date();
-	 */
 
 	public void BrokenLink() throws Exception {
+		String Methodname = new Object() {}.getClass().getEnclosingMethod().getName();
+		recorder = new ATUTestRecorder(ComVar.VIDEO_LOCATION, Methodname + "-" + dateFormat.format(date),false);
+		recorder.start();
 		String errLog = "";
 		errLog += HTTPErrorCheck();
 		if (errLog == "") {
-			reportlog("pass", "There is no broken links in the login page");
+			reportlog("pass", "There is no broken links \n");
 		} else {
 			reportlog("fail", errLog + "\n");
 		}
-		
+		recorder.stop();
 		//https://chat.googleapis.com/v1/spaces/AAAALheYDiM/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=NyFHpd5uEz9H7g3M3CXA6kZYo9r9ZBAEqLV6SixH5Ok%3D
 	}
 	/**
@@ -51,21 +52,29 @@ public class LoginTest extends GComFun {
 	 * @throws IOException
 	 */
 	public void Login(String username, String password) throws Exception, IOException {	
+		String errLog = "";
+		String Methodname = new Object() {}.getClass().getEnclosingMethod().getName();
+		recorder = new ATUTestRecorder(ComVar.VIDEO_LOCATION, Methodname + "-" + dateFormat.format(date),false);
+		recorder.start();
 		if (iselementPresent(By.xpath(ERROR_404_502)) == true) {
 			String Errordata = driver.findElement(By.xpath(ERROR_404_502)).getText();
 			reportlog("fail", "Pages throws " + Errordata + "");
 		}
 		if (iselementPresent(By.xpath(SERVER_ERROR)) == true) {
-			reportlog("fail", "Pages throws server error problem");
+			reportlog("fail", "Pages throws server error problem \n");
 		}
 		findAndPassbyxpath(GComVar.LOGIN_EMAIL_VALID, username);
 		findAndPassbyxpath(GComVar.LOGIN_PWD_VALID, password);
 		clickByXpath(GComVar.LOGIN_BTN);
 		waitForElementPresent(By.xpath(GComVar.PROFILE_ICON));
-		clickByXpath(GComVar.PROFILE_ICON);
-		if (stringComparion(GComVar.XPATH, GComVar.PROFILE_EMAIL, username) == true) {
-			reportlog("pass", "Login done successfully in grc web using the username '" + username + "'");
-		}		
+		clickByXpath(GComVar.PROFILE_ICON);		
+		errLog += stringComparion(GComVar.XPATH, GComVar.PROFILE_EMAIL, username);		
+		if ( errLog == "") {
+			reportlog("pass", "Login done successfully in grc web using the username '" + username + "'\n");
+		}	else {
+			reportlog("fail", "Login done successfully in grc web,but '" + errLog + "'\n");
+		}
+		recorder.stop();
 	}
 	/**
 	 * 
@@ -74,39 +83,51 @@ public class LoginTest extends GComFun {
 	 * @throws IOException
 	 */
 	public void MenuClicks(String sheetName) throws Exception, IOException {
+		String Methodname = new Object() {}.getClass().getEnclosingMethod().getName();
+		recorder = new ATUTestRecorder(ComVar.VIDEO_LOCATION, Methodname + "-" + dateFormat.format(date),false);
+		recorder.start();
 		driver.navigate().refresh();
 		String errLog = "";
-		errLog += MenusclickLinkCheck("//*[@id='dashboard_left_section_home']/li");
+		errLog += MenusclickLinkCheck(GComVar.LEFT_SIDE_NAV);
 		if (errLog == "") {
-			reportlog("pass", "There is no broken links in the login page");
+			reportlog("pass", "There is no 404,502, server issue, in 'left side navigaiton' pages \n");
 		} else {
 			reportlog("fail", errLog + "\n");
 		}
 
-		errLog += MenusclickLinkCheck("//*[@id='header_function']/li[contains(@id,'Pill')]");
+		errLog += MenusclickLinkCheck(GComVar.RIGHT_TOP_SIDE_NAV);
 		if (errLog == "") {
-			reportlog("pass", "There is no broken links in the login page");
+			reportlog("pass", "There is no 404,502, server issue, in 'right top side navigaiton' pages \n");
 		} else {
 			reportlog("fail", errLog + "\n");
 		}
 
 		driver.navigate().refresh();
-		clickByXpath("//*[@id='myServicesNavPill']/a");
-		errLog += MenusclickLinkCheck("//*[@class='col-lg-8 grc_btns_group service-nav-buttons']/ul/li");
+		clickByXpath(GComVar.MY_SERVICES_NAV);
+		errLog += MenusclickLinkCheck(GComVar.MY_SERVICES_SUB_LIST);
 		if (errLog == "") {
-			reportlog("pass", "There is no broken links in the login page");
+			reportlog("pass", "There is no 404,502, server issue, in 'my services sub navigaiton' pages \n");
 		} else {
 			reportlog("fail", errLog + "\n");
 		}	
 		
-		clickByXpath("//*[@id='paymentNavPill']/a");
-		errLog += MenusclickLinkCheck("//*[@class='col-lg-6 grc_btns_group service-nav-buttons']/ul/li");
+		clickByXpath(GComVar.MY_PAYMENTS_NAV);
+		errLog += MenusclickLinkCheck(GComVar.MY_PAYMENTS_SUB_LIST);
 		if (errLog == "") {
-			reportlog("pass", "There is no broken links in the login page");
+			reportlog("pass", "There is no 404,502, server issue, in 'my payment sub navigaiton' pages \n");
 		} else {
 			reportlog("fail", errLog + "\n");
-		}	
+		}
 		
-		
+		clickByXpath(GComVar.SETTINGS_NAV);
+		waitForElementPresent(By.xpath(GComVar.SETTINGS_USERS_NAV));
+		clickByXpath(GComVar.USERS_NAV);
+		errLog += MenusclickLinkCheck(GComVar.LEFT_SETTINGS_NAV);
+		if (errLog == "") {
+			reportlog("pass", "There is no 404,502, server issue, in 'settings' page \n");
+		} else {
+			reportlog("fail", errLog + "\n");
+		}						
+		recorder.stop();
 	}
 }

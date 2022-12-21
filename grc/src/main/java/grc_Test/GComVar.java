@@ -43,6 +43,16 @@ public class GComVar {
 	public static String MY_SERVICES = "//*[@alt='My Services']";
 	public static String PROFILE_ICON = "//*[@class='profileicon']";
 	public static String PROFILE_EMAIL = "(//*[@class='col-md-9'])[1]/p[1]";
+	public static String LEFT_SIDE_NAV = "//*[@id='dashboard_left_section_home']/li";
+	public static String RIGHT_TOP_SIDE_NAV = "//*[@id='header_function']/li[contains(@id,'Pill')]";
+	public static String MY_SERVICES_NAV = "//*[@id='myServicesNavPill']/a";
+	public static String MY_SERVICES_SUB_LIST = "//*[@class='col-lg-8 grc_btns_group service-nav-buttons']/ul/li";
+	public static String MY_PAYMENTS_NAV = "//*[@id='paymentNavPill']/a";
+	public static String MY_PAYMENTS_SUB_LIST = "//*[@class='col-lg-6 grc_btns_group service-nav-buttons']/ul/li";
+	public static String SETTINGS_NAV = "//*[@class='settingsicon']";
+	public static String SETTINGS_USERS_NAV = "(//*[@class='grc_navpills nav nav-pills'])[1]";
+	public static String USERS_NAV = "(//*[@class='grc_navpills nav nav-pills'])[1]/li[1]";
+	public static String LEFT_SETTINGS_NAV = "(//*[@class='grc_navpills nav nav-pills'])[2]/li";
 	
 	
 /*********************************************HOME PAGE*********************************************************************************/	

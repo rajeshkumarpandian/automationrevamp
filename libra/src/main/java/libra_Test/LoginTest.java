@@ -33,6 +33,7 @@ public class LoginTest extends LibraComFun {
 	 * @throws IOException
 	 */
 	public void EmailNull(String sheetName) throws Exception, IOException {
+		String errLog = "";
 		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
 		Sheet sheet1 = file1.getSheet(sheetName);
 		int rowCount = sheet1.getRows();
@@ -49,10 +50,11 @@ public class LoginTest extends LibraComFun {
 			if (Test_Scenario.equals("Negative") && (Scenario.equals("Email_Null"))) {
 				findAndPassbyid(LibraComVar.LOGIN_PWD, Password);
 				clickByXpath(LibraComVar.LOGIN_BTN);
-				if ((stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_EMAIL_VALID, expectedEmailAlert)) == true) {
+				errLog += stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_EMAIL_VALID, expectedEmailAlert);
+				if (errLog == "") {
 					reportlog("pass", "CHECKING LOGIN PAGE USING NULL EMAIL WITH RANDOM PASSWORD'" + Password + "'");
 				} else {
-					reportlog("fail", "CHECKING LOGIN PAGE USING NULL EMAIL WITH RANDOM PASSWORD'" + Password + "'");
+					reportlog("fail", errLog + "\n");
 				}
 			}
 		}
@@ -65,6 +67,7 @@ public class LoginTest extends LibraComFun {
 	 * @throws IOException
 	 */
 	public void PwdNull(String sheetName) throws Exception, IOException {
+		String errLog = "";
 		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
 		Sheet sheet1 = file1.getSheet(sheetName);
 		int rowCount = sheet1.getRows();
@@ -81,11 +84,11 @@ public class LoginTest extends LibraComFun {
 			if (Test_Scenario.equals("Negative") && (Scenario.equals("Pwd_Null"))) {
 				findAndPassbyid(LibraComVar.LOGIN_EMAIL, Email);
 				clickByXpath(LibraComVar.LOGIN_BTN);
-				if ((stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_PWD_NULL_VALID,
-						expectedPasswordAlert)) == true) {
+				errLog += stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_PWD_NULL_VALID,expectedPasswordAlert);
+				if (errLog  == "") {
 					reportlog("pass", "CHECKING LOGIN PAGE USING NULL PASSWORD WITH VALID EMAIL '" + Email + "'");
 				} else {
-					reportlog("fail", "CHECKING LOGIN PAGE USING NULL PASSWORD WITH VALID EMAIL '" + Email + "'");
+					reportlog("fail", errLog + "\n");
 				}
 			}
 		}
@@ -98,6 +101,8 @@ public class LoginTest extends LibraComFun {
 	 * @throws IOException
 	 */
 	public void EmailandPasswordNull(String sheetName) throws Exception, IOException {
+		String errLog = "";
+		String errLogEmail = "";
 		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
 		Sheet sheet1 = file1.getSheet(sheetName);
 		int rowCount = sheet1.getRows();
@@ -112,14 +117,15 @@ public class LoginTest extends LibraComFun {
 			String expectedEmailAlert = strHM.get("expectedEmailAlert");
 			String expectedPasswordAlert = strHM.get("expectedPasswordAlert");
 			if (Test_Scenario.equals("Negative") && (Scenario.equals("EmailAndPwd_Null"))) {
-				clickByXpath(LibraComVar.LOGIN_BTN);
-				if ((stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_EMAIL_VALID, expectedEmailAlert))
-						&& stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_PWD_VALID,
-								expectedPasswordAlert) == true) {
-					reportlog("pass", "CHECKING LOGIN PAGE USING NULL EMAIL AND PASSWORD");
+				clickByXpath(LibraComVar.LOGIN_BTN);				
+				errLog += stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_EMAIL_VALID, expectedEmailAlert);
+				errLogEmail += stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_PWD_VALID,expectedPasswordAlert);
+				String Log = errLog+""+errLogEmail;  
+				if (Log== "") {
+					reportlog("pass", "CHECKING LOGIN PAGE USING NULL EMAIL AND PASSWORD \n");
 				} else {
-					reportlog("fail", "CHECKING LOGIN PAGE USING NULL EMAIL AND PASSWORD");
-				}
+					reportlog("fail", Log + "\n");
+				}				
 			}
 		}
 	}
@@ -131,6 +137,7 @@ public class LoginTest extends LibraComFun {
 	 * @throws IOException
 	 */
 	public void ValEmailInvalidPwd(String sheetName) throws Exception, IOException {
+		String errLog = "";
 		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
 		Sheet sheet1 = file1.getSheet(sheetName);
 		int rowCount = sheet1.getRows();
@@ -150,10 +157,11 @@ public class LoginTest extends LibraComFun {
 				findAndPassbyid(LibraComVar.LOGIN_PWD, Password);
 				clickByXpath(LibraComVar.LOGIN_BTN);
 				waitForElementPresent(By.xpath(LibraComVar.LOGIN_INVAL_PWD));
-				if ((stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_INVAL_PWD, expectedEmailAlert)) == true) {
+				errLog += stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_INVAL_PWD, expectedEmailAlert);
+				if (errLog == "") {
 					reportlog("pass", "CHECKING LOGIN PAGE USING VALID EMAIL '" + Email + "' AND INVALID PASSWORD '"+ Password + "'");
 				} else {
-					reportlog("fail", "CHECKING LOGIN PAGE USING VALID EMAIL '" + Email + "' AND INVALID PASSWORD '"+ Password + "'");
+					reportlog("fail", errLog + "\n");
 				}
 			}
 		}
@@ -166,6 +174,7 @@ public class LoginTest extends LibraComFun {
 	 * @throws IOException
 	 */
 	public void ValEmailLess8CharPwd(String sheetName) throws Exception, IOException {
+		String errLog = "";
 		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
 		Sheet sheet1 = file1.getSheet(sheetName);
 		int rowCount = sheet1.getRows();
@@ -184,11 +193,11 @@ public class LoginTest extends LibraComFun {
 				findAndPassbyid(LibraComVar.LOGIN_EMAIL, Email);
 				findAndPassbyid(LibraComVar.LOGIN_PWD, Password);
 				clickByXpath(LibraComVar.LOGIN_BTN);
-				if ((stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_LESS_8_CHAR_PWD,
-						expectedPasswordAlert)) == true) {
+				errLog += stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_LESS_8_CHAR_PWD,expectedPasswordAlert);
+				if (errLog == "") {
 					reportlog("pass", "CHECKING LOGIN PAGE USING VALID EMAIL'" + Email + "' AND PASSWORD '" + Password+ "' WITH LESS THAN 8 CHARACTERS");
 				} else {
-					reportlog("fail", "CHECKING LOGIN PAGE USING VALID EMAIL '" + Email + "' AND PASSWORD '" + Password+ "' WITH LESS THAN 8 CHARACTERS");
+					reportlog("fail", errLog + "\n");
 				}
 			}
 		}
@@ -201,6 +210,7 @@ public class LoginTest extends LibraComFun {
 	 * @throws IOException
 	 */
 	public void InvalidEmailValPwd(String sheetName) throws Exception, IOException {
+		String errLog = "";
 		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
 		Sheet sheet1 = file1.getSheet(sheetName);
 		int rowCount = sheet1.getRows();
@@ -220,10 +230,11 @@ public class LoginTest extends LibraComFun {
 				findAndPassbyid(LibraComVar.LOGIN_PWD, Password);
 				clickByXpath(LibraComVar.LOGIN_BTN);
 				waitForElementPresent(By.xpath(LibraComVar.LOGIN_INVAL_PWD));
-				if ((stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_INVAL_PWD, expectedPasswordAlert)) == true) {
+				errLog += stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_INVAL_PWD, expectedPasswordAlert);
+				if (errLog =="") {
 					reportlog("pass", "CHECKING LOGIN PAGE USING INVALID EMAIL '" + Email + "' AND VALID PASSWORD '"+ Password + "'");
 				} else {
-					reportlog("fail", "CHECKING LOGIN PAGE USING INVALID EMAIL '" + Email + "' AND VALID PASSWORD '"+ Password + "'");
+					reportlog("fail", errLog + "\n");
 				}
 			}
 		}
@@ -236,6 +247,7 @@ public class LoginTest extends LibraComFun {
 	 * @throws IOException
 	 */
 	public void InvalidEmailLess8CharPwd(String sheetName) throws Exception, IOException {
+		String errLog = "";
 		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
 		Sheet sheet1 = file1.getSheet(sheetName);
 		int rowCount = sheet1.getRows();
@@ -254,11 +266,11 @@ public class LoginTest extends LibraComFun {
 				findAndPassbyid(LibraComVar.LOGIN_EMAIL, Email);
 				findAndPassbyid(LibraComVar.LOGIN_PWD, Password);
 				clickByXpath(LibraComVar.LOGIN_BTN);
-				if ((stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_LESS_8_CHAR_PWD,
-						expectedPasswordAlert)) == true) {
+				errLog += stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_LESS_8_CHAR_PWD,expectedPasswordAlert);
+				if (errLog == "") {
 					reportlog("pass", "CHECKING LOGIN PAGE USING INVALID EMAIL '" + Email + "' AND PASSWORD '"+ Password + "' WITH LESS THAN 8 CHARACTERS");
 				} else {
-					reportlog("fail", "CHECKING LOGIN PAGE USING INVALID EMAIL '" + Email + "' AND PASSWORD '"+ Password + "' WITH LESS THAN 8 CHARACTERS");
+					reportlog("fail", errLog + "\n");
 				}
 			}
 		}
@@ -271,6 +283,7 @@ public class LoginTest extends LibraComFun {
 	 * @throws IOException
 	 */
 	public void InvalidEmailAndPwd(String sheetName) throws Exception, IOException {
+		String errLog = "";
 		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
 		Sheet sheet1 = file1.getSheet(sheetName);
 		int rowCount = sheet1.getRows();
@@ -290,10 +303,11 @@ public class LoginTest extends LibraComFun {
 				findAndPassbyid(LibraComVar.LOGIN_PWD, Password);
 				clickByXpath(LibraComVar.LOGIN_BTN);
 				waitForElementPresent(By.xpath(LibraComVar.LOGIN_INVAL_PWD));
-				if ((stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_INVAL_PWD, expectedPasswordAlert)) == true) {
+				errLog += stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_INVAL_PWD, expectedPasswordAlert);
+				if (errLog == "") {
 					reportlog("pass","CHECKING LOGIN PAGE USING INVALID EMAIL '" + Email + "' AND PASSWORD '" + Password + "'");
 				} else {
-					reportlog("fail","CHECKING LOGIN PAGE USING INVALID EMAIL '" + Email + "' AND PASSWORD '" + Password + "'");
+					reportlog("fail", errLog + "\n");
 				}
 			}
 		}
@@ -306,6 +320,8 @@ public class LoginTest extends LibraComFun {
 	 * @throws IOException
 	 */
 	public void Less8CharEmailPwd(String sheetName) throws Exception, IOException {
+		String errLog = "";
+		String errLogEmail = "";
 		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
 		Sheet sheet1 = file1.getSheet(sheetName);
 		int rowCount = sheet1.getRows();
@@ -326,12 +342,13 @@ public class LoginTest extends LibraComFun {
 				findAndPassbyid(LibraComVar.LOGIN_PWD, Password);
 				clickByXpath(LibraComVar.LOGIN_BTN);
 				waitForElementPresent(By.xpath(LibraComVar.LOGIN_LESS_8_CHAR_PWD));
-				if ((stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_LESS_8_CHAR_PWD, expectedPasswordAlert))
-						&& (stringComparion(LibraComVar.XPATH, LibraComVar.VALID_MSG_EMAIL,
-								expectedEmailAlert)) == true) {
+				errLog += stringComparion(LibraComVar.XPATH, LibraComVar.LOGIN_LESS_8_CHAR_PWD, expectedPasswordAlert);
+				errLogEmail += stringComparion(LibraComVar.XPATH, LibraComVar.VALID_MSG_EMAIL,expectedEmailAlert);
+				String Log = errLog+""+errLogEmail;  
+				if (Log== "") {
 					reportlog("pass", "CHECKING LOGIN PAGE USING LESS THAN 8 CHARACTERS EMAIL '" + Email+ "' AND PASSWORD '" + Password + "'");
 				} else {
-					reportlog("fail", "CHECKING LOGIN PAGE USING LESS THAN 8 CHARACTERS EMAIL '" + Email+ "' AND PASSWORD '" + Password + "'");
+					reportlog("fail", Log + "\n");
 				}
 			}
 		}
@@ -344,6 +361,7 @@ public class LoginTest extends LibraComFun {
 	 * @throws IOException
 	 */
 	public void Less8CharEmail(String sheetName) throws Exception, IOException {
+		String errLog = "";
 		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
 		Sheet sheet1 = file1.getSheet(sheetName);
 		int rowCount = sheet1.getRows();
@@ -363,10 +381,11 @@ public class LoginTest extends LibraComFun {
 				findAndPassbyid(LibraComVar.LOGIN_PWD, Password);
 				clickByXpath(LibraComVar.LOGIN_BTN);
 				waitForElementPresent(By.xpath(LibraComVar.VALID_MSG_EMAIL));
-				if ((stringComparion(LibraComVar.XPATH, LibraComVar.VALID_MSG_EMAIL, expectedEmailAlert)) == true) {
+				errLog += stringComparion(LibraComVar.XPATH, LibraComVar.VALID_MSG_EMAIL, expectedEmailAlert);
+				if (errLog == "") {
 					reportlog("pass", "CHECKING LOGIN PAGE USING LESS THAN 8 CHARACTERS EMAIL '" + Email+ "' AND PASSWORD '" + Password + "'");
 				} else {
-					reportlog("fail", "CHECKING LOGIN PAGE USING LESS THAN 8 CHARACTERS EMAIL '" + Email+ "' AND PASSWORD '" + Password + "'");
+					reportlog("fail", errLog + "\n");
 				}
 			}
 		}
@@ -379,6 +398,7 @@ public class LoginTest extends LibraComFun {
 	 * @throws IOException
 	 */
 	public void Login(String sheetName) throws Exception, IOException {
+		String errLog = "";
 		Workbook file1 = Workbook.getWorkbook(new File(LibraComVar.TEST_DATA));
 		Sheet sheet1 = file1.getSheet(sheetName);
 		int rowCount = sheet1.getRows();
@@ -399,10 +419,11 @@ public class LoginTest extends LibraComFun {
 				waitForElementPresent(By.xpath(LibraComVar.HOME_ACCOUNT_CIRCLE));
 				if (sheetName.equals(LibraComVar.LOGIN)) {
 					clickByXpath(LibraComVar.HOME_ACCOUNT_CIRCLE);
-					if ((stringComparion(LibraComVar.XPATH, LibraComVar.HOME_AGENT_EMAIL, Email)) == true) {
+					errLog += stringComparion(LibraComVar.XPATH, LibraComVar.HOME_AGENT_EMAIL, Email);					
+					if (errLog == "") {
 						reportlog("pass", "CHECKING LOGIN PAGE WITH VALID EMAIL '" + Email + "' AND VAILD PASSWORD '"+ Password + "'");
 					} else {
-						reportlog("fail", "CHECKING LOGIN PAGE WITH VALID EMAIL '" + Email + "' AND VAILD PASSWORD '"+ Password + "'");
+						reportlog("fail", errLog + "\n");
 					}
 					clickByXpath(LibraComVar.BTN_LOGOUT);
 				}
