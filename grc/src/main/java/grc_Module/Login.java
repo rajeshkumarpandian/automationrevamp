@@ -38,10 +38,11 @@ public class Login {
 
 	private static WebDriver driver;
 	private static String baseUrl;
-	private static TestBrowser testBrowser;	
+	private static TestBrowser testBrowser;
 	private static String username;
 	private static String password;
 	ATUTestRecorder recorder;
+
 	@BeforeClass
 	public void openbrowser() throws IOException {
 
@@ -52,7 +53,7 @@ public class Login {
 		testBrowser = TestBrowser.valueOf(prop.getProperty(GComVar.PROP_BROWSER).toUpperCase());
 		baseUrl = prop.getProperty(GComVar.PROP_CRM_QE_URL);
 		username = prop.getProperty(GComVar.PROP_GRC_QE_EMAIL);
-		password = prop.getProperty(GComVar.PROP_GRC_QE_PWD);						  		
+		password = prop.getProperty(GComVar.PROP_GRC_QE_PWD);
 		switch (testBrowser) {
 		case CHROME:
 			System.setProperty(GComVar.CHROME_DRIVER, GComVar.PATH_CHROME_DRIVER);
@@ -62,52 +63,75 @@ public class Login {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.get(baseUrl);	
+		driver.get(baseUrl);
 	}
 
 	@BeforeMethod
-	public void beforeMethod(Method m) throws Exception {		
-			
+	public void beforeMethod(Method m) throws Exception {
+
 	}
-	
-	//@BeforeTest
-	public void Record () throws ATUTestRecorderException {
+
+	// @BeforeTest
+	public void Record() throws ATUTestRecorderException {
 		DateFormat dateFormat = new SimpleDateFormat(ComVar.CALENDAR_TEXT_FORMAT);
-		Date date = new Date();		
-		String Methodname = new Object() {}.getClass().getEnclosingMethod().getName();
-		recorder = new ATUTestRecorder(ComVar.VIDEO_LOCATION, Methodname + "-" + dateFormat.format(date),false);
+		Date date = new Date();
+		String Methodname = new Object() {
+		}.getClass().getEnclosingMethod().getName();
+		recorder = new ATUTestRecorder(ComVar.VIDEO_LOCATION, Methodname + "-" + dateFormat.format(date), false);
 		recorder.start();
 	}
-	
-	
+
 	@Test(priority = 1)
-	public void test01_checkHTTPError() throws Exception {		
+	public void test01_checkHTTPError() throws Exception {
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.BrokenLink();
 	}
 
 	@Test(priority = 2)
-	public void test02_checkLogin() throws Exception {		
+	public void test02_checkLogin() throws Exception {
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
-		libraPageTest.Login(username,password);
+		libraPageTest.Login(username, password);
 	}
-	
+
 	@Test(priority = 3)
-	public void test03_checkHTTPErrorAfterLogin() throws Exception {		
+	public void test03_checkHTTPErrorAfterLogin() throws Exception {
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.BrokenLink();
 	}
-	
+
 	@Test(priority = 4)
-	public void test04_checkMenuClicks() throws Exception {		
-		String sheetname = GComVar.GRC;
+	public void test04_checkMenuClicksLeftNav() throws Exception {
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
-		libraPageTest.MenuClicks(sheetname);
+		libraPageTest.MenuClicksLeftNav();
 	}
-	
-	//@AfterTest
-	public void aftertest() throws Exception {		
-		//recorder.stop();
+
+	@Test(priority = 5)
+	public void test05_checkMenuClicksTopRightNav() throws Exception {
+		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
+		libraPageTest.MenuClicksTopRightNav();
+	}
+
+	@Test(priority = 6)
+	public void test06_checkMenuClicksMyServicesSubNav() throws Exception {
+		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
+		libraPageTest.MenuClicksMyServicesSubNav();
+	}
+
+	@Test(priority = 7)
+	public void test07_checkMenuClicksPaymentsSubNav() throws Exception {
+		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
+		libraPageTest.MenuClicksPaymentsSubNav();
+	}
+
+	@Test(priority = 8)
+	public void test08_checkMenuClicksSettingsNav() throws Exception {
+		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
+		libraPageTest.MenuClicksSettingsNav();
+	}
+
+	@AfterTest
+	public void aftertest() throws Exception {
+		// recorder.stop();
 		driver.quit();
 	}
 }

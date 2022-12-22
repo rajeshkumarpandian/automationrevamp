@@ -128,7 +128,7 @@ public class ComFun extends ComVar {
 	 * @param by
 	 * @return
 	 */
-	public static boolean iselementPresent(By by) {
+	protected static boolean iselementPresent(By by) {
 		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
 		try {
 			driver.findElement(by);
@@ -358,15 +358,13 @@ public class ComFun extends ComVar {
 		for (int i = 1; i <= noOfData; i++) {
 			clickByXpath("" + xpath + "[" + i + "]");
 			String PageName = driver.findElement(By.xpath("" + xpath + "[" + i + "]")).getText();
-			//if(iselementPresent(By.xpath("//*[@id='overlayMessageDiv' and @style='display']"))) {
-				waitForElementPresent(By.xpath("//*[@id='overlayMessageDiv' and @style='display: none;']"));
-			//}
+			waitForElementPresent(By.xpath("//*[@id='overlayMessageDiv' and @style='display: none;']"));
 			if (iselementPresent(By.xpath(ERROR_404_502)) == true) {
 				String Errordata = driver.findElement(By.xpath(ERROR_404_502)).getText();
-				errLog += ("In Page "+PageName+" name it throws " + Errordata + "");
+				errLog += ("In Page " + PageName + " name it throws " + Errordata + "");
 			}
 			if (iselementPresent(By.xpath(SERVER_ERROR)) == true) {
-				errLog += ("In page "+PageName+" name it throws server error problem");
+				errLog += ("In page " + PageName + " name it throws server error problem");
 			}
 		}
 		return errLog;

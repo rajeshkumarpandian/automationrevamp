@@ -20,7 +20,7 @@ public class ComVar{
 	public static final String VALUE = "value";
 	
 	public static final String ERROR_404_502 = "/html/body/center[1]/h1";
-	public static final String SERVER_ERROR = "/html/body/div[@class='error_container']/div/div[1]/text()";
+	public static final String SERVER_ERROR = "(/html/body/div[@class='error_container']/div/div[1]/text())[2]";
 	public static final String INTERNAL_404 = "/html/body/div/section[1]/div/h1";
 	
 	

@@ -79,8 +79,8 @@ public class Dashbaord {
 		recorder.start();
 	}
 	
-	@Test(priority = 2)
-	public void test02_checkLogin() throws Exception {		
+	@Test(priority = 1)
+	public void test01_checkLogin() throws Exception {		
 		LoginTest libraPageTest = new LoginTest(Dashbaord.driver, Dashbaord.baseUrl);
 		libraPageTest.Login(username,password);
 	}
