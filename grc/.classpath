@@ -34,5 +34,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/Selenium-module"/>
 	<classpathentry kind="lib" path="R:/eclipse/workSpace/automationrevamp/grc/src/test/resources/ATUTestRecorder_2.1/ATUReporter_Selenium_testNG_5.1.1.jar"/>
 	<classpathentry kind="lib" path="R:/eclipse/workSpace/automationrevamp/grc/src/test/resources/ATUTestRecorder_2.1/ATUTestRecorder_2.1.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/libra"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

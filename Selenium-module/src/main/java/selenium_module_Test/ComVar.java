@@ -4,7 +4,12 @@ import java.time.Duration;
 
 public class ComVar{
 	
+/*********************************************ELEMENTS TYPE*****************************************************************************/	
 	
+	public static String XPATH = "XPATH";
+	public static String ID = "ID";
+	public static String NAME = "NAME";
+	public static String CLASSNAME = "CLASSNAME";
 	
 	public static final int WAIT_SECONDS = 2;
 	public static final Duration SERVER_TIMEOUT = Duration.ofSeconds(100);

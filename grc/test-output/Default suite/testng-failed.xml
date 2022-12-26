@@ -6,9 +6,9 @@
       <class name="grc_Module.Login">
         <methods>
           <include name="beforeMethod"/>
-          <include name="test04_checkMenuClicks"/>
-          <include name="test02_checkLogin"/>
           <include name="openbrowser"/>
+          <include name="test02_checkNullEMailPassword"/>
+          <include name="aftertest"/>
         </methods>
       </class> <!-- grc_Module.Login -->
     </classes>

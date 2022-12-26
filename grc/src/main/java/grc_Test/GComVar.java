@@ -29,7 +29,7 @@ public class GComVar {
 	public static String LOGIN = "Login";	
 	public static String GRC = "Grc";
 	public static String DELETE = "Delete";
-	public static String TEST_DATA = "R:\\eclipse\\workSpace\\automationrevamp\\libra\\src\\test\\resources\\LibraTestData.xls";
+	public static String TEST_DATA = "R:\\eclipse\\workSpace\\automationrevamp\\grc\\src\\test\\resources\\LibraTestData.xls";
 	
 /*********************************************EXTEND REPORT DETAILS**********************************************************************/
 	
@@ -37,12 +37,23 @@ public class GComVar {
 
 /*********************************************LOGIN PAGE*********************************************************************************/
 			
-	public static String LOGIN_EMAIL_VALID = "//*[@type='text']";
+	public static String LOGIN_EMAIL_VALID = "//*[@type='email']";
 	public static String LOGIN_PWD_VALID = "//*[@type='password']";
-	public static String LOGIN_BTN = "//*[@class='btn-grc-login login_user grc_mobile']";			
+	public static String LOGIN_BTN = "//*[@type='submit']";		
+	public static String EMAIL_NULL_VALD = "(//*[@class='error-feedback'])[1]";
+	public static String PASSWORD_NULL_VALD = "(//*[@class='error-feedback'])[2]";	
+	public static String PROFILE_ICON = "//*[@class='styles_myProfile__n+99a']";	
+	public static String PROFILE_EMAIL = "//*[@class='styles_profileInfo__2o15J']/div[1]/p";
+	public static String BTN_FORGOT_PWD = "(//*[@class='mb-3 forgot-password-link'])[2]";
+	public static String BTN_SEND_RESET_LINK = "//*[@type='button']";
+	
+	
+	
+	
+	
 	public static String MY_SERVICES = "//*[@alt='My Services']";
-	public static String PROFILE_ICON = "//*[@class='profileicon']";
-	public static String PROFILE_EMAIL = "(//*[@class='col-md-9'])[1]/p[1]";
+	
+	
 	public static String LEFT_SIDE_NAV = "//*[@id='dashboard_left_section_home']/li";
 	public static String RIGHT_TOP_SIDE_NAV = "//*[@id='header_function']/li[contains(@id,'Pill')]";
 	public static String MY_SERVICES_NAV = "//*[@id='myServicesNavPill']/a";
