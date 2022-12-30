@@ -136,26 +136,42 @@ public class Login {
 		libraPageTest.CreateAccountEmailInvalid(sheetname);
 	}
 	
-	@Test(groups = { "sanity" })
+	//@Test(groups = { "sanity" })
 	public void test09_checkCreateAccountPasswordNull() throws Exception {
 		String sheetname = GComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.CreateAccountPasswordNull(sheetname);
 	}
 	
-	
-	
-	
-	
-	
-	
+	//@Test(groups = { "sanity" })
+	public void test10_checkCreateAccountPasswordLessChar() throws Exception {
+		String sheetname = GComVar.LOGIN;
+		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
+		libraPageTest.CreateAccountPasswordLessChar(sheetname);
+	}
 	
 	//@Test(groups = { "sanity" })
+	public void test11_checkCreateAccountDifPassword() throws Exception {
+		String sheetname = GComVar.LOGIN;
+		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
+		libraPageTest.CreateAccountDifPassword(sheetname);
+	}
+	 
+	@Test(groups = { "sanity" })
 	public void test09_checkCreateAccount() throws Exception {
 		String sheetname = GComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.CreateAccount(sheetname);
-	}
+	} 
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	// @Test(groups = { "sanity" })
 	public void test07_checkForgotEmailNull() throws Exception {

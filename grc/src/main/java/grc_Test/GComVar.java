@@ -51,6 +51,7 @@ public class GComVar {
 	public static String BTN_CREATE_LINK = "(//*[@class='mb-3 forgot-password-link'])[1]";
 	public static String CREATE_PWD = "//*[@id='password']";
 	public static String CREATE_CONFIRM_PWD = "//*[@id='confirmPassword']";
+	public static String BTN_SIGNIN = "//*[@href='/grc-m/login']";
 	
 	
 	

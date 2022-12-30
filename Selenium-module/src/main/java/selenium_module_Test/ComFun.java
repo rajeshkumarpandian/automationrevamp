@@ -44,7 +44,7 @@ public class ComFun extends ComVar {
 			Reporter.log("" + Description + "<b> <font color='red' font size = 4>" + " ==> FAIL"+ "</font></b> \n");
 		}
 		if (testStatus.toLowerCase().equals("pass")) {
-			Reporter.log("" + Description + "<b> <font color='blue' font size = 4>" + " ==> PASS"+ "</font></b> \n");
+			Reporter.log("" + Description + "<b> <font color='green' font size = 4>" + " ==> PASS"+ "</font></b> \n");
 		}
 		if (testStatus.toLowerCase().equals("warning")) {
 			Reporter.log("" + Description + "<b> <font color='#8B008B' font size = 4>" + " ==> WARNING"+ "</font></b> \n");

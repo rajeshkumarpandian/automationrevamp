@@ -343,9 +343,7 @@ public class LoginTest extends GComFun {
 	 * @throws IOException
 	 */
 	public void CreateAccountPasswordNull(String sheetName) throws Exception, IOException {
-		String errLog = "";		
-		String text = randomTextGenerator();
-		String EmailID = text+"@gmail.com";
+		String errLog = "";				
 		try {
 			Workbook file1 = Workbook.getWorkbook(new File(GComVar.TEST_DATA));
 			Sheet sheet1 = file1.getSheet(sheetName);
@@ -357,7 +355,8 @@ public class LoginTest extends GComFun {
 					strHM.put(sheet1.getCell(j, 0).getContents(), sheet1.getCell(j, i).getContents());
 				}
 				String Test_Scenario = strHM.get("Test_Scenario");
-				String Scenario = strHM.get("Scenario");					
+				String Scenario = strHM.get("Scenario");	
+				String EmailID = strHM.get("Email");
 				String expectedEmailAlert = strHM.get("expectedEmailAlert");
 				if (Test_Scenario.equals("Negative") && (Scenario.equals("CreateAccountPwdNull"))) {					
 					driver.get(baseUrl);					
@@ -366,9 +365,9 @@ public class LoginTest extends GComFun {
 					findAndPassbyxpath(GComVar.LOGIN_EMAIL_VALID, EmailID);
 					clickByXpath(GComVar.BTN_SEND_RESET_LINK);	
 					waitForElementPresent(By.xpath(GComVar.CREATE_PWD));
-					waitForElementPresent(By.xpath(GComVar.BTN_SEND_RESET_LINK));					
+					//waitForElementPresent(By.xpath(GComVar.BTN_SEND_RESET_LINK));					
 					clickByXpath(GComVar.BTN_SEND_RESET_LINK);
-					errLog += stringComparion(ComVar.XPATH, GComVar.CREATE_EMAIL_NULL, expectedEmailAlert);
+					errLog += stringComparion(ComVar.XPATH, GComVar.EMAIL_NULL_VALD, expectedEmailAlert);
 					if (errLog == "") {
 						reportlog("pass", "CHECKING CREATE ACCOUNT PAGE USING NULL PASSWORD");
 					} else {
@@ -380,6 +379,102 @@ public class LoginTest extends GComFun {
 			reportlog("fail", "The entire case is failed becasue of '" + e + "'" + "\n");
 		}
 	}
+	
+	/**
+	 * 
+	 * @param sheetName
+	 * @throws Exception
+	 * @throws IOException
+	 */	
+	public void CreateAccountPasswordLessChar(String sheetName) throws Exception, IOException {
+		String errLog = "";				
+		try {
+			Workbook file1 = Workbook.getWorkbook(new File(GComVar.TEST_DATA));
+			Sheet sheet1 = file1.getSheet(sheetName);
+			int rowCount = sheet1.getRows();
+			int colCount = sheet1.getColumns();
+			for (int i = 1; i < rowCount; i++) {
+				LinkedHashMap<String, String> strHM = new LinkedHashMap<String, String>();
+				for (int j = 0; j < colCount; j++) {
+					strHM.put(sheet1.getCell(j, 0).getContents(), sheet1.getCell(j, i).getContents());
+				}
+				String Test_Scenario = strHM.get("Test_Scenario");
+				String Scenario = strHM.get("Scenario");
+				String EmailID = strHM.get("Email");
+				String Password = strHM.get("Password");
+				String expectedEmailAlert = strHM.get("expectedEmailAlert");
+				if (Test_Scenario.equals("Negative") && (Scenario.equals("CreateAccountPwdLesChar"))) {					
+					driver.get(baseUrl);					
+					clickByXpath(GComVar.BTN_CREATE_LINK);						
+					waitForElementPresent(By.xpath(GComVar.LOGIN_EMAIL_VALID));		
+					findAndPassbyxpath(GComVar.LOGIN_EMAIL_VALID, EmailID);
+					clickByXpath(GComVar.BTN_SEND_RESET_LINK);	
+					waitForElementPresent(By.xpath(GComVar.CREATE_PWD));
+					findAndPassbyxpath(GComVar.CREATE_PWD, Password); 		
+					clickByXpath(GComVar.BTN_SEND_RESET_LINK);
+					errLog += stringComparion(ComVar.XPATH, GComVar.EMAIL_NULL_VALD, expectedEmailAlert);
+					if (errLog == "") {
+						reportlog("pass", "CHECKING CREATE ACCOUNT PAGE USING LESS THAN 6 CHARACTERS PASSWORD '"+Password+"'");
+					} else {
+						reportlog("fail", errLog + "\n");
+					}
+				}
+			}
+		} catch (Exception e) {
+			reportlog("fail", "The entire case is failed becasue of '" + e + "'" + "\n");
+		}
+	}
+	
+	/**
+	 * 
+	 * @param sheetName
+	 * @throws Exception
+	 * @throws IOException
+	 */
+	public void CreateAccountDifPassword(String sheetName) throws Exception, IOException {
+		String errLog = "";				
+		try {
+			Workbook file1 = Workbook.getWorkbook(new File(GComVar.TEST_DATA));
+			Sheet sheet1 = file1.getSheet(sheetName);
+			int rowCount = sheet1.getRows();
+			int colCount = sheet1.getColumns();
+			for (int i = 1; i < rowCount; i++) {
+				LinkedHashMap<String, String> strHM = new LinkedHashMap<String, String>();
+				for (int j = 0; j < colCount; j++) {
+					strHM.put(sheet1.getCell(j, 0).getContents(), sheet1.getCell(j, i).getContents());
+				}
+				String Test_Scenario = strHM.get("Test_Scenario");
+				String Scenario = strHM.get("Scenario");
+				String EmailID = strHM.get("Email");
+				String Password = strHM.get("Password");
+				String NewPassword = strHM.get("NewPassword");	
+				String expectedEmailAlert = strHM.get("expectedEmailAlert");
+				if (Test_Scenario.equals("Negative") && (Scenario.equals("DifferentPasswords"))) {					
+					driver.get(baseUrl);					
+					clickByXpath(GComVar.BTN_CREATE_LINK);						
+					waitForElementPresent(By.xpath(GComVar.LOGIN_EMAIL_VALID));		
+					findAndPassbyxpath(GComVar.LOGIN_EMAIL_VALID, EmailID);
+					clickByXpath(GComVar.BTN_SEND_RESET_LINK);	
+					waitForElementPresent(By.xpath(GComVar.CREATE_PWD));
+					findAndPassbyxpath(GComVar.CREATE_PWD, Password); 	
+					findAndPassbyxpath(GComVar.CREATE_CONFIRM_PWD, NewPassword); 
+					clickByXpath(GComVar.BTN_SEND_RESET_LINK);
+					errLog += stringComparion(ComVar.XPATH, GComVar.PASSWORD_NULL_VALD, expectedEmailAlert);
+					if (errLog == "") {
+						reportlog("pass", "CHECKING CREATE ACCOUNT PAGE USING MISMATCH PASSWORD '"+Password+"' CONFIRM PASSWORD '"+NewPassword+"'");
+					} else {
+						reportlog("fail", errLog + "\n");
+					}
+				}
+			}
+		} catch (Exception e) {
+			reportlog("fail", "The entire case is failed becasue of '" + e + "'" + "\n");
+		}
+	}
+	
+	
+	
+	
 	/**
 	 * 
 	 * @param sheetName
@@ -412,16 +507,12 @@ public class LoginTest extends GComFun {
 					waitForElementPresent(By.xpath(GComVar.LOGIN_EMAIL_VALID));
 					findAndPassbyxpath(GComVar.LOGIN_EMAIL_VALID, EmailID);
 					clickByXpath(GComVar.BTN_SEND_RESET_LINK);	
+					waitForElementPresent(By.xpath(GComVar.CREATE_PWD));
 					findAndPassbyxpath(GComVar.CREATE_PWD, Password); 
 					findAndPassbyxpath(GComVar.CREATE_CONFIRM_PWD, NewPassword); 
 					clickByXpath(GComVar.BTN_SEND_RESET_LINK);
-					
-					errLog += stringComparion(ComVar.XPATH, GComVar.CREATE_EMAIL_NULL, expectedEmailAlert);
-					if (errLog == "") {
-						reportlog("pass", "CHECKING CREATE ACCOUNT PAGE USING NULL EMAIL");
-					} else {
-						reportlog("fail", errLog + "\n");
-					}
+					clickByXpath(GComVar.BTN_SIGNIN);
+					Login(EmailID, Password);										
 				}
 			}
 		} catch (Exception e) {
@@ -649,16 +740,16 @@ public class LoginTest extends GComFun {
 			clickByXpath(GComVar.PROFILE_ICON);
 			errLog += stringComparion(GComVar.XPATH, GComVar.PROFILE_EMAIL, username);
 			if (errLog == "") {
-				reportlog("pass", "Login done successfully in grc web using the username '" + username + "'\n");
+				reportlog("pass", "LOGIN DONE SUCCESSFULLY IN GRC WEB USING THE USERNAME'" + username + "'\n");
 			} else {
-				reportlog("fail", "Login done successfully in grc web,but '" + errLog + "'\n");
+				reportlog("fail", "LOGIN DONE SUCCESSFULLY IN GRC WEB,BUT'" + errLog + "'\n");
 			}
 			if (iselementPresent(By.xpath(ComVar.ERROR_404_502)) == true) {
 				String Errordata = driver.findElement(By.xpath(ComVar.ERROR_404_502)).getText();
-				errLog += ("In Page  name it throws " + Errordata + "");
+				errLog += ("IN PAGE  NAME IT THROWS" + Errordata + "");
 			}
 			if (iselementPresent(By.xpath(ComVar.SERVER_ERROR)) == true) {
-				errLog += ("In page  name it throws server error problem");
+				errLog += ("IN PAGE  NAME IT THROWS SERVER ERROR PROBLEM");
 			}
 			driver.navigate().refresh();
 		} catch (Exception e) {
