@@ -81,132 +81,146 @@ public class Login {
 		recorder.start();
 	}
 
-	@Test(groups = { "smoke" })
+	// @Test(groups = { "smoke" })
 	public void test01_checkHTTPError() throws Exception {
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.BrokenLink();
 	}
-	
-	@Test(groups = { "sanity" })
+
+	// @Test(groups = { "sanity" })
 	public void test02_checkNullEMailPassword() throws Exception {
 		String sheetname = GComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.NullEMailPassword(sheetname);
 	}
-		
-	@Test(groups = { "sanity" })
+
+	// @Test(groups = { "sanity" })
 	public void test03_checkNullEmail() throws Exception {
 		String sheetname = GComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.NullEmail(sheetname);
 	}
-				
-	@Test(groups = { "sanity" })
+
+	// @Test(groups = { "sanity" })
 	public void test04_checkNullPassword() throws Exception {
 		String sheetname = GComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.NullPassword(sheetname);
 	}
-	
-	@Test(groups = { "sanity" })
+
+	// @Test(groups = { "sanity" })
 	public void test05_checkInvalidEmail() throws Exception {
 		String sheetname = GComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.InvalidEmail(sheetname);
 	}
-	
-	@Test(groups = { "sanity" })
+
+	// @Test(groups = { "sanity" })
 	public void test06_checkInvalidPassword() throws Exception {
 		String sheetname = GComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.InvalidPassword(sheetname);
 	}
+
+	// @Test(groups = { "sanity" })
+	public void test07_checkCreateAccountEmailNull() throws Exception {
+		String sheetname = GComVar.LOGIN;
+		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
+		libraPageTest.CreateAccountEmailNull(sheetname);
+	}
+
+	//@Test(groups = { "sanity" })
+	public void test08_checkCreateAccountEmailInvalid() throws Exception {
+		String sheetname = GComVar.LOGIN;
+		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
+		libraPageTest.CreateAccountEmailInvalid(sheetname);
+	}
 	
 	@Test(groups = { "sanity" })
+	public void test09_checkCreateAccountPasswordNull() throws Exception {
+		String sheetname = GComVar.LOGIN;
+		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
+		libraPageTest.CreateAccountPasswordNull(sheetname);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	//@Test(groups = { "sanity" })
+	public void test09_checkCreateAccount() throws Exception {
+		String sheetname = GComVar.LOGIN;
+		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
+		libraPageTest.CreateAccount(sheetname);
+	}
+
+	// @Test(groups = { "sanity" })
 	public void test07_checkForgotEmailNull() throws Exception {
 		String sheetname = GComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.ForgotEmailNull(sheetname);
 	}
 
-	@Test(groups = { "sanity" })
+	// @Test(groups = { "sanity" })
 	public void test08_checkForgotInvalidEmail() throws Exception {
 		String sheetname = GComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.ForgotInvalidEmail(sheetname);
 	}
-	
-	@Test(groups = { "sanity" })
+
+	// @Test(groups = { "sanity" })
 	public void test09_checkForgotPassword() throws Exception {
 		String sheetname = GComVar.LOGIN;
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.ForgotPassword(sheetname);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	//@Test(groups = { "smoke" })
+
+	// @Test(groups = { "smoke" })
 	public void test07_checkLogin() throws Exception {
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.Login(username, password);
 	}
-	
+
 	// @Test(groups = { "smoke" })
 	public void test03_checkHTTPErrorAfterLogin() throws Exception {
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.BrokenLink();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
-	
-
-	//@Test(groups = { "smoke" })
+	// @Test(groups = { "smoke" })
 	public void test04_checkMenuClicksLeftNav() throws Exception {
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.MenuClicksLeftNav();
 	}
 
-	//@Test(groups = { "smoke" })
+	// @Test(groups = { "smoke" })
 	public void test05_checkMenuClicksTopRightNav() throws Exception {
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.MenuClicksTopRightNav();
 	}
 
-	//@Test(groups = { "smoke" })
+	// @Test(groups = { "smoke" })
 	public void test06_checkMenuClicksMyServicesSubNav() throws Exception {
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.MenuClicksMyServicesSubNav();
 	}
 
-	//@Test(groups = { "smoke" })
+	// @Test(groups = { "smoke" })
 	public void test07_checkMenuClicksPaymentsSubNav() throws Exception {
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.MenuClicksPaymentsSubNav();
 	}
 
-	//@Test(groups = { "smoke" })
+	// @Test(groups = { "smoke" })
 	public void test08_checkMenuClicksSettingsNav() throws Exception {
 		LoginTest libraPageTest = new LoginTest(Login.driver, Login.baseUrl);
 		libraPageTest.MenuClicksSettingsNav();
 	}
 
-	//@AfterTest
+	// @AfterTest
 	public void aftertest() throws Exception {
 		// recorder.stop();
 		driver.quit();

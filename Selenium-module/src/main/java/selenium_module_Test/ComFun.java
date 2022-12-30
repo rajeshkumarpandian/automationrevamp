@@ -6,13 +6,19 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -369,5 +375,93 @@ public class ComFun extends ComVar {
 		}
 		return errLog;
 	}
+	
+	public boolean MailtrapUserloginPassword(String Email) throws Exception {
+		boolean flag = false;	
+		driver.get(ComVar.MAIL_TRAP_URL);			
+		clickByXpath(ComVar.MAIL_TRAP_LOGIN_BTN);
+        WebElement element = driver.findElement(By.xpath(ComVar.MAIL_TRAP_NEXT_BTN));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+        Thread.sleep(500);		
+		findAndPassbyid(ComVar.MAIL_TRAP_USER_NAME, ComVar.MAIL_TRAP_USR_NAME);
+		clickByXpath(ComVar.MAIL_TRAP_NEXT_BTN);
+		waitForElementPresent(By.id(ComVar.MAIL_TRAP_PASSWORD));
+		findAndPassbyid(ComVar.MAIL_TRAP_PASSWORD, ComVar.MAIL_TRAP_PWD);
+		clickByXpath(ComVar.MAIL_TRAP_LOGIN);
+		waitForElementPresent(By.xpath(ComVar.QE_VAKILSEARCH));
+		clickByXpath(ComVar.QE_VAKILSEARCH);
+		
+		
+		if(getMailList(Email)==true){
+			driver.switchTo().frame(driver.findElement(By.tagName("iframe")));	
+		}
+		
+		return flag;
+	}
+	
+	public boolean getMailList(String receiver) throws Exception{
+		boolean flag=true;
+		driver.navigate().refresh();
+		List<WebElement> actsList = driver.findElements(By.xpath("//*[@role='main']/div/div[1]/div[2]/ul/li/a[@class='i18m0o91 i18m0o91--unread i16w2k3p']"));
+		int noOfActs = actsList.size();
+		for(int i=1;i < noOfActs;i++){
+			String acts =  driver.findElement(By.xpath("//*[@role='main']/div/div[1]/div[2]/ul/li["+i+"]/a[@class='i18m0o91 i18m0o91--unread i16w2k3p']")).getText();					
+			if(acts.contains(receiver)){
+				flag=true;
+				clickByXpath("//*[@role='main']/div/div[1]/div[2]/ul/li["+i+"]/a");
+				driver.switchTo().frame(driver.findElement(By.tagName("iframe")));	
+				clickByXpath("/html/body/table/tbody/tr/td[2]/div/table/tbody/tr/td/table/tbody/tr/td/p/a");
+				
+				break;
+			} else {
+				flag=false;
+			}
+		}
+		return flag;
+	}
+	
+	public void mailtraplogut(String testName) throws Exception{
+		clickByXpath("//*[@class='show_hide_menu_link account-name']");
+		clickByXpath("");	
+	}
+	
+	public void waitUntilManualActions(final WebDriver driver, String message, Map<String, String> dataMap) {
+        int tabSize;
+        String ticketId = dataMap.get("ticketId");
+        try {
+            String Msg = ("For ticket #  " + ticketId + " - MANUAL_ACTIONS - " + message);
+            ((JavascriptExecutor) driver).executeScript("window.open('about:blank','_blank');");
+            driver.switchTo().defaultContent();
+            JavascriptExecutor javascript = (JavascriptExecutor) driver;
+            javascript.executeScript("alert('" + message + "');");
+
+            ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+            driver.switchTo().window(tabs.get(0));
+            tabSize = tabs.size();
+            // System.out.println(tabs.size());
+            while (tabSize >= 2) {
+                Thread.sleep(1000);
+                tabs = new ArrayList<String>(driver.getWindowHandles());
+                tabSize = tabs.size();
+                // System.out.println(tabs.size());
+            }
+            ;
+        } catch (Exception e) {
+            // logger.error(e);
+        }
+    }
+	
+	protected String randomTextGenerator() {
+        String SALTCHARS = "abcdefghijklmnopqrstuvwxyz";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < 15) { // length of the random string.
+            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+            salt.append(SALTCHARS.charAt(index));
+        }
+        String saltStr = salt.toString();
+        return saltStr;
+
+    }
 
 }

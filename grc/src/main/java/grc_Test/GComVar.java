@@ -29,7 +29,8 @@ public class GComVar {
 	public static String LOGIN = "Login";	
 	public static String GRC = "Grc";
 	public static String DELETE = "Delete";
-	public static String TEST_DATA = "R:\\eclipse\\workSpace\\automationrevamp\\grc\\src\\test\\resources\\LibraTestData.xls";
+	public static String VAKILSEARCH = "Vakilsearch";
+	public static String TEST_DATA = "R:\\eclipse\\workSpace\\automationrevamp\\grc\\src\\test\\resources\\GrcTestData.xls";
 	
 /*********************************************EXTEND REPORT DETAILS**********************************************************************/
 	
@@ -42,10 +43,14 @@ public class GComVar {
 	public static String LOGIN_BTN = "//*[@type='submit']";		
 	public static String EMAIL_NULL_VALD = "(//*[@class='error-feedback'])[1]";
 	public static String PASSWORD_NULL_VALD = "(//*[@class='error-feedback'])[2]";	
+	public static String CREATE_EMAIL_NULL = "(//*[@class='error-feedback'])[3]";
 	public static String PROFILE_ICON = "//*[@class='styles_myProfile__n+99a']";	
 	public static String PROFILE_EMAIL = "//*[@class='styles_profileInfo__2o15J']/div[1]/p";
 	public static String BTN_FORGOT_PWD = "(//*[@class='mb-3 forgot-password-link'])[2]";
 	public static String BTN_SEND_RESET_LINK = "//*[@type='button']";
+	public static String BTN_CREATE_LINK = "(//*[@class='mb-3 forgot-password-link'])[1]";
+	public static String CREATE_PWD = "//*[@id='password']";
+	public static String CREATE_CONFIRM_PWD = "//*[@id='confirmPassword']";
 	
 	
 	

@@ -28,5 +28,15 @@ public class ComVar{
 	public static final String SERVER_ERROR = "(/html/body/div[@class='error_container']/div/div[1]/text())[2]";
 	public static final String INTERNAL_404 = "/html/body/div/section[1]/div/h1";
 	
+	public static final String MAIL_TRAP_URL = "https://mailtrap.io/";
+	public static final String MAIL_TRAP_USR_NAME = "tools.libra@vakilsearch.com";
+	public static final String MAIL_TRAP_PWD = "JD5e2N#kuck!L3U";	
+	public static final String MAIL_TRAP_LOGIN_BTN = "//*[@id=\"screen-reader-shortcut-header\"]/nav/div/div/div[2]/div[3]/a[1]";		
+	public static final String MAIL_TRAP_USER_NAME = "user_email";
+	public static final String MAIL_TRAP_NEXT_BTN =  "//*[@id='new_user']/div[3]/a";
+	public static final String MAIL_TRAP_PASSWORD="user_password";
+	public static final String MAIL_TRAP_LOGIN = "//*[@id='new_user']/div[2]/div[3]/input";	
+	public static final String QE_VAKILSEARCH = "(//*[@class='inbox_name'])[1]";
+	
 	
 }

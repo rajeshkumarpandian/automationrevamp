@@ -1,222 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
-      <![CDATA[There is no broken links 
-<b> <font color='blue' font size = 4> ==> PASS</font></b> 
-]]>
-    </line>
-    <line>
-      <![CDATA[CHECKING LOGIN PAGE USING NULL EMAIL<b> <font color='blue' font size = 4> ==> PASS</font></b> 
-]]>
-    </line>
-    <line>
-      <![CDATA[CHECKING LOGIN PAGE USING NULL PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b> 
-]]>
-    </line>
-    <line>
-      <![CDATA[CHECKING LOGIN PAGE USING NULL EMAIL<b> <font color='blue' font size = 4> ==> PASS</font></b> 
-]]>
-    </line>
-    <line>
-      <![CDATA[CHECKING LOGIN PAGE USING NULL PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b> 
-]]>
-    </line>
-    <line>
-      <![CDATA[CHECKING LOGIN PAGE USING INVALID EMAIL 'automaerhgerhtiontest@gmail.com'<b> <font color='blue' font size = 4> ==> PASS</font></b> 
-]]>
-    </line>
-    <line>
-      <![CDATA[CHECKING LOGIN PAGE USING INVALID PASSWORD 'Test786$'<b> <font color='blue' font size = 4> ==> PASS</font></b> 
-]]>
-    </line>
-    <line>
-      <![CDATA[CHECKING PASSWORD RESET PAGE USING NULL VALUE<b> <font color='blue' font size = 4> ==> PASS</font></b> 
-]]>
-    </line>
-    <line>
-      <![CDATA[CHECKING PASSWORD RESET PAGE USING INVALID EMAIL 'automaerhgerhtiontest@gmail.com'<b> <font color='blue' font size = 4> ==> PASS</font></b> 
+      <![CDATA[CHECKING CREATE ACCOUNT PAGE USING NULL PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b> 
 ]]>
     </line>
   </reporter-output>
-  <suite started-at="2022-12-26T08:31:03 IST" name="Default suite" finished-at="2022-12-26T08:31:11 IST" duration-ms="7589">
+  <suite started-at="2022-12-29T19:56:56 IST" name="Default suite" finished-at="2022-12-29T19:57:01 IST" duration-ms="5056">
     <groups>
-      <group name="smoke">
-        <method signature="Login.test01_checkHTTPError()[pri:0, instance:grc_Module.Login@21282ed8]" name="test01_checkHTTPError" class="grc_Module.Login"/>
-      </group> <!-- smoke -->
       <group name="sanity">
-        <method signature="Login.test02_checkNullEMailPassword()[pri:0, instance:grc_Module.Login@21282ed8]" name="test02_checkNullEMailPassword" class="grc_Module.Login"/>
-        <method signature="Login.test03_checkNullEmail()[pri:0, instance:grc_Module.Login@21282ed8]" name="test03_checkNullEmail" class="grc_Module.Login"/>
-        <method signature="Login.test04_checkNullPassword()[pri:0, instance:grc_Module.Login@21282ed8]" name="test04_checkNullPassword" class="grc_Module.Login"/>
-        <method signature="Login.test05_checkInvalidEmail()[pri:0, instance:grc_Module.Login@21282ed8]" name="test05_checkInvalidEmail" class="grc_Module.Login"/>
-        <method signature="Login.test06_checkInvalidPassword()[pri:0, instance:grc_Module.Login@21282ed8]" name="test06_checkInvalidPassword" class="grc_Module.Login"/>
-        <method signature="Login.test07_checkForgotEmailNull()[pri:0, instance:grc_Module.Login@21282ed8]" name="test07_checkForgotEmailNull" class="grc_Module.Login"/>
-        <method signature="Login.test08_checkForgotInvalidEmail()[pri:0, instance:grc_Module.Login@21282ed8]" name="test08_checkForgotInvalidEmail" class="grc_Module.Login"/>
+        <method signature="Login.test09_checkCreateAccountPasswordNull()[pri:0, instance:grc_Module.Login@36916eb0]" name="test09_checkCreateAccountPasswordNull" class="grc_Module.Login"/>
       </group> <!-- sanity -->
     </groups>
-    <test started-at="2022-12-26T08:31:03 IST" name="Default test" finished-at="2022-12-26T08:31:11 IST" duration-ms="7589">
+    <test started-at="2022-12-29T19:56:56 IST" name="Default test" finished-at="2022-12-29T19:57:01 IST" duration-ms="5056">
       <class name="grc_Module.Login">
-        <test-method is-config="true" signature="openbrowser()[pri:0, instance:grc_Module.Login@21282ed8]" started-at="2022-12-26T08:31:03 IST" name="openbrowser" finished-at="2022-12-26T08:31:06 IST" duration-ms="2916" status="PASS">
+        <test-method is-config="true" signature="openbrowser()[pri:0, instance:grc_Module.Login@36916eb0]" started-at="2022-12-29T19:56:56 IST" name="openbrowser" finished-at="2022-12-29T19:57:00 IST" duration-ms="3293" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openbrowser -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Login@21282ed8]" started-at="2022-12-26T08:31:06 IST" name="beforeMethod" finished-at="2022-12-26T08:31:06 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Login@36916eb0]" started-at="2022-12-29T19:57:00 IST" name="beforeMethod" finished-at="2022-12-29T19:57:00 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void grc_Module.Login.test01_checkHTTPError() throws java.lang.Exception]]>
+                <![CDATA[public void grc_Module.Login.test09_checkCreateAccountPasswordNull() throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test01_checkHTTPError()[pri:0, instance:grc_Module.Login@21282ed8]" started-at="2022-12-26T08:31:06 IST" name="test01_checkHTTPError" finished-at="2022-12-26T08:31:07 IST" duration-ms="623" status="PASS">
+        <test-method signature="test09_checkCreateAccountPasswordNull()[pri:0, instance:grc_Module.Login@36916eb0]" started-at="2022-12-29T19:57:00 IST" name="test09_checkCreateAccountPasswordNull" finished-at="2022-12-29T19:57:01 IST" duration-ms="1729" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[There is no broken links 
-<b> <font color='blue' font size = 4> ==> PASS</font></b> 
+              <![CDATA[CHECKING CREATE ACCOUNT PAGE USING NULL PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b> 
 ]]>
             </line>
           </reporter-output>
-        </test-method> <!-- test01_checkHTTPError -->
-        <test-method signature="test02_checkNullEMailPassword()[pri:0, instance:grc_Module.Login@21282ed8]" started-at="2022-12-26T08:31:07 IST" name="test02_checkNullEMailPassword" finished-at="2022-12-26T08:31:07 IST" duration-ms="188" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[CHECKING LOGIN PAGE USING NULL EMAIL<b> <font color='blue' font size = 4> ==> PASS</font></b> 
-]]>
-            </line>
-            <line>
-              <![CDATA[CHECKING LOGIN PAGE USING NULL PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b> 
-]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- test02_checkNullEMailPassword -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Login@21282ed8]" started-at="2022-12-26T08:31:07 IST" name="beforeMethod" finished-at="2022-12-26T08:31:07 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void grc_Module.Login.test02_checkNullEMailPassword() throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Login@21282ed8]" started-at="2022-12-26T08:31:07 IST" name="beforeMethod" finished-at="2022-12-26T08:31:07 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void grc_Module.Login.test03_checkNullEmail() throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="test03_checkNullEmail()[pri:0, instance:grc_Module.Login@21282ed8]" started-at="2022-12-26T08:31:07 IST" name="test03_checkNullEmail" finished-at="2022-12-26T08:31:07 IST" duration-ms="375" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[CHECKING LOGIN PAGE USING NULL EMAIL<b> <font color='blue' font size = 4> ==> PASS</font></b> 
-]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- test03_checkNullEmail -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Login@21282ed8]" started-at="2022-12-26T08:31:07 IST" name="beforeMethod" finished-at="2022-12-26T08:31:07 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void grc_Module.Login.test04_checkNullPassword() throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="test04_checkNullPassword()[pri:0, instance:grc_Module.Login@21282ed8]" started-at="2022-12-26T08:31:07 IST" name="test04_checkNullPassword" finished-at="2022-12-26T08:31:08 IST" duration-ms="407" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[CHECKING LOGIN PAGE USING NULL PASSWORD<b> <font color='blue' font size = 4> ==> PASS</font></b> 
-]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- test04_checkNullPassword -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Login@21282ed8]" started-at="2022-12-26T08:31:08 IST" name="beforeMethod" finished-at="2022-12-26T08:31:08 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void grc_Module.Login.test05_checkInvalidEmail() throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="test05_checkInvalidEmail()[pri:0, instance:grc_Module.Login@21282ed8]" started-at="2022-12-26T08:31:08 IST" name="test05_checkInvalidEmail" finished-at="2022-12-26T08:31:09 IST" duration-ms="1081" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[CHECKING LOGIN PAGE USING INVALID EMAIL 'automaerhgerhtiontest@gmail.com'<b> <font color='blue' font size = 4> ==> PASS</font></b> 
-]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- test05_checkInvalidEmail -->
-        <test-method signature="test06_checkInvalidPassword()[pri:0, instance:grc_Module.Login@21282ed8]" started-at="2022-12-26T08:31:09 IST" name="test06_checkInvalidPassword" finished-at="2022-12-26T08:31:09 IST" duration-ms="472" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[CHECKING LOGIN PAGE USING INVALID PASSWORD 'Test786$'<b> <font color='blue' font size = 4> ==> PASS</font></b> 
-]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- test06_checkInvalidPassword -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Login@21282ed8]" started-at="2022-12-26T08:31:09 IST" name="beforeMethod" finished-at="2022-12-26T08:31:09 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void grc_Module.Login.test06_checkInvalidPassword() throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="test07_checkForgotEmailNull()[pri:0, instance:grc_Module.Login@21282ed8]" started-at="2022-12-26T08:31:09 IST" name="test07_checkForgotEmailNull" finished-at="2022-12-26T08:31:10 IST" duration-ms="512" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[CHECKING PASSWORD RESET PAGE USING NULL VALUE<b> <font color='blue' font size = 4> ==> PASS</font></b> 
-]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- test07_checkForgotEmailNull -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Login@21282ed8]" started-at="2022-12-26T08:31:09 IST" name="beforeMethod" finished-at="2022-12-26T08:31:09 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void grc_Module.Login.test07_checkForgotEmailNull() throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Login@21282ed8]" started-at="2022-12-26T08:31:10 IST" name="beforeMethod" finished-at="2022-12-26T08:31:10 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void grc_Module.Login.test08_checkForgotInvalidEmail() throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="test08_checkForgotInvalidEmail()[pri:0, instance:grc_Module.Login@21282ed8]" started-at="2022-12-26T08:31:10 IST" name="test08_checkForgotInvalidEmail" finished-at="2022-12-26T08:31:11 IST" duration-ms="975" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[CHECKING PASSWORD RESET PAGE USING INVALID EMAIL 'automaerhgerhtiontest@gmail.com'<b> <font color='blue' font size = 4> ==> PASS</font></b> 
-]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- test08_checkForgotInvalidEmail -->
+        </test-method> <!-- test09_checkCreateAccountPasswordNull -->
       </class> <!-- grc_Module.Login -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
