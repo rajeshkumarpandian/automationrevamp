@@ -9,11 +9,24 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">5,504</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">5,588</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">grc_Module.Login</td><td><a href="#m0">test11_checkCreateAccountDifPassword</a></td><td rowspan="1">1672362620810</td><td rowspan="1">1954</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">grc_Module.MenuClicks</td><td><a href="#m0">test01_checkLogin</a></td><td rowspan="1">1672671463131</td><td rowspan="1">2097</td></tr><tr class="passedeven"><td><a href="#m1">test07_checkMenuClicksMyServices</a></td><td rowspan="1">1672671465230</td><td rowspan="1">289</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">grc_Module.Login#test11_checkCreateAccountDifPassword</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">CHECKING CREATE ACCOUNT PAGE USING MISMATCH PASSWORD 'Test786$' CONFIRM PASSWORD 'Test123$'<b> <font color='green' font size = 4> ==> PASS</font></b> 
+<h2>Default test</h2><h3 id="m0">grc_Module.MenuClicks#test01_checkLogin</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">LOGIN DONE SUCCESSFULLY IN GRC WEB USING THE USERNAME 'automationtest@gmail.com' AND PASSWORD 'Vakil@123'
+<b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">grc_Module.MenuClicks#test07_checkMenuClicksMyServices</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">The entire case is failed becasue of 'org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=108.0.5359.125)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'DESKTOP-LHQEHTF', ip: '192.168.29.221', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [371a5620b376ac72c9fdb07d28b4bafc, clickElement {id=13d89511-8dd8-4374-b43e-c7ad4cffdeb1}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\VAKILS~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50757}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50757/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (371a5620b376ac72c9fdb07d28b4bafc)] -> xpath: //*[@alt='My Services']]
+Session ID: 371a5620b376ac72c9fdb07d28b4bafc'
+<b> <font color='red' font size = 4> ==> FAIL</font></b> 
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

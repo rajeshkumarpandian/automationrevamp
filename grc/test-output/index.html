@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Vakilsearch\AppData\Local\Temp\testng-eclipse--384401895\testng-customsuite.xml</span>
+                    <span>C:\Users\Vakilsearch\AppData\Local\Temp\testng-eclipse-579359460\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +104,12 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="grc_Module.Login" class="method navigator-link" hash-for-method="test11_checkCreateAccountDifPassword">test11_checkCreateAccountDifPassword</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="grc_Module.MenuClicks" class="method navigator-link" hash-for-method="test01_checkLogin">test01_checkLogin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="grc_Module.MenuClicks" class="method navigator-link" hash-for-method="test07_checkMenuClicksMyServices">test07_checkMenuClicksMyServices</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -122,14 +127,21 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">grc_Module.Login</span>
+              <span class="class-name">grc_Module.MenuClicks</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test11_checkCreateAccountDifPassword">
-                  </a> <!-- test11_checkCreateAccountDifPassword -->
-                  <span class="method-name">test11_checkCreateAccountDifPassword</span>
+                  <a name="test01_checkLogin">
+                  </a> <!-- test01_checkLogin -->
+                  <span class="method-name">test01_checkLogin</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test07_checkMenuClicksMyServices">
+                  </a> <!-- test07_checkMenuClicksMyServices -->
+                  <span class="method-name">test07_checkMenuClicksMyServices</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +149,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Vakilsearch\AppData\Local\Temp\testng-eclipse--384401895\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Vakilsearch\AppData\Local\Temp\testng-eclipse-579359460\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -146,7 +158,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;grc_Module.Login&quot;/&gt;
+      &lt;class name=&quot;grc_Module.MenuClicks&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -171,10 +183,14 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">sanity</span>
+              <span class="test-group-name">smoke</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">test11_checkCreateAccountDifPassword</span>
+                <span class="method-in-group-name">test01_checkLogin</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">test07_checkMenuClicksMyServices</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -194,16 +210,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test11_checkCreateAccountDifPassword')
-data.setCell(0, 2, 'grc_Module.Login')
-data.setCell(0, 3, 1954);
+data.setCell(0, 1, 'test01_checkLogin')
+data.setCell(0, 2, 'grc_Module.MenuClicks')
+data.setCell(0, 3, 2097);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'test07_checkMenuClicksMyServices')
+data.setCell(1, 2, 'grc_Module.MenuClicks')
+data.setCell(1, 3, 289);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 seconds</span>
+              <span class="suite-total-time">Total running time: 2 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -215,9 +235,27 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">test11_checkCreateAccountDifPassword</span>
+              <span class="reporter-method-name">test07_checkMenuClicksMyServices</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">CHECKING CREATE ACCOUNT PAGE USING MISMATCH PASSWORD 'Test786$' CONFIRM PASSWORD 'Test123$'<b> <font color='green' font size = 4> ==> PASS</font></b> 
+                <span class="reporter-method-output">The entire case is failed becasue of 'org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=108.0.5359.125)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'DESKTOP-LHQEHTF', ip: '192.168.29.221', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [371a5620b376ac72c9fdb07d28b4bafc, clickElement {id=13d89511-8dd8-4374-b43e-c7ad4cffdeb1}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\VAKILS~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50757}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50757/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (371a5620b376ac72c9fdb07d28b4bafc)] -> xpath: //*[@alt='My Services']]
+Session ID: 371a5620b376ac72c9fdb07d28b4bafc'
+<b> <font color='red' font size = 4> ==> FAIL</font></b> 
+</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">test01_checkLogin</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">LOGIN DONE SUCCESSFULLY IN GRC WEB USING THE USERNAME 'automationtest@gmail.com' AND PASSWORD 'Vakil@123'
+<b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
 </span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
@@ -236,19 +274,27 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">grc_Module.Login</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">grc_Module.MenuClicks</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">openbrowser</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">beforeMethod(public void grc_Module.Login.test11_checkCreateAccountDifPassword() throws java.lang.Exception)</span>
-                <span class="method-start">3528 ms</span>
+                <span class="method-name">beforeMethod(public void grc_Module.MenuClicks.test01_checkLogin() throws java.lang.Exception)</span>
+                <span class="method-start">3178 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">test11_checkCreateAccountDifPassword</span>
-                <span class="method-start">3531 ms</span>
+                <span class="method-name">test01_checkLogin</span>
+                <span class="method-start">3180 ms</span>
               </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test07_checkMenuClicksMyServices</span>
+                <span class="method-start">5279 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void grc_Module.MenuClicks.test07_checkMenuClicksMyServices() throws java.lang.Exception)</span>
+                <span class="method-start">5279 ms</span>
+              </div> <!-- configuration-method before -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

@@ -5,9 +5,9 @@
     <classes>
       <class name="grc_Module.Login">
         <methods>
-          <include name="test10_checkCreateAccountPasswordLessChar"/>
           <include name="beforeMethod"/>
           <include name="openbrowser"/>
+          <include name="test09_checkCreateAccount"/>
         </methods>
       </class> <!-- grc_Module.Login -->
     </classes>

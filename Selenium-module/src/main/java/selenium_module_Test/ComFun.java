@@ -44,7 +44,7 @@ public class ComFun extends ComVar {
 			Reporter.log("" + Description + "<b> <font color='red' font size = 4>" + " ==> FAIL"+ "</font></b> \n");
 		}
 		if (testStatus.toLowerCase().equals("pass")) {
-			Reporter.log("" + Description + "<b> <font color='green' font size = 4>" + " ==> PASS"+ "</font></b> \n");
+			Reporter.log("" + Description + "<b> <font color='#40E314' font size = 4>" + " ==> PASS"+ "</font></b> \n");
 		}
 		if (testStatus.toLowerCase().equals("warning")) {
 			Reporter.log("" + Description + "<b> <font color='#8B008B' font size = 4>" + " ==> WARNING"+ "</font></b> \n");
@@ -363,8 +363,7 @@ public class ComFun extends ComVar {
 		noOfData = dataCount.size();
 		for (int i = 1; i <= noOfData; i++) {
 			clickByXpath("" + xpath + "[" + i + "]");
-			String PageName = driver.findElement(By.xpath("" + xpath + "[" + i + "]")).getText();
-			waitForElementPresent(By.xpath("//*[@id='overlayMessageDiv' and @style='display: none;']"));
+			String PageName = driver.findElement(By.xpath("" + xpath + "[" + i + "]")).getText();		
 			if (iselementPresent(By.xpath(ERROR_404_502)) == true) {
 				String Errordata = driver.findElement(By.xpath(ERROR_404_502)).getText();
 				errLog += ("In Page " + PageName + " name it throws " + Errordata + "");
@@ -462,6 +461,5 @@ public class ComFun extends ComVar {
         String saltStr = salt.toString();
         return saltStr;
 
-    }
-
+    } 
 }
