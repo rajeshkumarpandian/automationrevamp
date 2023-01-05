@@ -87,43 +87,43 @@ public class MenuClicks {
 		grcPageTest.Login(username, password);
 	}
 
-	// @Test(groups = { "smoke" })
+	@Test(groups = { "smoke" })
 	public void test02_checkMenuClicksLeftNav() throws Exception {
 		MenuClicksTest grcPageTest = new MenuClicksTest(MenuClicks.driver, MenuClicks.baseUrl);
 		grcPageTest.MenuClicksLeftNav();
 	} 
 	 
-	// @Test(groups = { "smoke" })
+	@Test(groups = { "smoke" })
 	public void test03_checkMenuClicksTopRightQuickNav() throws Exception {
 		MenuClicksTest grcPageTest = new MenuClicksTest(MenuClicks.driver, MenuClicks.baseUrl);
 		grcPageTest.MenuClicksTopRightQuickNav();
 	}
 	
-	// @Test(groups = { "smoke" })
+	@Test(groups = { "smoke" })
 	public void test04_checkMenuClicksTopRightDemoVideo() throws Exception {
 		MenuClicksTest grcPageTest = new MenuClicksTest(MenuClicks.driver, MenuClicks.baseUrl);
 		grcPageTest.MenuClicksTopRightDemoVideo();
 	}
 
-	// @Test(groups = { "smoke" })
+	@Test(groups = { "smoke" })
 	public void test05_checkMenuClicksTopRightNav() throws Exception {
 		MenuClicksTest grcPageTest = new MenuClicksTest(MenuClicks.driver, MenuClicks.baseUrl);
 		grcPageTest.MenuClicksTopRightNav();
 	}
 
-	// @Test(groups = { "smoke" })
+	@Test(groups = { "smoke" })
 	public void test06_checkMenuClicksProfile() throws Exception {
 		MenuClicksTest grcPageTest = new MenuClicksTest(MenuClicks.driver, MenuClicks.baseUrl);
 		grcPageTest.MenuClicksProfile();
 	}
 	
-	 @Test(groups = { "smoke" })
+	@Test(groups = { "smoke" })
 	public void test07_checkMenuClicksMyServices() throws Exception {
 		MenuClicksTest grcPageTest = new MenuClicksTest(MenuClicks.driver, MenuClicks.baseUrl);
 		grcPageTest.MenuClicksMyServices();
 	}
 
-	// @Test(groups = { "smoke" })
+	 @Test(groups = { "smoke" })
 	public void test07_checkMenuClicksPaymentsSubNav() throws Exception {
 		MenuClicksTest grcPageTest = new MenuClicksTest(MenuClicks.driver, MenuClicks.baseUrl);
 		grcPageTest.MenuClicksPaymentsSubNav();

@@ -66,8 +66,8 @@ public class GComVar {
 	public static String RIGHT_TOP_SIDE_NAV = "//*[@class='styles_header__NyX8e']/div/span";		
 	public static String MY_SERVICES_NAV = "//*[@class='styles_leftBox__JrE7N']/button";
 	
-	public static String MY_PAYMENTS_NAV = "//*[@id='paymentNavPill']/a";
-	public static String MY_PAYMENTS_SUB_LIST = "//*[@class='col-lg-6 grc_btns_group service-nav-buttons']/ul/li";
+	public static String MY_PAYMENTS_NAV = "//*[@class='styles_menu__O9eHZ']/li[4]/a";
+	public static String MY_PAYMENTS_SUB_LIST = "//*[@class='styles_tabSection__Mtsoy']/button";
 	
 	
 /*********************************************HOME PAGE*********************************************************************************/	

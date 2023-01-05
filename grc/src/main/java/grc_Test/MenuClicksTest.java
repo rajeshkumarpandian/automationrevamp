@@ -168,6 +168,8 @@ public class MenuClicksTest extends GComFun {
 	public void MenuClicksPaymentsSubNav() throws Exception, IOException {
 		String errLog = "";
 		try {
+			driver.get(baseUrl);
+			waitForElementPresent(By.xpath(GComVar.MY_PAYMENTS_NAV));
 			clickByXpath(GComVar.MY_PAYMENTS_NAV);
 			errLog += MenusclickLinkCheck(GComVar.MY_PAYMENTS_SUB_LIST);
 			if (errLog == "") {

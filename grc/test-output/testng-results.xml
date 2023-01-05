@@ -1,89 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="11" total="16" passed="5" failed="0" skipped="0">
   <reporter-output>
     <line>
-      <![CDATA[LOGIN DONE SUCCESSFULLY IN GRC WEB USING THE USERNAME 'automationtest@gmail.com' AND PASSWORD 'Vakil@123'
+      <![CDATA[THERE IS NO BROKEN LINKS
 <b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
 ]]>
     </line>
     <line>
-      <![CDATA[The entire case is failed becasue of 'org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=108.0.5359.125)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'DESKTOP-LHQEHTF', ip: '192.168.29.221', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [371a5620b376ac72c9fdb07d28b4bafc, clickElement {id=13d89511-8dd8-4374-b43e-c7ad4cffdeb1}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\VAKILS~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50757}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50757/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (371a5620b376ac72c9fdb07d28b4bafc)] -> xpath: //*[@alt='My Services']]
-Session ID: 371a5620b376ac72c9fdb07d28b4bafc'
+      <![CDATA[The entire case is failed becasue of 'java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.manage()" because "selenium_module_Test.ComFun.driver" is null'
+<b> <font color='red' font size = 4> ==> FAIL</font></b> 
+]]>
+    </line>
+    <line>
+      <![CDATA[THERE IS NO BROKEN LINKS
+<b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
+]]>
+    </line>
+    <line>
+      <![CDATA[The entire case is failed becasue of 'java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.manage()" because "selenium_module_Test.ComFun.driver" is null'
+<b> <font color='red' font size = 4> ==> FAIL</font></b> 
+]]>
+    </line>
+    <line>
+      <![CDATA[The entire case is failed becasue of 'java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "grc_Test.MenuClicksTest.driver" is null'
 <b> <font color='red' font size = 4> ==> FAIL</font></b> 
 ]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-01-02T20:27:39 IST" name="Default suite" finished-at="2023-01-02T20:27:45 IST" duration-ms="5588">
+  <suite started-at="2023-01-03T11:52:25 IST" name="Suite" finished-at="2023-01-03T11:52:25 IST" duration-ms="86">
     <groups>
       <group name="smoke">
-        <method signature="MenuClicks.test01_checkLogin()[pri:0, instance:grc_Module.MenuClicks@6404f418]" name="test01_checkLogin" class="grc_Module.MenuClicks"/>
-        <method signature="MenuClicks.test07_checkMenuClicksMyServices()[pri:0, instance:grc_Module.MenuClicks@6404f418]" name="test07_checkMenuClicksMyServices" class="grc_Module.MenuClicks"/>
+        <method signature="Login.test01_checkHTTPError()[pri:0, instance:grc_Module.Login@2805d709]" name="test01_checkHTTPError" class="grc_Module.Login"/>
+        <method signature="Login.test13_checkLogin()[pri:0, instance:grc_Module.Login@2805d709]" name="test13_checkLogin" class="grc_Module.Login"/>
+        <method signature="Login.test14_checkHTTPErrorAfterLogin()[pri:0, instance:grc_Module.Login@2805d709]" name="test14_checkHTTPErrorAfterLogin" class="grc_Module.Login"/>
+        <method signature="MenuClicks.test01_checkLogin()[pri:0, instance:grc_Module.MenuClicks@36916eb0]" name="test01_checkLogin" class="grc_Module.MenuClicks"/>
+        <method signature="MenuClicks.test07_checkMenuClicksPaymentsSubNav()[pri:0, instance:grc_Module.MenuClicks@36916eb0]" name="test07_checkMenuClicksPaymentsSubNav" class="grc_Module.MenuClicks"/>
       </group> <!-- smoke -->
     </groups>
-    <test started-at="2023-01-02T20:27:39 IST" name="Default test" finished-at="2023-01-02T20:27:45 IST" duration-ms="5588">
-      <class name="grc_Module.MenuClicks">
-        <test-method is-config="true" signature="openbrowser()[pri:0, instance:grc_Module.MenuClicks@6404f418]" started-at="2023-01-02T20:27:39 IST" name="openbrowser" finished-at="2023-01-02T20:27:43 IST" duration-ms="3170" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openbrowser -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.MenuClicks@6404f418]" started-at="2023-01-02T20:27:43 IST" name="beforeMethod" finished-at="2023-01-02T20:27:43 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void grc_Module.MenuClicks.test01_checkLogin() throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="test01_checkLogin()[pri:0, instance:grc_Module.MenuClicks@6404f418]" started-at="2023-01-02T20:27:43 IST" name="test01_checkLogin" finished-at="2023-01-02T20:27:45 IST" duration-ms="2097" status="PASS">
+    <test started-at="2023-01-03T11:52:25 IST" name="smoke" finished-at="2023-01-03T11:52:25 IST" duration-ms="86">
+      <class name="grc_Module.Login">
+        <test-method signature="test01_checkHTTPError()[pri:0, instance:grc_Module.Login@2805d709]" started-at="2023-01-03T11:52:25 IST" name="test01_checkHTTPError" finished-at="2023-01-03T11:52:25 IST" duration-ms="44" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[LOGIN DONE SUCCESSFULLY IN GRC WEB USING THE USERNAME 'automationtest@gmail.com' AND PASSWORD 'Vakil@123'
+              <![CDATA[THERE IS NO BROKEN LINKS
 <b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
 ]]>
             </line>
           </reporter-output>
-        </test-method> <!-- test01_checkLogin -->
-        <test-method signature="test07_checkMenuClicksMyServices()[pri:0, instance:grc_Module.MenuClicks@6404f418]" started-at="2023-01-02T20:27:45 IST" name="test07_checkMenuClicksMyServices" finished-at="2023-01-02T20:27:45 IST" duration-ms="289" status="PASS">
+        </test-method> <!-- test01_checkHTTPError -->
+        <test-method signature="test13_checkLogin()[pri:0, instance:grc_Module.Login@2805d709]" started-at="2023-01-03T11:52:25 IST" name="test13_checkLogin" finished-at="2023-01-03T11:52:25 IST" duration-ms="1" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[The entire case is failed becasue of 'org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=108.0.5359.125)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'DESKTOP-LHQEHTF', ip: '192.168.29.221', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [371a5620b376ac72c9fdb07d28b4bafc, clickElement {id=13d89511-8dd8-4374-b43e-c7ad4cffdeb1}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\VAKILS~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50757}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50757/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (371a5620b376ac72c9fdb07d28b4bafc)] -> xpath: //*[@alt='My Services']]
-Session ID: 371a5620b376ac72c9fdb07d28b4bafc'
+              <![CDATA[The entire case is failed becasue of 'java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.manage()" because "selenium_module_Test.ComFun.driver" is null'
 <b> <font color='red' font size = 4> ==> FAIL</font></b> 
 ]]>
             </line>
           </reporter-output>
-        </test-method> <!-- test07_checkMenuClicksMyServices -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.MenuClicks@6404f418]" started-at="2023-01-02T20:27:45 IST" name="beforeMethod" finished-at="2023-01-02T20:27:45 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void grc_Module.MenuClicks.test07_checkMenuClicksMyServices() throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- test13_checkLogin -->
+        <test-method signature="test14_checkHTTPErrorAfterLogin()[pri:0, instance:grc_Module.Login@2805d709]" started-at="2023-01-03T11:52:25 IST" name="test14_checkHTTPErrorAfterLogin" finished-at="2023-01-03T11:52:25 IST" duration-ms="1" status="PASS">
           <reporter-output>
+            <line>
+              <![CDATA[THERE IS NO BROKEN LINKS
+<b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
+]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
+        </test-method> <!-- test14_checkHTTPErrorAfterLogin -->
+      </class> <!-- grc_Module.Login -->
+      <class name="grc_Module.MenuClicks">
+        <test-method signature="test01_checkLogin()[pri:0, instance:grc_Module.MenuClicks@36916eb0]" started-at="2023-01-03T11:52:25 IST" name="test01_checkLogin" finished-at="2023-01-03T11:52:25 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The entire case is failed becasue of 'java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.manage()" because "selenium_module_Test.ComFun.driver" is null'
+<b> <font color='red' font size = 4> ==> FAIL</font></b> 
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test01_checkLogin -->
+        <test-method signature="test07_checkMenuClicksPaymentsSubNav()[pri:0, instance:grc_Module.MenuClicks@36916eb0]" started-at="2023-01-03T11:52:25 IST" name="test07_checkMenuClicksPaymentsSubNav" finished-at="2023-01-03T11:52:25 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The entire case is failed becasue of 'java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "grc_Test.MenuClicksTest.driver" is null'
+<b> <font color='red' font size = 4> ==> FAIL</font></b> 
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test07_checkMenuClicksPaymentsSubNav -->
       </class> <!-- grc_Module.MenuClicks -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- smoke -->
+  </suite> <!-- Suite -->
 </testng-results>

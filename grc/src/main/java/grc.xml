@@ -9,6 +9,7 @@
 		</groups>
 		<classes>
 			<class name="grc_Module.Login" />
+			<class name="grc_Module.MenuClicks" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
