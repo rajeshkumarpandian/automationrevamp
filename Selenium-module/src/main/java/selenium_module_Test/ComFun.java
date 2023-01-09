@@ -4,14 +4,26 @@ import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+
+import javax.activation.DataHandler;
+import javax.activation.FileDataSource;
+import javax.sql.DataSource;
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -19,6 +31,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.http.Message;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -31,6 +44,7 @@ public class ComFun extends ComVar {
 	public File parameters;
 	private static int statusCode;
 	public static StringBuffer verificationErrors = new StringBuffer();
+	public static String testResultsFilePath	= "" + File.separator + "src" + File.separator + "test" + File.separator + "resources" + File.separator + "testResults" + File.separator + "";
 
 	public ComFun(WebDriver webPageDriver, String baseURL) {
 		// TODO Auto-generated constructor stub
@@ -61,6 +75,7 @@ public class ComFun extends ComVar {
 	public String stringComparion(String elementType, String elementValue, String expectedValue) {
 		String getValue = "";	
 		String errLog = "";
+		
 		if (elementType.equals("XPATH")) {
 			getValue = driver.findElement(By.xpath(elementValue)).getText().trim();
 		} else if (elementType.equals("ID")) {
@@ -72,6 +87,22 @@ public class ComFun extends ComVar {
 		}
 		if ((getValue.equals(expectedValue))==false) {
 			errLog += ("There is an error while comparing the string. Expected value is '"+expectedValue+"' but got value is '"+getValue+"'");
+		}	
+		// org.testng.Assert.assertEquals(getValue, expectedValue);
+		return errLog;
+	}
+	
+	/**
+	 * 
+	 * @param elementType
+	 * @param elementValue
+	 * @param expectedValue
+	 * @return
+	 */
+	public String stringComparionDirValues(String elementValue, String expectedValue) {		
+		String errLog = "";				
+		if ((elementValue.equals(expectedValue))==false) {
+			errLog += ("There is an error while comparing the string. Expected value is '"+expectedValue+"' but got value is '"+elementValue+"'");
 		}	
 		// org.testng.Assert.assertEquals(getValue, expectedValue);
 		return errLog;
@@ -462,4 +493,7 @@ public class ComFun extends ComVar {
         return saltStr;
 
     } 
+	
+
+	
 }

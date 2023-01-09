@@ -43,7 +43,7 @@ public class HomePage {
 	private static String password;
 	ATUTestRecorder recorder;
 
-	@BeforeClass
+	//@BeforeClass
 	public void openbrowser() throws IOException {
 
 		Properties prop = new Properties();

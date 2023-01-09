@@ -23,12 +23,38 @@ public class GComFun extends selenium_module_Test.ComFun{
 	}
 
 	public void Login(String username, String password,String pathusername,String pathpwd, String pathbtn) throws Exception, IOException {		
+		waitForElementPresent(By.xpath(pathusername));
 		findAndPassbyxpath(pathusername, username);
 		findAndPassbyxpath(pathpwd, password);
 		clickByXpath(pathbtn);	
 	}
 	
-	
+	public String MyservicesListVerify() throws Exception {
+		String errLog = "";
+		int noOfserviceList = 0;
+		List<WebElement> serviceList = driver.findElements(By.xpath(GComVar.MY_SERVICE_LIST));
+		noOfserviceList = serviceList.size();
+		for (int i = 1; i <= noOfserviceList; i++) {
+			String serviceName = driver.findElement(By.xpath(""+GComVar.MY_SERVICE_LIST+"["+i+"]"+GComVar.MY_SERVICE_LIST_SERVICE_NAME+"")).getText().trim(); 
+			String serviceStatus = driver.findElement(By.xpath(""+GComVar.MY_SERVICE_LIST+"["+i+"]"+GComVar.MY_SERVICE_LIST_SERVICE_STATUS+"")).getText().trim();
+			driver.findElement(By.xpath(""+GComVar.MY_SERVICE_LIST+"["+i+"]"+GComVar.MY_SERVICE_LIST_SERVICE_CLICK+"")).click();
+			waitForElementPresent(By.xpath(GComVar.SERVICE_NAME));
+			String StatusServiceName = driver.findElement(By.xpath(GComVar.SERVICE_NAME)).getText().trim();
+			String[] service = StatusServiceName.split(" ");
+			String ServiceName = service[0] +" "+ service[1];			
+			String StatusServiceStatus = driver.findElement(By.xpath(GComVar.SERVICE_STATUS)).getText().trim();			
+			errLog += stringComparionDirValues(serviceName, ServiceName);
+			if (!(errLog == "")) {
+				reportlog("fail", errLog + "\n");
+			}					
+			errLog += stringComparionDirValues(serviceStatus, StatusServiceStatus);
+			if (!(errLog == "")) {
+				reportlog("fail", errLog + "\n");
+			}
+			clickByXpath(GComVar.MY_SERVICE_BACK);			
+		}										
+		return errLog;
+	}
 	
 	
 }

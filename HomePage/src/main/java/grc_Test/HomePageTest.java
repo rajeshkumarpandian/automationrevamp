@@ -8,6 +8,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedHashMap;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -54,6 +58,7 @@ public class HomePageTest extends HpComFun {
 	 */
 	public void HomePage(String sheetName) throws Exception, IOException {
 		String errLog = "";
+		Document document;
 		try {
 			Workbook file1 = Workbook.getWorkbook(new File(HpComVar.TEST_DATA));
 			Sheet sheet1 = file1.getSheet(sheetName);
@@ -67,13 +72,39 @@ public class HomePageTest extends HpComFun {
 				String Test_Scenario = strHM.get("Test_Scenario");
 				String Scenario = strHM.get("Scenario");
 				String Domain = strHM.get("Domain");
-				String Services = strHM.get("Services");					
-				if (Test_Scenario.equals("Positive") && (Scenario.equals("Pagecheck"))) {
-					driver.navigate().to(Domain+Services);
+				String Services = strHM.get("Services");	
+				String MetaTitle = strHM.get("MetaTitle");	
+				String MetaDesc = strHM.get("MetaDesc");	
+				if (Test_Scenario.equals("Positive") && (Scenario.equals("Pagecheck"))) {														
+					document = Jsoup.connect(Domain+Services).get();
+					String title = document.title();
+					//Element ServiceID = document.text("application/json");						 
+					// String ServiceID = document.select("section[id=__NEXT_DATA__]").get(0).attr(""); 
+					 System.out.println(document);
+					 
+					 
+					 
+					 
+					String description = document.select("meta[name=description]").get(0).attr("content");	
 					
-					String pageSource = driver.getPageSource();
-															
 										
+                   
+					
+					
+					
+					errLog += stringComparionDirValues(title, MetaTitle);
+					if (errLog == "") {
+						reportlog("pass", "CHECKING META TITLE FOR PAGE '"+Domain+Services+"'");
+					} else {
+						reportlog("fail", errLog + "\n");
+					}
+					
+					errLog += stringComparionDirValues(description, MetaDesc);
+					if (errLog == "") {
+						reportlog("pass", "CHECKING META DESCRIPTION FOR PAGE '"+Domain+Services+"'");
+					} else {
+						reportlog("fail", errLog + "\n");
+					}																				
 				}
 			}
 		} catch (Exception e) {

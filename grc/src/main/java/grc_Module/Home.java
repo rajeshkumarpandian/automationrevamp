@@ -30,7 +30,7 @@ import grc_Test.*;
 import io.netty.handler.logging.LogLevel;
 import selenium_module_Test.ComVar;
 
-public class MenuClicks {
+public class Home {
 
 	private enum TestBrowser {
 		HTMLUNIT, FIREFOX, IE, CHROME
@@ -81,13 +81,47 @@ public class MenuClicks {
 		recorder.start();
 	}
 
-	 @Test(groups = { "smoke" })
+	 @Test(groups = { "sanity" })
 	public void test01_checkLogin() throws Exception {
-		 MenuClicksTest grcPageTest = new MenuClicksTest(MenuClicks.driver, MenuClicks.baseUrl);
+		 MenuClicksTest grcPageTest = new MenuClicksTest(Home.driver, Home.baseUrl);
 		grcPageTest.Login(username, password);
 	}
+	 
+	@Test(groups = { "sanity" })
+	public void test02_checkMyservicesList() throws Exception {		
+		HomeTest grcPageTest = new HomeTest(Home.driver, Home.baseUrl);
+		grcPageTest.MyservicesList();
+	}
+	
+	@Test(groups = { "sanity" })
+	public void test03_checkMyservicesViewAll() throws Exception {		
+		HomeTest grcPageTest = new HomeTest(Home.driver, Home.baseUrl);
+		grcPageTest.MyservicesViewAll();
+	}
+	
+	@Test(groups = { "sanity" })
+	public void test04_checkRecservicesViewAll() throws Exception {		
+		HomeTest grcPageTest = new HomeTest(Home.driver, Home.baseUrl);
+		grcPageTest.RecservicesViewAll();
+	}
+	
+	@Test(groups = { "sanity" })
+	public void test05_checkComCalendarViewAll() throws Exception {		
+		HomeTest grcPageTest = new HomeTest(Home.driver, Home.baseUrl);
+		grcPageTest.ComCalendarViewAll();
+	}
+	
+	@Test(groups = { "sanity" })
+	public void test06_checkPopularServicesViewAll() throws Exception {		
+		HomeTest grcPageTest = new HomeTest(Home.driver, Home.baseUrl);
+		grcPageTest.PopularServicesViewAll();
+	}
+	
+	
 
-
+	 
+	 
+	 
 	// @AfterTest
 	public void aftertest() throws Exception {
 		// recorder.stop();

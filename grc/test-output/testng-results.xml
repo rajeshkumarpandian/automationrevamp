@@ -1,92 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="11" total="16" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
     <line>
-      <![CDATA[THERE IS NO BROKEN LINKS
+      <![CDATA[LOGIN DONE SUCCESSFULLY IN GRC WEB USING THE USERNAME 'automationtest@gmail.com' AND PASSWORD 'Vakil@123'
 <b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
 ]]>
     </line>
     <line>
-      <![CDATA[The entire case is failed becasue of 'java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.manage()" because "selenium_module_Test.ComFun.driver" is null'
-<b> <font color='red' font size = 4> ==> FAIL</font></b> 
+      <![CDATA[CHECKING SERVICE NAMES AND STATUS FROM MY SERVICE LIST AND AFTER CLICKING SERVICE<b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
 ]]>
     </line>
     <line>
-      <![CDATA[THERE IS NO BROKEN LINKS
-<b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
+      <![CDATA[CHECKING MY SERVICES VIEW ALL NAVIGATION<b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
 ]]>
     </line>
     <line>
-      <![CDATA[The entire case is failed becasue of 'java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.manage()" because "selenium_module_Test.ComFun.driver" is null'
-<b> <font color='red' font size = 4> ==> FAIL</font></b> 
+      <![CDATA[CHECKING RECOMMENDED SERVICES VIEW ALL NAVIGATION<b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
 ]]>
     </line>
     <line>
-      <![CDATA[The entire case is failed becasue of 'java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "grc_Test.MenuClicksTest.driver" is null'
-<b> <font color='red' font size = 4> ==> FAIL</font></b> 
+      <![CDATA[CHECKING COMPLIANCE CALENDAR VIEW ALL NAVIGATION<b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
+]]>
+    </line>
+    <line>
+      <![CDATA[CHECKING POPULAR SERVICES VIEW ALL NAVIGATION<b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
 ]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-01-03T11:52:25 IST" name="Suite" finished-at="2023-01-03T11:52:25 IST" duration-ms="86">
+  <suite started-at="2023-01-09T18:49:27 IST" name="Default suite" finished-at="2023-01-09T18:49:40 IST" duration-ms="12347">
     <groups>
       <group name="smoke">
-        <method signature="Login.test01_checkHTTPError()[pri:0, instance:grc_Module.Login@2805d709]" name="test01_checkHTTPError" class="grc_Module.Login"/>
-        <method signature="Login.test13_checkLogin()[pri:0, instance:grc_Module.Login@2805d709]" name="test13_checkLogin" class="grc_Module.Login"/>
-        <method signature="Login.test14_checkHTTPErrorAfterLogin()[pri:0, instance:grc_Module.Login@2805d709]" name="test14_checkHTTPErrorAfterLogin" class="grc_Module.Login"/>
-        <method signature="MenuClicks.test01_checkLogin()[pri:0, instance:grc_Module.MenuClicks@36916eb0]" name="test01_checkLogin" class="grc_Module.MenuClicks"/>
-        <method signature="MenuClicks.test07_checkMenuClicksPaymentsSubNav()[pri:0, instance:grc_Module.MenuClicks@36916eb0]" name="test07_checkMenuClicksPaymentsSubNav" class="grc_Module.MenuClicks"/>
+        <method signature="Home.test01_checkLogin()[pri:0, instance:grc_Module.Home@1de5f259]" name="test01_checkLogin" class="grc_Module.Home"/>
+        <method signature="Home.test02_checkMyservicesList()[pri:0, instance:grc_Module.Home@1de5f259]" name="test02_checkMyservicesList" class="grc_Module.Home"/>
+        <method signature="Home.test03_checkMyservicesViewAll()[pri:0, instance:grc_Module.Home@1de5f259]" name="test03_checkMyservicesViewAll" class="grc_Module.Home"/>
+        <method signature="Home.test04_checkRecservicesViewAll()[pri:0, instance:grc_Module.Home@1de5f259]" name="test04_checkRecservicesViewAll" class="grc_Module.Home"/>
+        <method signature="Home.test05_checkComCalendarViewAll()[pri:0, instance:grc_Module.Home@1de5f259]" name="test05_checkComCalendarViewAll" class="grc_Module.Home"/>
+        <method signature="Home.test06_checkPopularServicesViewAll()[pri:0, instance:grc_Module.Home@1de5f259]" name="test06_checkPopularServicesViewAll" class="grc_Module.Home"/>
       </group> <!-- smoke -->
     </groups>
-    <test started-at="2023-01-03T11:52:25 IST" name="smoke" finished-at="2023-01-03T11:52:25 IST" duration-ms="86">
-      <class name="grc_Module.Login">
-        <test-method signature="test01_checkHTTPError()[pri:0, instance:grc_Module.Login@2805d709]" started-at="2023-01-03T11:52:25 IST" name="test01_checkHTTPError" finished-at="2023-01-03T11:52:25 IST" duration-ms="44" status="PASS">
+    <test started-at="2023-01-09T18:49:27 IST" name="Default test" finished-at="2023-01-09T18:49:40 IST" duration-ms="12347">
+      <class name="grc_Module.Home">
+        <test-method is-config="true" signature="openbrowser()[pri:0, instance:grc_Module.Home@1de5f259]" started-at="2023-01-09T18:49:27 IST" name="openbrowser" finished-at="2023-01-09T18:49:30 IST" duration-ms="2581" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openbrowser -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Home@1de5f259]" started-at="2023-01-09T18:49:30 IST" name="beforeMethod" finished-at="2023-01-09T18:49:30 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void grc_Module.Home.test01_checkLogin() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="test01_checkLogin()[pri:0, instance:grc_Module.Home@1de5f259]" started-at="2023-01-09T18:49:30 IST" name="test01_checkLogin" finished-at="2023-01-09T18:49:32 IST" duration-ms="1955" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[THERE IS NO BROKEN LINKS
+              <![CDATA[LOGIN DONE SUCCESSFULLY IN GRC WEB USING THE USERNAME 'automationtest@gmail.com' AND PASSWORD 'Vakil@123'
 <b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
-]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- test01_checkHTTPError -->
-        <test-method signature="test13_checkLogin()[pri:0, instance:grc_Module.Login@2805d709]" started-at="2023-01-03T11:52:25 IST" name="test13_checkLogin" finished-at="2023-01-03T11:52:25 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[The entire case is failed becasue of 'java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.manage()" because "selenium_module_Test.ComFun.driver" is null'
-<b> <font color='red' font size = 4> ==> FAIL</font></b> 
-]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- test13_checkLogin -->
-        <test-method signature="test14_checkHTTPErrorAfterLogin()[pri:0, instance:grc_Module.Login@2805d709]" started-at="2023-01-03T11:52:25 IST" name="test14_checkHTTPErrorAfterLogin" finished-at="2023-01-03T11:52:25 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[THERE IS NO BROKEN LINKS
-<b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
-]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- test14_checkHTTPErrorAfterLogin -->
-      </class> <!-- grc_Module.Login -->
-      <class name="grc_Module.MenuClicks">
-        <test-method signature="test01_checkLogin()[pri:0, instance:grc_Module.MenuClicks@36916eb0]" started-at="2023-01-03T11:52:25 IST" name="test01_checkLogin" finished-at="2023-01-03T11:52:25 IST" duration-ms="2" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[The entire case is failed becasue of 'java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.manage()" because "selenium_module_Test.ComFun.driver" is null'
-<b> <font color='red' font size = 4> ==> FAIL</font></b> 
 ]]>
             </line>
           </reporter-output>
         </test-method> <!-- test01_checkLogin -->
-        <test-method signature="test07_checkMenuClicksPaymentsSubNav()[pri:0, instance:grc_Module.MenuClicks@36916eb0]" started-at="2023-01-03T11:52:25 IST" name="test07_checkMenuClicksPaymentsSubNav" finished-at="2023-01-03T11:52:25 IST" duration-ms="1" status="PASS">
+        <test-method signature="test02_checkMyservicesList()[pri:0, instance:grc_Module.Home@1de5f259]" started-at="2023-01-09T18:49:32 IST" name="test02_checkMyservicesList" finished-at="2023-01-09T18:49:34 IST" duration-ms="2129" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[The entire case is failed becasue of 'java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "grc_Test.MenuClicksTest.driver" is null'
-<b> <font color='red' font size = 4> ==> FAIL</font></b> 
+              <![CDATA[CHECKING SERVICE NAMES AND STATUS FROM MY SERVICE LIST AND AFTER CLICKING SERVICE<b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
 ]]>
             </line>
           </reporter-output>
-        </test-method> <!-- test07_checkMenuClicksPaymentsSubNav -->
-      </class> <!-- grc_Module.MenuClicks -->
-    </test> <!-- smoke -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- test02_checkMyservicesList -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Home@1de5f259]" started-at="2023-01-09T18:49:32 IST" name="beforeMethod" finished-at="2023-01-09T18:49:32 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void grc_Module.Home.test02_checkMyservicesList() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Home@1de5f259]" started-at="2023-01-09T18:49:34 IST" name="beforeMethod" finished-at="2023-01-09T18:49:34 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void grc_Module.Home.test03_checkMyservicesViewAll() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="test03_checkMyservicesViewAll()[pri:0, instance:grc_Module.Home@1de5f259]" started-at="2023-01-09T18:49:34 IST" name="test03_checkMyservicesViewAll" finished-at="2023-01-09T18:49:35 IST" duration-ms="916" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[CHECKING MY SERVICES VIEW ALL NAVIGATION<b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test03_checkMyservicesViewAll -->
+        <test-method signature="test04_checkRecservicesViewAll()[pri:0, instance:grc_Module.Home@1de5f259]" started-at="2023-01-09T18:49:35 IST" name="test04_checkRecservicesViewAll" finished-at="2023-01-09T18:49:36 IST" duration-ms="1432" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[CHECKING RECOMMENDED SERVICES VIEW ALL NAVIGATION<b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test04_checkRecservicesViewAll -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Home@1de5f259]" started-at="2023-01-09T18:49:35 IST" name="beforeMethod" finished-at="2023-01-09T18:49:35 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void grc_Module.Home.test04_checkRecservicesViewAll() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Home@1de5f259]" started-at="2023-01-09T18:49:36 IST" name="beforeMethod" finished-at="2023-01-09T18:49:36 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void grc_Module.Home.test05_checkComCalendarViewAll() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="test05_checkComCalendarViewAll()[pri:0, instance:grc_Module.Home@1de5f259]" started-at="2023-01-09T18:49:36 IST" name="test05_checkComCalendarViewAll" finished-at="2023-01-09T18:49:38 IST" duration-ms="1902" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[CHECKING COMPLIANCE CALENDAR VIEW ALL NAVIGATION<b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test05_checkComCalendarViewAll -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:grc_Module.Home@1de5f259]" started-at="2023-01-09T18:49:38 IST" name="beforeMethod" finished-at="2023-01-09T18:49:38 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void grc_Module.Home.test06_checkPopularServicesViewAll() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="test06_checkPopularServicesViewAll()[pri:0, instance:grc_Module.Home@1de5f259]" started-at="2023-01-09T18:49:38 IST" name="test06_checkPopularServicesViewAll" finished-at="2023-01-09T18:49:40 IST" duration-ms="1392" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[CHECKING POPULAR SERVICES VIEW ALL NAVIGATION<b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test06_checkPopularServicesViewAll -->
+      </class> <!-- grc_Module.Home -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="grc_Module.Login">
+      <class name="grc_Module.MenuClicks">
         <methods>
-          <include name="beforeMethod"/>
+          <include name="test04_checkMenuClicksTopRightDemoVideo"/>
           <include name="openbrowser"/>
-          <include name="test09_checkCreateAccount"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- grc_Module.Login -->
+      </class> <!-- grc_Module.MenuClicks -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
