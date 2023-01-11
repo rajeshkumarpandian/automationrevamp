@@ -10,15 +10,15 @@
 ]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-01-09T10:59:55 IST" name="Default suite" finished-at="2023-01-09T10:59:56 IST" duration-ms="1103">
+  <suite started-at="2023-01-11T17:28:25 IST" name="Default suite" finished-at="2023-01-11T17:28:26 IST" duration-ms="1088">
     <groups>
       <group name="sanity">
         <method signature="HomePage.test01_checkHomePage()[pri:0, instance:grc_Module.HomePage@71def8f8]" name="test01_checkHomePage" class="grc_Module.HomePage"/>
       </group> <!-- sanity -->
     </groups>
-    <test started-at="2023-01-09T10:59:55 IST" name="Default test" finished-at="2023-01-09T10:59:56 IST" duration-ms="1103">
+    <test started-at="2023-01-11T17:28:25 IST" name="Default test" finished-at="2023-01-11T17:28:26 IST" duration-ms="1088">
       <class name="grc_Module.HomePage">
-        <test-method signature="test01_checkHomePage()[pri:0, instance:grc_Module.HomePage@71def8f8]" started-at="2023-01-09T10:59:55 IST" name="test01_checkHomePage" finished-at="2023-01-09T10:59:56 IST" duration-ms="1072" status="PASS">
+        <test-method signature="test01_checkHomePage()[pri:0, instance:grc_Module.HomePage@71def8f8]" started-at="2023-01-11T17:28:25 IST" name="test01_checkHomePage" finished-at="2023-01-11T17:28:26 IST" duration-ms="1049" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[CHECKING META TITLE FOR PAGE 'https://stg.vakilsearch.com/criminal-lawyer'<b> <font color='#40E314' font size = 4> ==> PASS</font></b> 
